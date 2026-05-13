@@ -19,7 +19,7 @@ The failure that made this manual necessary was an overnight intelligence run th
 
 The fix was not more prompting. It was shared connection threading through a ContextVar, cache attribution, phase-level observability, and a rule that any automated workflow downstream of an LLM boundary has to be durable enough to fail visibly and recover cleanly. That is the difference between a clever AI demo and an operating system for repeatable work.
 
-That incident is in this manual because it cost real work and taught a real pattern. Every other pattern here has the same provenance. None of this came from a deck. It came from production, and it was paid for in tokens, sleep, and one Sunday morning that was supposed to be church.
+That incident is in this manual because it cost real work and taught a real pattern. Every other pattern here has the same provenance. None of this came from a deck. It came from production, and it was paid for in tokens, sleep, and one Sunday morning when I'd rather have been elsewhere.
 
 The frame this manual offers is simple. **Most AI work resets.** Every session re-explains the project. Every synthesis rebuilds from zero. Every expensive call runs whether or not the inputs changed. Every output dies the moment it is read. The cost is silent and continuous, and it is the reason most organizations report "we tried AI and it did not stick."
 
