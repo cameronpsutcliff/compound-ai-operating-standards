@@ -46,6 +46,10 @@ The 50+ item chart taxonomy in `taxonomy.md` synthesizes:
 
 This taxonomy is broader than Few's or Kriebel's individual lists because it includes strategic frameworks (SWOT, BCG, Porter), process diagrams, and CX-specific patterns. Treat it as a chart picker, not a teaching reference. The teaching reference is Few and Kriebel.
 
+## Light credits
+
+The 50+ chart taxonomy was assembled by Elizabeth Griemann and adapted here. Analytics delivery methodology context (story-type framing, audience-level distinctions) draws on Patrick Dyer's enterprise analytics training material. This skill is a synthesis layer over their work plus Few + Kriebel canon; the originals are richer than what fits in a pointer skill.
+
 ## When to cite
 
 When recommending a specific chart type or design principle:

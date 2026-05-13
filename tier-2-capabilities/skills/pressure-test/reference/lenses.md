@@ -6,6 +6,8 @@ Ten executive operating lenses. Apply each to the work being reviewed. Each lens
 
 These are not business school principles. They are board-level operating discipline: what gets asked when the stakes are real and the time is short.
 
+The ten lenses below are adapted from Michael Sutcliff's executive operating framework. Mike led a $10B+ consulting practice through the digital era and is now building an agentic development platform; the mental models reflect that operating reality.
+
 ---
 
 ## 1. Multiples, not percentages
