@@ -1,6 +1,8 @@
-# Compound AI Operating Standards — Starter Kit v2.0.0
+# Compound AI Operating Standards -- Starter Kit v2.1.0
 
-A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 18 ready-to-load skills, four project shells, and a complete field guide explaining why the kit is shaped this way.
+A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 20 ready-to-load skills, four project shells, and a complete field guide explaining why the kit is shaped this way.
+
+**New in v2.1.0:** `agent-panel-review` (Tier 1) for independent-first-pass multi-agent review with sealed Stage 2 and four-cell critique. `nod-protocol` (Tier 2 cognitive) for five-gate opposite-construction with signing test. Plus `reference/protocol.md` operationalization for all 6 existing cognitive modes.
 
 **Canonical site:** [cameronsutcliff.com/compound-ai](https://cameronsutcliff.com/compound-ai)
 **Source repo:** [github.com/cameronpsutcliff/compound-ai-operating-standards](https://github.com/cameronpsutcliff/compound-ai-operating-standards)
@@ -19,17 +21,17 @@ compound-ai-operating-standards/
 ├── _skills-index.md              ← complete skill registry, 18 skills
 ├── _map.md                       ← navigation map
 │
-├── tier-1-global/                ← universal — everything inherits this
+├── tier-1-global/                ← universal: everything inherits this
 │   ├── conventions/                style-guide, token-efficiency, skill-author rules
 │   ├── context/                    tier0 always-load, tier1-current working context
 │   ├── checklists/                 session-start, era transitions, model-routing
 │   └── skills-core/                request-router + 6 session infrastructure skills
 │
-├── tier-2-capabilities/          ← workhorse skills — load when the task calls for them
+├── tier-2-capabilities/          ← workhorse skills: load when the task calls for them
 │   ├── skills/                     13 skills (6 cognitive modes + 5 analytical + 2 domain)
 │   └── templates/                  lineage-record, quality-gates, token-budget
 │
-├── tier-3-shells/                ← project scaffolds — pick one per deliverable
+├── tier-3-shells/                ← project scaffolds: pick one per deliverable
 │   ├── slide-shell/                presentation deck (keyboard nav, speaker notes, fullscreen)
 │   ├── scroll-shell/               data-storytelling page (scroll animations, sliders, charts)
 │   ├── mission-control/            dashboard (grid layout, RAG status, sparklines, role filter)
@@ -43,16 +45,16 @@ compound-ai-operating-standards/
 
 ## What you get
 
-**18 skills** organized by tier, every one a pointer file under 80 lines that dispatches to richer reference material on demand:
+**20 skills** organized by tier, every one a pointer file under 80 lines that dispatches to richer reference material on demand:
 
 | Tier | Count | Skills |
 |---|---|---|
-| **1 — Session infrastructure** | 7 | request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check |
-| **2 — Cognitive modes** | 6 | parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge |
-| **2 — Analytical capabilities** | 5 | ultra-think, pressure-test, code-audit, autoresearch, skill-creator |
-| **2 — Domain capabilities** | 2 | viz, stakeholder-mapping |
+| **1 -- Session infrastructure** | 8 | request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-review |
+| **2 -- Cognitive modes** | 7 | parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol |
+| **2 -- Analytical capabilities** | 5 | ultra-think, pressure-test, code-audit, autoresearch, skill-creator |
+| **2 -- Domain capabilities** | 2 | viz, stakeholder-mapping |
 
-**4 shells** for the most common deliverable types — open `index.html` in a browser, edit content, deploy as static HTML.
+**4 shells** for the most common deliverable types: open `index.html` in a browser, edit content, deploy as static HTML.
 
 **A complete framework** (the field guide) explaining why the kit is structured this way, what each pattern does, and when not to use AI at all.
 
@@ -72,7 +74,7 @@ The agent reads `AGENT.md`, walks the tier structure, and is operational in unde
 
 ### Option B: Use the agent-facing handoff
 
-For any agent — Claude Code, Codex, Cursor, Aider, Continue.dev — paste this prompt:
+For any agent (Claude Code, Codex, Cursor, Aider, Continue.dev), paste this prompt:
 
 ```
 You are about to work with the Compound AI Operating Standards kit
@@ -100,7 +102,7 @@ If you don't want to install anything, the field guide explains the patterns and
 
 1. **You ask an agent for something.** "Pressure-test this plan", "what chart for this data", "map stakeholders for this initiative".
 2. **The request-router matches your language to a skill** (see `tier-1-global/skills-core/request-router/SKILL.md` for the routing table).
-3. **The skill loads, runs, and returns a structured output** — every skill ships with an output template, so results are consistent.
+3. **The skill loads, runs, and returns a structured output.** Every skill ships with an output template, so results are consistent.
 4. **For deliverables, you pick a shell from `tier-3-shells/`** and fill in the content. The interactivity, navigation, theming, and progress tracking are already wired.
 
 The compounding part: every session that runs through this kit reinforces the same patterns. Outputs accumulate in `STATE.md` and `session-log.md`. Patterns that prove themselves get promoted via `pattern-promoter`. The system gets cheaper and more reliable the longer it runs.
@@ -114,7 +116,7 @@ The compounding part: every session that runs through this kit reinforces the sa
 
 ## Versioning
 
-This is **v2.0.0**. Major version change from v1.x because the directory structure changed (tier-based hierarchy replaces flat layout) and the skill count tripled (from 6 to 18). v1.1.0 kits will keep working but won't see new features.
+This is **v2.1.0**. Minor version bump from v2.0.0 to add `agent-panel-review` (Tier 1) and `nod-protocol` (Tier 2 cognitive), plus `reference/protocol.md` operationalization for all 6 existing cognitive modes. The v2.0.0 line is the major-version anchor: directory structure changed (tier-based hierarchy replaces flat layout) and the skill count grew from 6 to 18; v2.1.0 takes it to 20.
 
 See `releases/` for full version history.
 
@@ -140,8 +142,8 @@ Returns `VERIFIED` if the local manifest matches the canonical website manifest.
 
 - **Field guide questions:** read [cameronsutcliff.com/compound-ai/field-guide](https://cameronsutcliff.com/compound-ai/field-guide)
 - **Bug reports / requests:** open an issue on [GitHub](https://github.com/cameronpsutcliff/compound-ai-operating-standards/issues)
-- **Pattern contributions:** PR welcome — every promoted pattern needs a Field Guide reference and a working skill or shell
+- **Pattern contributions:** PR welcome. Every promoted pattern needs a Field Guide reference and a working skill or shell.
 
 ---
 
-*Compound AI Operating Standards — operating layer for AI work that accumulates instead of evaporates.*
+*Compound AI Operating Standards: operating layer for AI work that accumulates instead of evaporates.*

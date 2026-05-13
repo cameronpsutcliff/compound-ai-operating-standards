@@ -1,6 +1,6 @@
 # Map
 
-Navigation map for Compound AI Operating Standards v2.0.0. Tier model lives in `_tiers.md`.
+Navigation map for Compound AI Operating Standards v2.1.0. Tier model lives in `_tiers.md`.
 
 ## Root files
 
@@ -10,14 +10,14 @@ Navigation map for Compound AI Operating Standards v2.0.0. Tier model lives in `
 | `AGENT.md` | Root operating contract |
 | `CLAUDE.md` | 3-line pointer to AGENT.md (Claude Code convention) |
 | `_tiers.md` | Inheritance model explanation |
-| `_skills-index.md` | Complete skill registry, 18 skills across tiers |
+| `_skills-index.md` | Complete skill registry, 20 skills across tiers |
 | `_map.md` | This file |
 | `Project.md` | Human project overview |
 | `STATE.md` | Current state of this kit's development |
 | `session-log.md` | Append-only history |
 | `BACKLOG.md` | Open work |
 
-## Tier 1 — Global (universal, inherited by everything)
+## Tier 1 -- Global (universal, inherited by everything)
 
 | Path | Purpose |
 |---|---|
@@ -25,18 +25,18 @@ Navigation map for Compound AI Operating Standards v2.0.0. Tier model lives in `
 | `tier-1-global/conventions/` | style-guide, token-efficiency, skill-author-guide, provenance, session-log-format |
 | `tier-1-global/context/` | tier0.md (always-load), tier1-current.md, tier1-subsystem/ |
 | `tier-1-global/checklists/` | session-start, session-closeout, era transitions, model-routing, new-project, pattern-promotion |
-| `tier-1-global/skills-core/` | request-router + 6 session infrastructure skills |
+| `tier-1-global/skills-core/` | request-router + 7 session infrastructure skills (incl. agent-panel-review) |
 | `tier-1-global/design-system/` | Abyssal CSS tokens for use in Tier 3 shells |
 
-## Tier 2 — Capabilities (on-demand)
+## Tier 2 -- Capabilities (on-demand)
 
 | Path | Purpose |
 |---|---|
 | `tier-2-capabilities/AGENT.md` | Tier 2 operating rules |
-| `tier-2-capabilities/skills/` | 11 capability skills (cognitive modes + analytical + domain) |
+| `tier-2-capabilities/skills/` | 12 capability skills (7 cognitive modes + 5 analytical + 2 domain). Cognitive modes ship `reference/protocol.md` files for full operationalization in v2.1.0. |
 | `tier-2-capabilities/templates/` | lineage-record, model-routing, quality-gates, token-budget |
 
-## Tier 3 — Shells (project scaffolds)
+## Tier 3 -- Shells (project scaffolds)
 
 | Path | Purpose |
 |---|---|

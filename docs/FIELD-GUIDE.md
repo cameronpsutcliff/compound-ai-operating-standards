@@ -1403,13 +1403,82 @@ This manual is an advocacy document for one specific thing: AI work that compoun
 
 Hype ages fast. Tools that work age well. A field manual that did not include this chapter would be advocacy. With it, it is engineering.
 
+### Chapter 31. The Agent Panel Review Pattern
+
+*Who this chapter is for: anyone shipping a high-stakes deliverable who suspects one agent is not enough but does not want to convene a roundtable.*
+
+This chapter operationalizes the pattern that produced this very kit. The first version of the Compound AI Operating Standards starter kit was built by three agents working in a specific staged sequence: each produced an independent first attempt, then read the others' attempts, then revised with no ego. The convergence was honest because the first pass was sealed. The pattern is reusable on any deliverable that benefits from multi-perspective review. This chapter is the canonical write-up of that pattern. It is not a transcript of any specific build; it is the protocol you can run on your own.
+
+The pattern is implemented as the `agent-panel-review` skill (Tier 1). What follows is the staged method.
+
+#### 31.1 When to convene a panel
+
+A panel costs time, attention, and orchestration discipline. The threshold should be deliberately high. Most work does not need a panel.
+
+Convene a panel when at least one of the following is true: the deliverable is high-stakes and durable (a field guide, a foreword, a public release); the work spans multiple genuinely-different functions (voice + substance + architecture, or builder + critic + integrator); the decision is irreversible at meaningful cost; you suspect groupthink in the single-agent output; or the work explicitly requires multiple perspectives.
+
+Do not convene a panel when the work is routine code, when one good prompt would have done it, when the decision is reversible at low cost, or when you already know what you want. The convergence-theater test catches the last case: if you imagine the panel converging on loop 1 with all agents agreeing with your current instinct, and you would find that valuable, you do not need a panel, you need confirmation. A panel is bad at producing confirmation. Use it when you want the panel to disagree with your instinct and surface what you are missing.
+
+#### 31.2 Role assignment without ego
+
+Roles are functions, not identities. Any agent can hold any role. The three canonical templates:
+
+**Editorial work (three roles):** voice (tone, arc, attribution), substance (the content body, technical accuracy), architecture (structural spine, packaging, provenance). This is the template that produced the v1 kit and the field guide you are reading.
+
+**Code review (two roles):** builder (produces the patch) and critic (finds bugs, edge cases, tests). Add an integrator role for high-stakes changes like data migrations or public APIs.
+
+**Strategic analysis (three roles):** researcher (gathers evidence and base rates), skeptic (constructs the opposing case), synthesizer (produces the integrated position with stated confidence). This template pairs naturally with the `nod-protocol` skill, which formalizes the skeptic's gated opposite-construction.
+
+The ego rule: the producing agent does not defend the original draft when the critique lands. It revises. Defenses are limited to one-line dissents when the critique misreads scope. Anything longer is relitigation, which destroys the panel.
+
+#### 31.3 The sealed independent pass
+
+The hard rule, the load-bearing one: in Stage 2, no panelist sees another panelist's draft, summary, or framing. Each writes from scratch.
+
+This is the discipline that separates structured panel review from convergence theater. Models anchor heavily on prior context. If panelist B sees even a paragraph of panelist A's draft, panelist B's output is no longer independent. It is anchored. The whole point of the panel is the unanchored signal each agent produces. When that signal is preserved, the cross-critique surfaces real blind spots. When it is destroyed, the panel just produces three flavors of the first draft.
+
+The operator's job at this stage is to hold the seal. Do not run sessions in adjacent tabs of the same agent. Do not paste cross-session content. Do not summarize one agent's output to another. If the seal breaks, restart that panelist's first pass. The lost time is cheaper than the lost signal.
+
+There is one common failure mode worth naming: leaky session memory. Some agent platforms share context across sessions in the same workspace. Verify your panel members are running in genuinely separate contexts. A shared system prompt is fine. A shared session history is not.
+
+#### 31.4 Structured critique
+
+After Stage 2 produces three independent first passes, Stage 3 sends each output to the other panelists for critique. The critique format is the discipline that keeps it from becoming negging.
+
+Every critique covers four cells per output reviewed:
+
+1. **Strongest claim.** The single most defensible move in this output. Specific. Cite the line or section.
+2. **Weakest claim.** The single most vulnerable move. Name the vulnerability, not a vague worry.
+3. **Shared blind spot.** Something this output and yours both missed. This is the cell where the panel earns its cost: it requires the reviewer to read another agent's output through the lens of what their own output also missed.
+4. **One thing worth stealing.** What you would adopt from this output into yours. Concrete: a framing, a phrase, a structural move.
+
+The cells force discipline. Without the strongest-claim cell, critique becomes a list of complaints. Without the weakest-claim cell, critique stays at the safe "this could be improved" level. Without the shared-blind-spot cell, the panel does not surface the things no single agent would have caught. Without the one-thing-to-steal cell, the revisions in Stage 4 do not incorporate the others' work.
+
+The anti-pattern to watch: critiquing the agent instead of the work. "Claude's output is weak on attribution" is wrong. "This output is weak on attribution" is right. The work is the unit.
+
+#### 31.5 Convergence and the no-ego revise
+
+Stage 4 sends each panelist the critiques of its own work and asks for a revision. The discipline is to adopt or dissent in one line, then move on.
+
+A healthy revision adopts roughly 60-80% of critiques, dissents on the rest with one-line reasoning, and produces a stronger version of the original output. Two failure modes bracket this:
+
+**Relitigation.** A revision that turns into a 500-word defense of the original draft. The protocol breaks here. The producing agent should adopt what lands and write a single line of dissent for what does not. No 500-word defenses.
+
+**Capitulation.** A revision that adopts every critique without judgment. Equally bad. Each panelist should retain some of its original signal. Adopting every critique flattens the panel into groupthink, which is exactly what the panel was supposed to prevent.
+
+After Stage 4 produces three revisions, Stage 5 is the operator's job: pick the merge architecture. The merge takes the strongest layer from each, not an average. Common merge patterns: spine from one agent, body from another, voice from the third; or one agent's revision is dominant and the operator merges in only the specific improvements from the others; or the operator hands all three revisions to one panelist for final integration. Whichever pattern fits, the operator owns the merge. The panel produced the inputs. The operator decides what ships.
+
+Stage 6 is the loop-or-ship decision. Healthy convergence happens between loops 1 and 3. Loop 1 convergence usually means you did not need a panel; the work could have been done by one agent with a good prompt. Loop 4 still arguing usually means the question was framed too broadly; close the loop, narrow the question, restart.
+
+The pattern is implemented as the `agent-panel-review` skill. The skill's `reference/protocol.md` has the full six-stage procedure, `reference/roles.md` covers role templates, `reference/critique-format.md` defines the four-cell template, `reference/when-to-convene.md` is the threshold guide, `reference/agent-strengths.md` lists known model strengths for panel composition, and `reference/worked-example.md` shows the protocol applied to a synthetic deliverable. Run the skill on your next high-stakes deliverable and you will know within one loop whether it was the right call.
+
 ---
 
 ## Part VII. A Worked Example
 
 > **Status:** Complete. Owner: Kiro. Loop 3 delivered. Anonymized per Loop 4 decision: the downloadable package teaches the technique; the website and GitHub page may name IIP as the source proof point.
 
-### Chapter 31. Before and After
+### Chapter 32. Before and After
 
 *Who this chapter is for: anyone who wants to see the standards applied end-to-end on a real system.*
 

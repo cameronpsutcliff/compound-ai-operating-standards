@@ -1,12 +1,12 @@
 # Project Operating Contract
-# Compound AI Operating Standards v2.0.0
+# Compound AI Operating Standards v2.1.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0 (code) / CC BY 4.0 (docs)
 
 Canonical URL: `https://cameronsutcliff.com/compound-ai`
 
 ## What this kit is
 
-A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 18 ready-to-load skills, four project shells, the Abyssal design system, and a complete field guide explaining why the kit is shaped this way.
+A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 20 ready-to-load skills, four project shells, the Abyssal design system, and a complete field guide explaining why the kit is shaped this way.
 
 ## What this kit is not
 
@@ -25,9 +25,9 @@ A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Co
 
 Read `_tiers.md` for the inheritance rules. Quick summary:
 
-- `tier-1-global/` — universal: conventions, context, checklists, core skills, design system
-- `tier-2-capabilities/` — domain skills: viz, code-audit, pressure-test, cognitive modes, etc.
-- `tier-3-shells/` — project scaffolds: slide, scroll, mission-control, course
+- `tier-1-global/` -- universal: conventions, context, checklists, core skills, design system
+- `tier-2-capabilities/` -- domain skills: viz, code-audit, pressure-test, cognitive modes, etc.
+- `tier-3-shells/` -- project scaffolds: slide, scroll, mission-control, course
 
 ## Context map
 
@@ -65,13 +65,13 @@ Read `_tiers.md` for the inheritance rules. Quick summary:
 
 ## Skills
 
-Eighteen skills total, organized by tier. See `_skills-index.md` for the complete registry with triggers.
+Twenty skills total, organized by tier. See `_skills-index.md` for the complete registry with triggers.
 
-**Tier 1 — session infrastructure (7 skills):**
-request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check
+**Tier 1 -- session infrastructure (8 skills):**
+request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-review
 
-**Tier 2 — capabilities (11 skills):**
-parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, ultra-think, code-audit, autoresearch, skill-creator, pressure-test, viz, stakeholder-mapping
+**Tier 2 -- capabilities (12 skills):**
+parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol, ultra-think, code-audit, autoresearch, skill-creator, pressure-test, viz, stakeholder-mapping
 
 The `request-router` auto-dispatches based on request triggers. Most users never have to think about which skill applies.
 

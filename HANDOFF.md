@@ -1,5 +1,5 @@
 # Agent Handoff
-# Compound AI Operating Standards v2.0.0
+# Compound AI Operating Standards v2.1.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 This is the document you hand to a fresh agent (Claude, Codex, Cursor, Aider, Continue, or any other) to get it operational on this kit in under two minutes.
@@ -12,30 +12,30 @@ Copy everything between the rules and paste into a new agent session:
 
 ---
 
-You are about to use the **Compound AI Operating Standards kit v2.0.0** at this path. The kit is a tiered operating layer with 18 skills and 4 project shells. Your job is to load it correctly, then help me work.
+You are about to use the **Compound AI Operating Standards kit v2.1.0** at this path. The kit is a tiered operating layer with 20 skills and 4 project shells. Your job is to load it correctly, then help me work.
 
 **Read these files in this exact order:**
 
-1. `AGENT.md` — root operating contract (what this kit is, what it isn't, governance rules)
-2. `_tiers.md` — the inheritance model (Tier 1 / 2 / 3)
-3. `_skills-index.md` — complete skill registry with triggers
-4. `tier-1-global/checklists/session-start.md` — the bootstrap routine
-5. `tier-1-global/skills-core/request-router/SKILL.md` — the routing table that matches my requests to skills
-6. `tier-1-global/context/tier0.md` — always-load context (project name, phase, primary constraint)
+1. `AGENT.md`: root operating contract (what this kit is, what it isn't, governance rules)
+2. `_tiers.md`: the inheritance model (Tier 1 / 2 / 3)
+3. `_skills-index.md`: complete skill registry with triggers
+4. `tier-1-global/checklists/session-start.md`: the bootstrap routine
+5. `tier-1-global/skills-core/request-router/SKILL.md`: the routing table that matches my requests to skills
+6. `tier-1-global/context/tier0.md`: always-load context (project name, phase, primary constraint)
 
 **After loading, confirm by stating:**
 
-- The 7 Tier 1 infrastructure skills you have access to (request-router + 6 session skills)
-- The 11 Tier 2 capability skills you have access to (6 cognitive modes, 5 analytical, 2 domain)
+- The 8 Tier 1 infrastructure skills you have access to (request-router + 6 session skills + agent-panel-review)
+- The 12 Tier 2 capability skills you have access to (7 cognitive modes, 5 analytical, 2 domain)
 - The 4 Tier 3 shells available (slide, scroll, mission-control, course)
-- Which shell you'd recommend for the project at hand (if I've told you the project type — if not, ask)
+- Which shell you'd recommend for the project at hand (if I've told you the project type. If not, ask.)
 
 **Operating rules:**
 
-1. Every request I make: first check the `request-router` routing table. If a skill matches, load it from `tier-2-capabilities/skills/[name]/SKILL.md` and follow its protocol.
+1. Every request I make: first check the `request-router` routing table. If a skill matches, load it from the matching tier and follow its protocol.
 2. Pointer skills are under 80 lines. They dispatch to `reference/` subfolders. Load those references only when the skill says to.
 3. Compound requests (analysis + decision + action) trigger sequenced skills. See request-router's "Compound requests" section.
-4. `AGENT.md` is the canonical operating contract. `CLAUDE.md` exists only as a 3-line pointer to AGENT.md — never read CLAUDE.md for content.
+4. `AGENT.md` is the canonical operating contract. `CLAUDE.md` exists only as a 3-line pointer to AGENT.md, never read CLAUDE.md for content.
 5. Update `STATE.md` and append to `session-log.md` at the end of every non-trivial session.
 6. Confirm before destructive operations, force pushes, billing changes, external publishing, or auth/secret changes.
 
@@ -46,38 +46,40 @@ You are about to use the **Compound AI Operating Standards kit v2.0.0** at this 
 ## What the agent sees after running this
 
 ```
-LOADED COMPOUND AI v2.0.0
+LOADED COMPOUND AI v2.1.0
 ═════════════════════════
 
-Tier 1 — Session infrastructure (7 skills):
-  ✓ request-router (active — auto-routing enabled)
+Tier 1: Session infrastructure (8 skills):
+  ✓ request-router (active, auto-routing enabled)
   ✓ context-loader
   ✓ token-economist
   ✓ engagement-bootstrap
   ✓ quality-gate
   ✓ pattern-promoter
   ✓ provenance-check
+  ✓ agent-panel-review
 
-Tier 2 — Cognitive modes (6 skills):
+Tier 2: Cognitive modes (7 skills):
   ✓ parallel-lens-synthesis
   ✓ consequence-simulation
   ✓ cross-domain-translation
   ✓ convergence-detection
   ✓ detached-judgment
   ✓ simulation-to-action-bridge
+  ✓ nod-protocol
 
-Tier 2 — Analytical capabilities (5 skills):
+Tier 2: Analytical capabilities (5 skills):
   ✓ ultra-think
   ✓ pressure-test
   ✓ code-audit
   ✓ autoresearch
   ✓ skill-creator
 
-Tier 2 — Domain capabilities (2 skills):
+Tier 2: Domain capabilities (2 skills):
   ✓ viz
   ✓ stakeholder-mapping
 
-Tier 3 — Shells (4):
+Tier 3: Shells (4):
   ✓ slide-shell (presentation deck)
   ✓ scroll-shell (data-storytelling page)
   ✓ mission-control (dashboard)
@@ -91,11 +93,11 @@ If the agent's response doesn't look like the above, restart and check that the 
 ## Tested with
 
 This handoff has been validated against:
-- **Claude Code** — reads `CLAUDE.md` first (which routes to AGENT.md), then proceeds through the checklist
-- **Claude API** (custom integrations) — reads `AGENT.md` natively
-- **Codex CLI** — reads `AGENT.md` natively (Codex's standard convention)
-- **Cursor** — reads `AGENT.md` via its rules file mechanism
-- **Aider** — reads `CONVENTIONS.md` natively; symlink `AGENT.md` to `CONVENTIONS.md` for Aider projects
+- **Claude Code**: reads `CLAUDE.md` first (which routes to AGENT.md), then proceeds through the checklist
+- **Claude API** (custom integrations): reads `AGENT.md` natively
+- **Codex CLI**: reads `AGENT.md` natively (Codex's standard convention)
+- **Cursor**: reads `AGENT.md` via its rules file mechanism
+- **Aider**: reads `CONVENTIONS.md` natively; symlink `AGENT.md` to `CONVENTIONS.md` for Aider projects
 
 If your agent reads a different file convention (e.g. `INSTRUCTIONS.md`, `.cursorrules`), create that as a symlink or 3-line pointer to `AGENT.md` and you're done.
 
@@ -106,11 +108,11 @@ For a project that uses this kit, write a project-specific handoff that subclass
 ```markdown
 # Project Handoff: [Project Name]
 
-You are working on [project] which uses Compound AI Operating Standards v2.0.0.
+You are working on [project] which uses Compound AI Operating Standards v2.1.0.
 
 Read these files in order:
 1. AGENT.md (root)
-2. Project.md (project-specific overview — what this is, who uses it, current state)
+2. Project.md (project-specific overview: what this is, who uses it, current state)
 3. _tiers.md, _skills-index.md, session-start.md, request-router (per HANDOFF.md)
 4. STATE.md (live state)
 

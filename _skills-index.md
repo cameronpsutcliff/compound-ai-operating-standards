@@ -1,12 +1,12 @@
 # Skills Index
-# Compound AI Operating Standards v2.0.0
+# Compound AI Operating Standards v2.1.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
-Load this file at session start. It is the complete capability registry. Eighteen skills total, organized by tier.
+Load this file at session start. It is the complete capability registry. Twenty skills total, organized by tier.
 
 ---
 
-## Tier 1 — Session Infrastructure (7 skills)
+## Tier 1 -- Session Infrastructure (8 skills)
 
 These run the session. Load at session start; the `request-router` then handles dispatch.
 
@@ -19,12 +19,13 @@ These run the session. Load at session start; the `request-router` then handles 
 | quality-gate | "quality check", "validate this output", "is this ready" | `tier-1-global/skills-core/quality-gate/SKILL.md` | active |
 | pattern-promoter | "promote this pattern", "save this lesson", "make this reusable" | `tier-1-global/skills-core/pattern-promoter/SKILL.md` | active |
 | provenance-check | "verify origin", "check provenance", "is this the official version" | `tier-1-global/skills-core/provenance-check/SKILL.md` | active |
+| **agent-panel-review** | "set up a panel", "convene a panel", "multi-agent review", "second opinion". Independent-first-pass, structured-critique, no-ego convergence. | `tier-1-global/skills-core/agent-panel-review/SKILL.md` | active |
 
 ---
 
-## Tier 2 — Cognitive Modes (6 skills)
+## Tier 2 -- Cognitive Modes (7 skills)
 
-Change HOW you reason. The router auto-selects based on request patterns.
+Change HOW you reason. The router auto-selects based on request patterns. New in v2.1.0: each cognitive mode ships a `reference/protocol.md` that operationalizes the skill end-to-end. The seventh skill, `nod-protocol`, fills the adversarial reasoning gap identified during the v2.0.0 review.
 
 | Skill | When the router fires it | Pointer | Status |
 |---|---|---|---|
@@ -34,10 +35,11 @@ Change HOW you reason. The router auto-selects based on request patterns.
 | **convergence-detection** | "common thread", "root cause", "what connects these" | `tier-2-capabilities/skills/convergence-detection/SKILL.md` | active |
 | **detached-judgment** | "devil's advocate", "base rate", "am I being objective" | `tier-2-capabilities/skills/detached-judgment/SKILL.md` | active |
 | **simulation-to-action-bridge** | "what should we do", "next steps", "OODA", "make this actionable" | `tier-2-capabilities/skills/simulation-to-action-bridge/SKILL.md` | active |
+| **nod-protocol** | "play devil's advocate", "argue the opposite", "construct the opposite case", "NOD this". Five-gate opposite-construction with signing test. | `tier-2-capabilities/skills/nod-protocol/SKILL.md` | active |
 
 ---
 
-## Tier 2 — Analytical Capabilities (5 skills)
+## Tier 2 -- Analytical Capabilities (5 skills)
 
 The workhorses. Load when the task calls for them.
 
@@ -51,12 +53,21 @@ The workhorses. Load when the task calls for them.
 
 ---
 
-## Tier 2 — Domain Capabilities (2 skills)
+## Tier 2 -- Domain Capabilities (2 skills)
 
 | Skill | When to use | Pointer | Status |
 |---|---|---|---|
 | **viz** | Chart selection, dashboard design, viz critique. Grounded in Few (Perceptual Edge) and Kriebel (Makeover Monday). | `tier-2-capabilities/skills/viz/SKILL.md` | active |
 | **stakeholder-mapping** | Map stakeholders for an initiative. Influence-interest grid + engagement strategy. | `tier-2-capabilities/skills/stakeholder-mapping/SKILL.md` | active |
+
+---
+
+## v2.1.0 changes
+
+- **Added `agent-panel-review`** (Tier 1). Independent-first-pass panel protocol with sealed Stage 2 and four-cell critique format.
+- **Added `nod-protocol`** (Tier 2 cognitive). Five-gate opposite-construction with signing test. Fills the adversarial reasoning gap.
+- **Operationalized all 6 existing cognitive modes** with `reference/protocol.md` files (step procedure, output template, worked example, anti-patterns).
+- **Router updated** with new triggers for both new skills and a new compound-request entry for high-stakes deliverables.
 
 ---
 
