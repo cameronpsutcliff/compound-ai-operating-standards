@@ -1,24 +1,60 @@
 # Map
 
-## This Project
+Navigation map for Compound AI Operating Standards v2.0.0. Tier model lives in `_tiers.md`.
+
+## Root files
 
 | Path | Purpose |
 |---|---|
-| `AGENT.md` | Operating contract |
+| `README.md` | Public-facing intro, install instructions |
+| `AGENT.md` | Root operating contract |
+| `CLAUDE.md` | 3-line pointer to AGENT.md (Claude Code convention) |
+| `_tiers.md` | Inheritance model explanation |
+| `_skills-index.md` | Complete skill registry, 18 skills across tiers |
+| `_map.md` | This file |
 | `Project.md` | Human project overview |
-| `STATE.md` | Current state |
+| `STATE.md` | Current state of this kit's development |
 | `session-log.md` | Append-only history |
 | `BACKLOG.md` | Open work |
-| `_skills-index.md` | Pointer skill registry |
-| `context/` | Tiered context |
-| `conventions/` | Reusable standards |
-| `checklists/` | Operational checklists |
-| `code/` | Reference implementations |
-| `scripts/` | Setup and verification scripts |
 
-## Trigger Words
+## Tier 1 — Global (universal, inherited by everything)
 
-[Add project-specific trigger words here.]
+| Path | Purpose |
+|---|---|
+| `tier-1-global/AGENT.md` | Tier 1 operating rules |
+| `tier-1-global/conventions/` | style-guide, token-efficiency, skill-author-guide, provenance, session-log-format |
+| `tier-1-global/context/` | tier0.md (always-load), tier1-current.md, tier1-subsystem/ |
+| `tier-1-global/checklists/` | session-start, session-closeout, era transitions, model-routing, new-project, pattern-promotion |
+| `tier-1-global/skills-core/` | request-router + 6 session infrastructure skills |
+| `tier-1-global/design-system/` | Abyssal CSS tokens for use in Tier 3 shells |
+
+## Tier 2 — Capabilities (on-demand)
+
+| Path | Purpose |
+|---|---|
+| `tier-2-capabilities/AGENT.md` | Tier 2 operating rules |
+| `tier-2-capabilities/skills/` | 11 capability skills (cognitive modes + analytical + domain) |
+| `tier-2-capabilities/templates/` | lineage-record, model-routing, quality-gates, token-budget |
+
+## Tier 3 — Shells (project scaffolds)
+
+| Path | Purpose |
+|---|---|
+| `tier-3-shells/AGENT.md` | Tier 3 operating rules |
+| `tier-3-shells/slide-shell/` | Presentation deck scaffold (keyboard nav, speaker notes, fullscreen) |
+| `tier-3-shells/scroll-shell/` | Data-storytelling scaffold (Framer Motion, sliders, Recharts) |
+| `tier-3-shells/mission-control/` | Dashboard scaffold |
+| `tier-3-shells/course-shell/` | Sequential lesson scaffold |
+
+## Support directories
+
+| Path | Purpose |
+|---|---|
+| `code/` | Reference implementations (cache_key.py, schema_validator.py, pipeline_runs.sql, phase_wrapper.sh) |
+| `scripts/` | build-manifest.py, verify-integrity.py, verify-origin.py, new-project.sh |
+| `hooks/` | git hooks (pre-commit/no-em-dashes, post-session/append-state) |
+| `docs/` | FIELD-GUIDE.md and related publication docs |
+| `releases/` | Versioned release archives |
 
 ## Upstream Pointers
 
@@ -26,6 +62,7 @@
 |---|---|
 | Canonical framework | `https://cameronsutcliff.com/compound-ai` |
 | Source repo | `https://github.com/cameronpsutcliff/compound-ai-operating-standards` |
+| Field guide | `https://cameronsutcliff.com/compound-ai/field-guide` |
 
 ## Rule
 

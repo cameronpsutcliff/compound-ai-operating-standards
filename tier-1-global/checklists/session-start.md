@@ -6,19 +6,20 @@ Run at the start of every non-trivial AI session.
 
 ## Always load
 
-- [ ] `AGENT.md` — the operating contract (constraints, tech stack, context map)
-- [ ] `context/tier0.md` — the 5-bullet always-load context
-- [ ] `_skills-index.md` — full capability registry (infrastructure + cognitive mode skills)
-- [ ] `skills/request-router/SKILL.md` — activates cognitive mode routing for this session
+- [ ] `AGENT.md` — root operating contract (constraints, tech stack, context map)
+- [ ] `_tiers.md` — inheritance model (Tier 1 / 2 / 3)
+- [ ] `tier-1-global/context/tier0.md` — the 5-bullet always-load context
+- [ ] `_skills-index.md` — full capability registry (infrastructure + capability skills)
+- [ ] `tier-1-global/skills-core/request-router/SKILL.md` — activates skill routing for this session
 
 ## Load for most sessions
 
 - [ ] `STATE.md` — current state: what is running, blocked, next
-- [ ] `context/tier1-current.md` — live working context
+- [ ] `tier-1-global/context/tier1-current.md` — live working context
 
 ## Load on demand (subsystem work)
 
-- [ ] `context/tier1-subsystem/[relevant].md` — the specific subsystem slice
+- [ ] `tier-1-global/context/tier1-subsystem/[relevant].md` — the specific subsystem slice
 
 ## Load on demand (deep work)
 
