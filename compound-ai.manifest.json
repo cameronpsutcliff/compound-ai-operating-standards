@@ -8,7 +8,7 @@
   "release_date": "2026-05-13",
   "license_docs": "CC-BY-4.0",
   "license_code": "Apache-2.0",
-  "aggregate_sha256": "3b089a2cc185a98b82581d9c4956090e1d3587642d479ff25d870e5fa8817ddc",
+  "aggregate_sha256": "dc9c853bbaba3c2c670017f119cc9611cd08962acbcb8231f57c7aad525bd8a3",
   "files": [
     {
       "path": "AGENT.annotated.md",
@@ -47,8 +47,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2656,
-      "sha256": "a591fea5b645295ae27ed244c7dd94357adbdbee0cefa3cbcb56161781293ef5"
+      "bytes": 2652,
+      "sha256": "3402a44629aadac007d58c20700a3b2021dbf9accdf06c3c15ff6efa06e88e9b"
     },
     {
       "path": "STATE.md",
@@ -57,8 +57,8 @@
     },
     {
       "path": "_map.md",
-      "bytes": 844,
-      "sha256": "496daa50edd6d359c7bcbcdc064680b5312ca2e28e4e8b382c6ec72dd46c74bc"
+      "bytes": 839,
+      "sha256": "9218c2bc316eec3c13bd8e0d7dc53fe14b1531f48f1f3ca4db9a26747ace0289"
     },
     {
       "path": "_skills-index.md",
@@ -251,5 +251,5 @@
       "sha256": "7eab8184fb30f77b86ec84dabf0cde812ea42963e2e35648da1d0933ca3b58c4"
     }
   ],
-  "generated_at": "2026-05-13T16:09:15.088424+00:00"
+  "generated_at": "2026-05-13T16:16:54.225272+00:00"
 }

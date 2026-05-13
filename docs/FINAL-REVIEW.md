@@ -2,7 +2,7 @@
 # Compound AI Operating Standards v1.0.0
 # Three-agent review: voice (Claude), technical accuracy (Kiro), package integrity (Codex)
 
-Status: Complete. Kiro technical accuracy pass complete. Codex package integrity and release packaging complete. Claude voice and anti-AI-slop pass complete. v1.0.0 is ready to publish.
+Status: Complete. Kiro technical accuracy pass complete. Codex package integrity, release packaging, GitHub publication, website deployment, and fresh-session dry run complete. Claude voice and anti-AI-slop pass complete. v1.0.0 is live.
 
 ---
 
@@ -14,7 +14,7 @@ Status: Complete. Kiro technical accuracy pass complete. Codex package integrity
 
 ### Verdict: PASS
 
-The final v1.0.0 local release bundle is cut and verifies.
+The final v1.0.0 release bundle is cut, published, and verifies.
 
 Release folder:
 
@@ -52,21 +52,66 @@ Current starter-kit manifest:
 
 - Package version: `1.0.0`
 - Files indexed: 48
-- Aggregate SHA256: `fae969e32581b43c3765674b85736f3cffc3297d653f5dfe969f5a384afd762e`
+- Aggregate SHA256: `dc9c853bbaba3c2c670017f119cc9611cd08962acbcb8231f57c7aad525bd8a3`
 
 Release artifact SHA256 values:
 
 | File | SHA256 |
 |---|---|
-| `compound-ai-starter-kit-v1.0.0.zip` | `531aa63a1b5cb625e6dfd85e14ecd03252c8ffa7b4a4db661483ffda5e23d9bb` |
-| `Compound-AI-Operating-Standards-v1.0.0.md` | `d97485dffbda5457bbf660b58197948bdfcd4fedad9734a906f9a07860a514d5` |
-| `WEBSITE-COPY-v1.0.0.md` | `00fb21cfa4e65b8f28a666e6c8f1326820db7c3972b5e5f229fbfbee43497550` |
-| `RELEASE-NOTES.md` | `f6e005dfec9beea92e2d620e744aee88e7eafa2c838d9657105d40020a4186a0` |
-| `starter-kit-internal-SHA256SUMS` | `95abdaf39883b0f7da78d0cfc0367e65bd740b1c7c7b7d85d269f58ffdacdde2` |
+| `compound-ai-starter-kit-v1.0.0.zip` | `e124d2b1c0e7baee1c7aee17a6f85006bd1981cd5180a0175a0f0340b15bd309` |
+| `Compound-AI-Operating-Standards-v1.0.0.md` | `5fbcfeb765b7d8fa932db9f7a90e1116aaacea3cb797584786b83ad70ea226dc` |
+| `WEBSITE-COPY-v1.0.0.md` | `b77e18fd3045bcfd23bb7092570ec22f6c00541915ab9d06c55cf06557ad479a` |
+| `RELEASE-NOTES.md` | `838d349c4c64f0848d3f49a37d2720520e19b60215f67c9ef620f98d24e9f97e` |
+| `starter-kit-internal-SHA256SUMS` | `1a49caf23904fa392d0058042d27080dafc1ba591a2cdf5c61f7701fd7696648` |
 
-Remaining external step:
+Publication status:
 
-Host the release bundle, manifest, and checksum on GitHub or `cameronsutcliff.com/compound-ai`, then online origin verification can be enabled.
+1. Website is live at `https://cameronsutcliff.com/compound-ai`.
+2. GitHub repo is live at `https://github.com/cameronpsutcliff/compound-ai-operating-standards`.
+3. GitHub release is live at `https://github.com/cameronpsutcliff/compound-ai-operating-standards/releases/tag/v1.0.0`.
+4. Online origin verification returns `VERIFIED`.
+
+---
+
+## Codex: Loop 6 Publication And Fresh-Session Dry Run
+
+**Reviewer:** Codex
+**Date:** 2026-05-13
+**Scope:** GitHub publication, website deployment, release asset alignment, online origin verification, and fresh-session dry run.
+
+### Verdict: PASS
+
+Loop 6 completed the external publication step Cameron requested.
+
+Published surfaces:
+
+1. `https://cameronsutcliff.com/compound-ai`
+2. `https://github.com/cameronpsutcliff/compound-ai-operating-standards`
+3. `https://github.com/cameronpsutcliff/compound-ai-operating-standards/releases/tag/v1.0.0`
+
+Checks run:
+
+```bash
+npm run build
+scripts/verify-integrity.py
+scripts/verify-origin.py --online
+shasum -a 256 -c SHA256SUMS
+curl -I -L https://cameronsutcliff.com/compound-ai
+curl -sS -L https://cameronsutcliff.com/compound-ai/manifest.json
+```
+
+Results:
+
+1. Website build passed.
+2. Website route returned 200 after canonical redirect to `www`.
+3. Release downloads returned 200.
+4. Hosted manifest exposes the corrected source repo and aggregate hash.
+5. Online origin verification returned `VERIFIED`.
+6. Fresh-session dry run passed and is logged in `FRESH-SESSION-DRY-RUN.md`.
+
+Issue caught and fixed:
+
+The fresh-session dry run found two stale `examples/` references in the starter kit after the reference implementations had been finalized under `code/`. I corrected `README.md` and `_map.md`, rebuilt the starter-kit manifest, rebuilt the release zip, regenerated checksums, and republished the affected assets.
 
 ---
 

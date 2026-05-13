@@ -54,7 +54,7 @@ The kit is technique-first by design. Public pages can name the production syste
 | `conventions/` | Token, skill, session-log, provenance, and style conventions |
 | `skills/` | Small pointer skills |
 | `checklists/` | Operational checklists |
-| `examples/` | Reference implementations |
+| `code/` | Reference implementations |
 | `scripts/` | Verification and setup scripts |
 
 ## Design Principle

@@ -68,7 +68,7 @@ scripts/verify-integrity.py
 scripts/verify-origin.py
 ```
 
-Local verification is the default. Online origin verification should be enabled after the website or GitHub release hosts the canonical manifest and checksum.
+Local verification is the default. Online origin verification is enabled when the canonical website hosts the manifest and checksum.
 
 ## License
 

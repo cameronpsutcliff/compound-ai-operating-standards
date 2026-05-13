@@ -13,7 +13,7 @@
 | `context/` | Tiered context |
 | `conventions/` | Reusable standards |
 | `checklists/` | Operational checklists |
-| `examples/` | Reference implementations |
+| `code/` | Reference implementations |
 | `scripts/` | Setup and verification scripts |
 
 ## Trigger Words
@@ -30,4 +30,3 @@
 ## Rule
 
 Use this file for navigation. Do not overload `AGENT.md` with file listings.
-
