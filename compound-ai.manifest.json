@@ -1,0 +1,255 @@
+{
+  "package_name": "Compound AI Operating Standards",
+  "origin_id": "compound-ai-operating-standards",
+  "author": "Cameron Sutcliff",
+  "canonical_url": "https://cameronsutcliff.com/compound-ai",
+  "source_repo": "https://github.com/cameronpsutcliff/compound-ai-operating-standards",
+  "version": "1.0.0",
+  "release_date": "2026-05-13",
+  "license_docs": "CC-BY-4.0",
+  "license_code": "Apache-2.0",
+  "aggregate_sha256": "3b089a2cc185a98b82581d9c4956090e1d3587642d479ff25d870e5fa8817ddc",
+  "files": [
+    {
+      "path": "AGENT.annotated.md",
+      "bytes": 13453,
+      "sha256": "1350501b93ebce23de32f8f8702f491c994e15f69f055ec51d1100325f6edd53"
+    },
+    {
+      "path": "AGENT.md",
+      "bytes": 2466,
+      "sha256": "9ba8504a547d8b17498c1de566886422069c52b3550a1f45877de3a61261dad7"
+    },
+    {
+      "path": "BACKLOG.md",
+      "bytes": 138,
+      "sha256": "bb898f9348a4450855f5300bdf0d69d090879d87b0dd60deaf63313ebc7e5fde"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 516,
+      "sha256": "82b673376d5942ade292a22560cc30fde6323ee1208a4c4c583bb52ce075b4da"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 1398,
+      "sha256": "37e684164cc90eb99924351ff21260664a0916d0b1a560c35d8f301679a5402d"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 535,
+      "sha256": "ddc72f6f92967e4f15ef686c9829980e77fca423a0765813ae850711ccd98e2f"
+    },
+    {
+      "path": "Project.md",
+      "bytes": 501,
+      "sha256": "64193671e8fc8317982ca5802ef87be7d8ddb461da064dbb0c25810f8dc81a9b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2656,
+      "sha256": "a591fea5b645295ae27ed244c7dd94357adbdbee0cefa3cbcb56161781293ef5"
+    },
+    {
+      "path": "STATE.md",
+      "bytes": 294,
+      "sha256": "03739034cb9c29a27ca1f394475b44754fe57eadc4b2adbb5a7d6062b0fc5d3f"
+    },
+    {
+      "path": "_map.md",
+      "bytes": 844,
+      "sha256": "496daa50edd6d359c7bcbcdc064680b5312ca2e28e4e8b382c6ec72dd46c74bc"
+    },
+    {
+      "path": "_skills-index.md",
+      "bytes": 1070,
+      "sha256": "d2058e09a7c2193bf4a9bd28a49694441201751d46eb75387c7e1b10ccc74bdf"
+    },
+    {
+      "path": "checklists/era-01-to-02.md",
+      "bytes": 1582,
+      "sha256": "0fb3fa5a41ab3df23cbee470e2d3dd257a7644add22d275a0f750906a68fa5b8"
+    },
+    {
+      "path": "checklists/era-02-to-03.md",
+      "bytes": 2283,
+      "sha256": "a0e4e6ee11bb2c560cb46fbe49a0de996fde30e2b797a1992ca69c749e0fbfb7"
+    },
+    {
+      "path": "checklists/model-routing.md",
+      "bytes": 609,
+      "sha256": "3087483b71734b4982d634c8a6edd2b89c4340de3faa6ff76804e2b8207d289f"
+    },
+    {
+      "path": "checklists/new-project.md",
+      "bytes": 2197,
+      "sha256": "2cc66a9533beb9c920686432ca69ab2b4bf254954190bbd5e457572d0031755b"
+    },
+    {
+      "path": "checklists/pattern-promotion.md",
+      "bytes": 1627,
+      "sha256": "d220fa42c9df929e8d4174d6be7c5c4594c3a265704fdd0a6f853f80f733360c"
+    },
+    {
+      "path": "checklists/session-closeout.md",
+      "bytes": 380,
+      "sha256": "e9a8069006c9e946c8afb1cade5012b4fef08e54facf21924133d6f3b73155b1"
+    },
+    {
+      "path": "checklists/session-start.md",
+      "bytes": 1505,
+      "sha256": "e19fe56325db395ffff4f034ca9da2486f370b42f57462c9a69f586fd70efc47"
+    },
+    {
+      "path": "code/cache_key.py",
+      "bytes": 7074,
+      "sha256": "b5a8c0dc2739173105b3db7ca07a33ab1c1b57ba3b57e8ba2e5cfa4074b71abe"
+    },
+    {
+      "path": "code/phase_wrapper.sh",
+      "bytes": 3698,
+      "sha256": "a187407c0ebe534fd1ca9fc528e73c1970ab107d6962d44d2fdc7e6a2f331353"
+    },
+    {
+      "path": "code/pipeline_runs.sql",
+      "bytes": 3719,
+      "sha256": "8b85fd2bfdec1f628f4cc356c0d42db654e7fd3d2d30f976ee7463271a669329"
+    },
+    {
+      "path": "code/schema_validator.py",
+      "bytes": 4098,
+      "sha256": "a8b230f723f97ec609a538f56e913b9eb7e49d46288a41a68711147e2d958e5e"
+    },
+    {
+      "path": "codemeta.json",
+      "bytes": 799,
+      "sha256": "635b5bd5718739f20792c2b0fb2dae1eb215d0389716904251d0064a619f2c81"
+    },
+    {
+      "path": "context/tier0.md",
+      "bytes": 236,
+      "sha256": "923d2e3893cf0a1458d8ed7fa85130a928373b982421e21f1c8697d1e9763b0c"
+    },
+    {
+      "path": "context/tier1-current.md",
+      "bytes": 235,
+      "sha256": "57e1e0a162ac61da5af04097be0bd0117991cf769fa1e70447ec522963497880"
+    },
+    {
+      "path": "context/tier1-subsystem/README.md",
+      "bytes": 268,
+      "sha256": "0bc11af9f9e25984c18360475e1086b73c15427c69393bf363a268b4fbb31bb1"
+    },
+    {
+      "path": "conventions/provenance.md",
+      "bytes": 479,
+      "sha256": "784d485b14e26d1ab4a6666f53a766f0b92196548e0bdd7c024c40bd460ad619"
+    },
+    {
+      "path": "conventions/session-log-format.md",
+      "bytes": 1637,
+      "sha256": "bf8cfa8a2018dc4eed4bd18801295773dc604c64feafb5fbe864fbeeeaad89be"
+    },
+    {
+      "path": "conventions/skill-author-guide.md",
+      "bytes": 1903,
+      "sha256": "08d23d6be8bfb65e07170b339619b0359cf2c7eaaa866d142c78e04dba0fcdf9"
+    },
+    {
+      "path": "conventions/style-guide.md",
+      "bytes": 8226,
+      "sha256": "6c78e0a832a641501fceb7eeb158033443cb70a14b1194745bbd94f19d0b5aea"
+    },
+    {
+      "path": "conventions/token-efficiency.md",
+      "bytes": 2465,
+      "sha256": "c73ab43d68c1f507409b1fd60789c603bf95399b116cb522a0437c05ed4efc2a"
+    },
+    {
+      "path": "hooks/post-session/append-state.sh",
+      "bytes": 281,
+      "sha256": "62370f6fe7ac42f14127dcc024d5b1c22448fabbd55ffffb2b94ca149871551d"
+    },
+    {
+      "path": "hooks/pre-commit/no-em-dashes.sh",
+      "bytes": 401,
+      "sha256": "4452ed5275fb5fc8807234e619f625ed52783def442822af8b3f090babbd3366"
+    },
+    {
+      "path": "scripts/build-manifest.py",
+      "bytes": 2365,
+      "sha256": "e9233dbe12238527713fce6e0c9258937986577fb975b270faecda59da0791df"
+    },
+    {
+      "path": "scripts/new-project.sh",
+      "bytes": 1121,
+      "sha256": "d2018c58b3ca88a2bcc50056e034c034884efa8460bbcbd6e78f2ffffb89249e"
+    },
+    {
+      "path": "scripts/verify-integrity.py",
+      "bytes": 2637,
+      "sha256": "0732e33e290f1bcb46644e906d50e8dcb4193e641381e3793b15efcd46400f77"
+    },
+    {
+      "path": "scripts/verify-origin.py",
+      "bytes": 2591,
+      "sha256": "d1341bac4b741a1866490275d2df28ebaa04a27515741ad500cec71171f1f5ed"
+    },
+    {
+      "path": "session-log.md",
+      "bytes": 269,
+      "sha256": "c6673d370d3fc1b5a78caba7178188b1ea56eca88c559143b42f4b5b6fe2ea2c"
+    },
+    {
+      "path": "skills/context-loader/SKILL.md",
+      "bytes": 1252,
+      "sha256": "54a7659d2f4564be5fd0a33f62e862bee761e7cd6922a7f4e43026b6aa380e2a"
+    },
+    {
+      "path": "skills/engagement-bootstrap/SKILL.md",
+      "bytes": 1821,
+      "sha256": "e5ef71d65576e76f4ae3429e7ed9dabe83ebdd14863812c548ae742d943fbd5d"
+    },
+    {
+      "path": "skills/pattern-promoter/SKILL.md",
+      "bytes": 1431,
+      "sha256": "eb641817ca640cab884c2735e06c2808e227c8156afa61c947206adaf0a2788e"
+    },
+    {
+      "path": "skills/provenance-check/SKILL.md",
+      "bytes": 672,
+      "sha256": "85f58426dd61251be2897896717a6ca9f75e03b55bc56544908b5a55cded8976"
+    },
+    {
+      "path": "skills/quality-gate/SKILL.md",
+      "bytes": 1811,
+      "sha256": "e7d1bfd26e8ea28b38fbc910e88a9ac115e68db521d596e9cf21b93df12484d4"
+    },
+    {
+      "path": "skills/token-economist/SKILL.md",
+      "bytes": 1491,
+      "sha256": "1d0e20c32caac72a8b2a217f7bb300c841a82b690a0a0511676813163f1de7a0"
+    },
+    {
+      "path": "templates/lineage-record.md",
+      "bytes": 1774,
+      "sha256": "7f1416d1bc3c74e40213ebe059a5888a41afb376fb1dc09f342ff43270c40fe6"
+    },
+    {
+      "path": "templates/model-routing.md",
+      "bytes": 1934,
+      "sha256": "c6ae3235a3ab050f8f2c8ef42ffb652cf7e1a6cb75071ff49e96706213d32e7b"
+    },
+    {
+      "path": "templates/quality-gates.md",
+      "bytes": 1726,
+      "sha256": "7ee1d2cc7d91105c3e1eb54c122a2d4a38c9d952d7f50eda29ba292ab018863d"
+    },
+    {
+      "path": "templates/token-budget.md",
+      "bytes": 1822,
+      "sha256": "7eab8184fb30f77b86ec84dabf0cde812ea42963e2e35648da1d0933ca3b58c4"
+    }
+  ],
+  "generated_at": "2026-05-13T16:09:15.088424+00:00"
+}
