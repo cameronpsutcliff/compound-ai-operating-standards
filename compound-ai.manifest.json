@@ -4,11 +4,11 @@
   "author": "Cameron Sutcliff",
   "canonical_url": "https://cameronsutcliff.com/compound-ai",
   "source_repo": "https://github.com/cameronpsutcliff/compound-ai-operating-standards",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "release_date": "2026-05-13",
   "license_docs": "CC-BY-4.0",
   "license_code": "Apache-2.0",
-  "aggregate_sha256": "4bf9b41b4a2c4f4b6025e60805778ea2a3b4a5f535f161b3e04e1fd8aa46a501",
+  "aggregate_sha256": "f617686679869e6fffaebe59807a2239b4b4d9250bfc237253b300c191044b14",
   "files": [
     {
       "path": ".gitignore",
@@ -22,8 +22,8 @@
     },
     {
       "path": "AGENT.md",
-      "bytes": 4267,
-      "sha256": "3a8f4ef37bc6da38728aaba9f36de67b7570a9ab34b9808ee2629284b79e41b5"
+      "bytes": 4373,
+      "sha256": "550477047d96bf8b1bb8244c310570950b9ffb36ac5d1d0a5f14ada38f9de504"
     },
     {
       "path": "BACKLOG.md",
@@ -42,8 +42,8 @@
     },
     {
       "path": "HANDOFF.md",
-      "bytes": 5448,
-      "sha256": "312866c1a5d186c72194c0cfe48f1bda390cc2a53bf75ccff7ab85d205d177a4"
+      "bytes": 5706,
+      "sha256": "1ffe198a0261738981bbd9f5e07f419b9cd78e9eab53381081b457b78e0e990d"
     },
     {
       "path": "LICENSE.md",
@@ -62,8 +62,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8365,
-      "sha256": "587cb8a9a4c746d06abad42ddaf38968c096124b3ce6d1343ccc01f2ebbaae51"
+      "bytes": 8862,
+      "sha256": "407c228dcb37038c0332f7b402ad64d410db764482801ed13bf029a1be0f18cc"
     },
     {
       "path": "STATE.md",
@@ -72,13 +72,13 @@
     },
     {
       "path": "_map.md",
-      "bytes": 2975,
-      "sha256": "db9a69bfcdb90ac70eac3b0f4c48d82787f890ed1ec435a3657a35e520d28168"
+      "bytes": 3000,
+      "sha256": "25ed5d6b6e6165f2bd4c895f91bc86cf7a3ee8b7acf6da6f0cabf176c39fed8a"
     },
     {
       "path": "_skills-index.md",
-      "bytes": 5479,
-      "sha256": "2f460a79a03b78b6bcae23666cfde599861c21c6fe07e8556ce57259edee3af6"
+      "bytes": 6525,
+      "sha256": "4382ce5ef72373785b613cf2f46e5310f539eed53464d029ee57b602588fe9dd"
     },
     {
       "path": "_tiers.md",
@@ -112,8 +112,8 @@
     },
     {
       "path": "docs/FIELD-GUIDE.md",
-      "bytes": 137520,
-      "sha256": "afa09fa95b2036da1be2c8fbfa211410336dd007fa4e2fdca7398d8beaecd238"
+      "bytes": 147453,
+      "sha256": "944ac117051d18ee73f04e786344a1f39c966a96bbdaf27e55322c7e79bad87e"
     },
     {
       "path": "docs/FINAL-REVIEW.md",
@@ -179,6 +179,11 @@
       "path": "releases/v1.0.0/starter-kit-internal-SHA256SUMS",
       "bytes": 4392,
       "sha256": "1a49caf23904fa392d0058042d27080dafc1ba591a2cdf5c61f7701fd7696648"
+    },
+    {
+      "path": "releases/v2.1.0/RELEASE-NOTES.md",
+      "bytes": 3875,
+      "sha256": "02bdb833d5ae1a1e37ba0145cdbc488ddf22fc5579358cdaa1a2b1b2309419bb"
     },
     {
       "path": "scripts/build-manifest.py",
@@ -291,6 +296,51 @@
       "sha256": "c73ab43d68c1f507409b1fd60789c603bf95399b116cb522a0437c05ed4efc2a"
     },
     {
+      "path": "tier-1-global/skills-core/agent-panel-planning/SKILL.md",
+      "bytes": 5040,
+      "sha256": "e9e9bb92dd307f622167f534f2b3d2ce275bd590638deb3e1f4ec200f63547dd"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/concession-discipline.md",
+      "bytes": 6426,
+      "sha256": "9387fbb8f39bbffb1acdfa37c88ff14a2a188ca630cc934525f4da90c4f8a739"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/cross-feedback-template.md",
+      "bytes": 4833,
+      "sha256": "bab6269ca25d739ec916c4b084c6110c4c7b46f33e52c77edc59613d3fa9838f"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/escalation-discipline.md",
+      "bytes": 6670,
+      "sha256": "94d6c5bb6773af07f9e2f7a4276b17165db0718e585da05300a171d499cbb606"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/protocol.md",
+      "bytes": 8882,
+      "sha256": "1c38d9b039b869917e0bc51050cb29eed49c13e1f2bc12cb5ff60eff4f6493fd"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/task-assignment.md",
+      "bytes": 6133,
+      "sha256": "aca1faaef525704ad6d4426873d511988f4c1610d7d110abc3abfa213968adad"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/voting-format.md",
+      "bytes": 5255,
+      "sha256": "078c0218f67423521bcb07ca5fc73265358f1b680a1a7d250e44bc4516cef02d"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/when-to-convene.md",
+      "bytes": 6394,
+      "sha256": "716afe1f107c07688aba7d6c1437cec55256b10657ec75d3ba24aed78cac24d5"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/worked-example.md",
+      "bytes": 11462,
+      "sha256": "22dc34a876274ec8ed89a75f74c6676de247e6e0f60168d7ecdf38a652afe66f"
+    },
+    {
       "path": "tier-1-global/skills-core/agent-panel-review/SKILL.md",
       "bytes": 3788,
       "sha256": "d9e84dc3bf8466cd8b6f5e14ef525f30e8fe741a78199fe0f1dc0ffb3b60a2be"
@@ -352,8 +402,8 @@
     },
     {
       "path": "tier-1-global/skills-core/request-router/SKILL.md",
-      "bytes": 5377,
-      "sha256": "7052360a0f9516e5c217b8d59a918fcd3836fdfe5a28db227f6ae831153fce4e"
+      "bytes": 8995,
+      "sha256": "b5d5f0a92e17c4c641983034f7b440a326d5cd4a4d91110fcb9e5c3eaa18af6d"
     },
     {
       "path": "tier-1-global/skills-core/token-economist/SKILL.md",
@@ -731,5 +781,5 @@
       "sha256": "e084a74f7c7c8552d2a49fe2a23ba018310683740ed4117ba66e81213d766bbb"
     }
   ],
-  "generated_at": "2026-05-13T23:50:13.699030+00:00"
+  "generated_at": "2026-05-14T03:31:58.460437+00:00"
 }

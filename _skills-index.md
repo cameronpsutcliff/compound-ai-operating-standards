@@ -1,24 +1,25 @@
 # Skills Index
-# Compound AI Operating Standards v2.1.0
+# Compound AI Operating Standards v2.2.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
-Load this file at session start. It is the complete capability registry. Twenty skills total, organized by tier.
+Load this file at session start. It is the complete capability registry. Twenty-one skills total, organized by tier.
 
 ---
 
-## Tier 1 -- Session Infrastructure (8 skills)
+## Tier 1 -- Session Infrastructure (9 skills)
 
 These run the session. Load at session start; the `request-router` then handles dispatch.
 
 | Skill | Trigger | Pointer | Status |
 |---|---|---|---|
-| **request-router** | Load at session start. Auto-routes any request to the right skill. | `tier-1-global/skills-core/request-router/SKILL.md` | active |
+| **request-router** | Load at session start. Auto-routes any request to the right skill; offers panels on operator-humility signals. | `tier-1-global/skills-core/request-router/SKILL.md` | active |
 | context-loader | "load context", "what should I read", "start session" | `tier-1-global/skills-core/context-loader/SKILL.md` | active |
 | token-economist | "token audit", "optimize context", "reduce cost" | `tier-1-global/skills-core/token-economist/SKILL.md` | active |
 | engagement-bootstrap | "new project", "bootstrap this", "set up the project" | `tier-1-global/skills-core/engagement-bootstrap/SKILL.md` | active |
 | quality-gate | "quality check", "validate this output", "is this ready" | `tier-1-global/skills-core/quality-gate/SKILL.md` | active |
 | pattern-promoter | "promote this pattern", "save this lesson", "make this reusable" | `tier-1-global/skills-core/pattern-promoter/SKILL.md` | active |
 | provenance-check | "verify origin", "check provenance", "is this the official version" | `tier-1-global/skills-core/provenance-check/SKILL.md` | active |
+| **agent-panel-planning** | "plan this with the panel", "converge on a plan", "split this work across agents", "who should own what". Independent plans, cross-suggestions, voting, strength-matched task split. | `tier-1-global/skills-core/agent-panel-planning/SKILL.md` | active |
 | **agent-panel-review** | "set up a panel", "convene a panel", "multi-agent review", "second opinion". Independent-first-pass, structured-critique, no-ego convergence. | `tier-1-global/skills-core/agent-panel-review/SKILL.md` | active |
 
 ---
@@ -61,6 +62,12 @@ The workhorses. Load when the task calls for them.
 | **stakeholder-mapping** | Map stakeholders for an initiative. Influence-interest grid + engagement strategy. | `tier-2-capabilities/skills/stakeholder-mapping/SKILL.md` | active |
 
 ---
+
+## v2.2.0 changes
+
+- **Added `agent-panel-planning`** (Tier 1). Independent-plans panel protocol with element-level voting, concession-with-attribution + path-forward-for-others, reconvene, ratification, and strength-matched task split. Pairs upstream of `agent-panel-review`.
+- **Router gained Panel Offer Triggers section.** New behavior: when operator humility signals fire ("I'm not sure", "high-stakes", "want a second opinion", "test my framing"), the agent OFFERS a panel and the operator opts in. Distinct from the existing routing table which silently invokes.
+- **Field guide:** Chapter 31 split into Ch 31 (Planning) + Ch 32 (Review). Original Ch 31 content is now Ch 32; "Before and After" is now Ch 33.
 
 ## v2.1.0 changes
 

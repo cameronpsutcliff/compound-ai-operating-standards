@@ -1403,15 +1403,91 @@ This manual is an advocacy document for one specific thing: AI work that compoun
 
 Hype ages fast. Tools that work age well. A field manual that did not include this chapter would be advocacy. With it, it is engineering.
 
-### Chapter 31. The Agent Panel Review Pattern
+### Chapter 31. The Agent Panel Planning Pattern
+
+*Who this chapter is for: anyone whose high-stakes deliverable does not yet have a locked plan, and who suspects their own framing has gaps.*
+
+Most multi-agent council patterns assume the plan exists and ask agents to evaluate it. The panel pattern that produced this kit started one step earlier: the agents converged on the plan itself. Three sealed independent plans, one round of cross-feedback with element-level voting, a private revise cycle that included path-forward suggestions for the other agents, a reconvene, a vote, a ratification, and finally a strength-matched task split based on what each agent demonstrated in this round. The output was a plan that no single agent could have produced and a task split with explicit empirical justification.
+
+The pattern is implemented as the `agent-panel-planning` skill (Tier 1). It is the upstream sibling of `agent-panel-review` (Chapter 32): planning produces what to build and who builds what; review produces "is what we built any good." Run planning when the plan itself is the question. Run review when execution drafts are landing.
+
+#### 31.1 When to convene a planning panel
+
+A planning panel costs more operator time than a review panel because each agent produces a complete plan, not a focused critique. The threshold should match.
+
+Convene a planning panel when the plan itself is what needs to be right (not just execution); when multiple agents have genuinely different framings of the problem; when the work will be split across agents and the operator needs strength-matched routing; or when the operator suspects their own framing has gaps and wants independent reframings to test against.
+
+Do not convene a planning panel when the plan is obvious and only execution matters (go straight to `agent-panel-review` on the drafts), when one agent has already framed the problem well (use `pressure-test` or `nod-protocol` on that framing instead), when time pressure dominates accuracy, or when you already know the answer and want validation. The most common operator-humility signal that warrants planning: "I have a draft plan but I want to test it against alternatives." When the operator says or thinks this, the kit's router offers the panel.
+
+#### 31.2 Independent plans, sealed
+
+Stage 2 is the load-bearing move. Each agent produces a complete plan covering the same scope, with no visibility into the others. The seal preserves the independent framings that the entire pattern depends on.
+
+What each first-pass plan must contain at minimum: the problem framed in the agent's own words, the structural spine of the proposed solution, decision points the operator should rule on, owners for each major piece (proposed, not final), dependencies and sequencing, and the open questions the agent cannot resolve alone. A panelist who produces only the spine without owners or open questions has produced a sketch, not a plan; ask for a revision before Stage 3.
+
+Same-platform panels (three Claude sessions, three Codex sessions) work as well as cross-platform panels for most planning work. The discipline is that the sessions be genuinely separate: no shared session history, no leaky workspace context, no operator paraphrasing one plan to another agent. Verify the contexts are isolated before Stage 2.
+
+#### 31.3 Cross-feedback with element-level voting
+
+Stage 3 sends each panelist the other plans for structured cross-feedback. The same four-cell template that powers `agent-panel-review` applies (strongest claim, weakest claim, shared blind spot, one thing worth stealing), but planning adds a second block: element-level votes on specific decision points the operator surfaced during framing.
+
+The reason for element-level voting rather than whole-plan voting: tribalism. Whole-plan voting asks panelists to defend their first pass against the others. Element-level voting asks them to recognize specific wins by other plans without surrendering their whole framing. A panelist may vote against their own title proposal while keeping their structural spine, or vote for another's provenance design while retaining their own license framework. The granularity is what makes the votes honest.
+
+Operator discipline at framing: surface three to seven decision points, no more. Anything beyond seven becomes noise. Each panelist's vote requires one-line reasoning. The reasoning is the audit trail.
+
+#### 31.4 The collaborative revise: concession, plan revision, and path-forward for others
+
+Stage 4 is sealed again. Each panelist produces three outputs without seeing the others' revisions. The third output is the move that distinguishes this pattern from any other multi-agent council pattern the team has seen.
+
+The three outputs:
+
+1. **Concessions with attribution.** Each panelist names what they concede and to which other agent on what dimension. "Concede to Codex on structural spine; concede to Kiro on substance density in Part V; hold on cross-platform translation chapter because both others omit it." The attribution is the no-ego discipline made visible.
+
+2. **Revised private plan.** The agent's own plan, revised to absorb the conceded points. Unaccepted critiques get one line of dissent each. No 500-word defenses.
+
+3. **Path-forward suggestions for the OTHER agents.** This is the collaborative move. Each panelist, having absorbed the critique of its own plan, proposes specific adjustments for each other panelist's plan. Not "you should do what I did." Concrete and actionable suggestions for how each other agent's plan should evolve given what the cross-feedback surfaced.
+
+Without the third output, every agent revises only its own plan and Stage 5 reconvene becomes a guessing game. With it, each agent arrives at reconvene with two sets of incoming suggestions for themselves plus the revised plans of the others. The collective shaping information is what makes convergence at Stage 5 honest rather than imposed.
+
+#### 31.5 Reconvene and ratification
+
+Stage 5 reconvene is the first stage with no seal. Each panelist reads the others' revised plans plus the cross-suggestions written for them, and produces a short response: which incoming suggestions are accepted, which are rejected (with one-line reasoning), and where the panelist now stands on the contested decision points from Stage 3.
+
+The rule is no relitigation. Reconvene is for adoption and adjustment, not for re-arguing the original position. A response that re-states the first-pass position is wasted motion.
+
+Stage 6 is the operator's job. Surface the remaining contested decision points (if any survive Stage 5), run a final vote with one-line reasoning per panelist, then ratify. The operator votes too. The panel is advisory; the operator decides. Operator override of a unanimous panel is allowed but should be rare and on the record.
+
+Ratification produces a one-page document with locked decisions, deferred open questions, and the task assignment table.
+
+#### 31.6 Strength-matched task assignment
+
+The task split is empirical, not categorical. Each task goes to whoever **demonstrated dominant capability on that dimension in this round**, not to whoever has the role label.
+
+The rule unpacks: read the Stage 3 cross-feedback's strongest-claim cells. Whichever panelist gets named most often as strongest on a dimension owns that dimension. Ties break by which panelist's plan most directly addressed the dimension; if still tied, by which agent's cross-suggestions on that dimension were most actionable; if still tied, the operator decides.
+
+The assignment is on the record with a "why" column: structural spine to Codex because its first-pass spine had the most breadth; substance body to Kiro because its first-pass code samples were strongest; foreword and attribution to Claude because its first-pass plan included the annotated artifact concept. The same agents on a different panel for a different deliverable might end up with different roles. Strengths are demonstrated per-round, not preset.
+
+Strength-matched assignment is the antidote to council theater. Without it, panels produce three agents who agree but no one is accountable for the work. With it, the plan ships with explicit owners whose ownership is defensible from the panel's own outputs.
+
+#### 31.7 Execution with operator-in-the-loop escalation
+
+The planning panel ends at Stage 6 ratification. Execution begins. The discipline that makes the plan durable through execution: when an agent hits a decision point not covered by ratification, escalate to the operator with the panel's prior context, not decide solo.
+
+Escalation is bounded. Agents do not escalate every choice; that is helplessness. They escalate when (a) the decision is not covered by ratification, (b) it commits to one of multiple valid paths, (c) reversibility is non-trivial, and (d) it affects work assigned to other panelists. The fourth condition is the key: if a decision only affects the deciding agent's own work, the agent decides and notes it. If it affects the others' work, escalate.
+
+The operator's exits on escalation: decide and respond, run a fast mini-panel on the contested decision, or punt to a later checkpoint. The wrong move is silence, which agents read as "proceed at your discretion" and which produces drift the panel did not see.
+
+The pattern is implemented across `agent-panel-planning/SKILL.md` and its reference files: `protocol.md` covers the six stages, `cross-feedback-template.md` defines the Stage 3 format with element-level voting, `concession-discipline.md` covers the Stage 4 three-output structure including path-forward-for-others, `voting-format.md` covers Stage 3 and Stage 6 voting, `task-assignment.md` covers the strength-matched split, `escalation-discipline.md` covers post-ratification execution, `when-to-convene.md` is the threshold guide, and `worked-example.md` shows the protocol applied to a synthetic deliverable. Run the skill on your next planning question, especially when you have a draft plan and want to test it against alternatives.
+
+### Chapter 32. The Agent Panel Review Pattern
 
 *Who this chapter is for: anyone shipping a high-stakes deliverable who suspects one agent is not enough but does not want to convene a roundtable.*
 
-This chapter operationalizes the pattern that produced this very kit. The first version of the Compound AI Operating Standards starter kit was built by three agents working in a specific staged sequence: each produced an independent first attempt, then read the others' attempts, then revised with no ego. The convergence was honest because the first pass was sealed. The pattern is reusable on any deliverable that benefits from multi-perspective review. This chapter is the canonical write-up of that pattern. It is not a transcript of any specific build; it is the protocol you can run on your own.
+This chapter operationalizes the pattern that produced the deliverables this kit ships. After the planning panel (Chapter 31) ratifies the plan and assigns tasks, the execution phase produces drafts. The panel review pattern is what catches blind spots in the drafts before they ship. It is the downstream sibling of `agent-panel-planning`: where planning asks "what should we build and who is best at each piece," review asks "is what we built any good."
 
 The pattern is implemented as the `agent-panel-review` skill (Tier 1). What follows is the staged method.
 
-#### 31.1 When to convene a panel
+#### 32.1 When to convene a review panel
 
 A panel costs time, attention, and orchestration discipline. The threshold should be deliberately high. Most work does not need a panel.
 
@@ -1419,7 +1495,7 @@ Convene a panel when at least one of the following is true: the deliverable is h
 
 Do not convene a panel when the work is routine code, when one good prompt would have done it, when the decision is reversible at low cost, or when you already know what you want. The convergence-theater test catches the last case: if you imagine the panel converging on loop 1 with all agents agreeing with your current instinct, and you would find that valuable, you do not need a panel, you need confirmation. A panel is bad at producing confirmation. Use it when you want the panel to disagree with your instinct and surface what you are missing.
 
-#### 31.2 Role assignment without ego
+#### 32.2 Role assignment without ego
 
 Roles are functions, not identities. Any agent can hold any role. The three canonical templates:
 
@@ -1431,7 +1507,7 @@ Roles are functions, not identities. Any agent can hold any role. The three cano
 
 The ego rule: the producing agent does not defend the original draft when the critique lands. It revises. Defenses are limited to one-line dissents when the critique misreads scope. Anything longer is relitigation, which destroys the panel.
 
-#### 31.3 The sealed independent pass
+#### 32.3 The sealed independent pass
 
 The hard rule, the load-bearing one: in Stage 2, no panelist sees another panelist's draft, summary, or framing. Each writes from scratch.
 
@@ -1441,7 +1517,7 @@ The operator's job at this stage is to hold the seal. Do not run sessions in adj
 
 There is one common failure mode worth naming: leaky session memory. Some agent platforms share context across sessions in the same workspace. Verify your panel members are running in genuinely separate contexts. A shared system prompt is fine. A shared session history is not.
 
-#### 31.4 Structured critique
+#### 32.4 Structured critique
 
 After Stage 2 produces three independent first passes, Stage 3 sends each output to the other panelists for critique. The critique format is the discipline that keeps it from becoming negging.
 
@@ -1456,7 +1532,7 @@ The cells force discipline. Without the strongest-claim cell, critique becomes a
 
 The anti-pattern to watch: critiquing the agent instead of the work. "Claude's output is weak on attribution" is wrong. "This output is weak on attribution" is right. The work is the unit.
 
-#### 31.5 Convergence and the no-ego revise
+#### 32.5 Convergence and the no-ego revise
 
 Stage 4 sends each panelist the critiques of its own work and asks for a revision. The discipline is to adopt or dissent in one line, then move on.
 
@@ -1478,7 +1554,7 @@ The pattern is implemented as the `agent-panel-review` skill. The skill's `refer
 
 > **Status:** Complete. Owner: Kiro. Loop 3 delivered. Anonymized per Loop 4 decision: the downloadable package teaches the technique; the website and GitHub page may name IIP as the source proof point.
 
-### Chapter 32. Before and After
+### Chapter 33. Before and After
 
 *Who this chapter is for: anyone who wants to see the standards applied end-to-end on a real system.*
 

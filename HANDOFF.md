@@ -1,5 +1,5 @@
 # Agent Handoff
-# Compound AI Operating Standards v2.1.0
+# Compound AI Operating Standards v2.2.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 This is the document you hand to a fresh agent (Claude, Codex, Cursor, Aider, Continue, or any other) to get it operational on this kit in under two minutes.
@@ -12,7 +12,7 @@ Copy everything between the rules and paste into a new agent session:
 
 ---
 
-You are about to use the **Compound AI Operating Standards kit v2.1.0** at this path. The kit is a tiered operating layer with 20 skills and 4 project shells. Your job is to load it correctly, then help me work.
+You are about to use the **Compound AI Operating Standards kit v2.2.0** at this path. The kit is a tiered operating layer with 21 skills and 4 project shells. Your job is to load it correctly, then help me work.
 
 **Read these files in this exact order:**
 
@@ -25,8 +25,9 @@ You are about to use the **Compound AI Operating Standards kit v2.1.0** at this 
 
 **After loading, confirm by stating:**
 
-- The 8 Tier 1 infrastructure skills you have access to (request-router + 6 session skills + agent-panel-review)
+- The 9 Tier 1 infrastructure skills you have access to (request-router + 6 session skills + agent-panel-planning + agent-panel-review)
 - The 12 Tier 2 capability skills you have access to (7 cognitive modes, 5 analytical, 2 domain)
+- The router has TWO modes: the routing table (matches invoke a skill silently) and the Panel Offer Triggers section (humility signals OFFER a panel, do not auto-invoke). Acknowledge both.
 - The 4 Tier 3 shells available (slide, scroll, mission-control, course)
 - Which shell you'd recommend for the project at hand (if I've told you the project type. If not, ask.)
 
@@ -46,17 +47,18 @@ You are about to use the **Compound AI Operating Standards kit v2.1.0** at this 
 ## What the agent sees after running this
 
 ```
-LOADED COMPOUND AI v2.1.0
+LOADED COMPOUND AI v2.2.0
 ═════════════════════════
 
-Tier 1: Session infrastructure (8 skills):
-  ✓ request-router (active, auto-routing enabled)
+Tier 1: Session infrastructure (9 skills):
+  ✓ request-router (active, auto-routing + panel-offer mode enabled)
   ✓ context-loader
   ✓ token-economist
   ✓ engagement-bootstrap
   ✓ quality-gate
   ✓ pattern-promoter
   ✓ provenance-check
+  ✓ agent-panel-planning
   ✓ agent-panel-review
 
 Tier 2: Cognitive modes (7 skills):
@@ -108,7 +110,7 @@ For a project that uses this kit, write a project-specific handoff that subclass
 ```markdown
 # Project Handoff: [Project Name]
 
-You are working on [project] which uses Compound AI Operating Standards v2.1.0.
+You are working on [project] which uses Compound AI Operating Standards v2.2.0.
 
 Read these files in order:
 1. AGENT.md (root)
