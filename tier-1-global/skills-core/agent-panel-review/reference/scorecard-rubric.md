@@ -46,10 +46,56 @@ to a specific section or line of the artifact being scored.
 
 ---
 
+## Required opening: verification performed
+
+The scorecard's first line is NOT a dimension. It is a verification
+declaration. The reviewer must state what was checked before scoring.
+
+Without this, the scorecard can praise an artifact's "Package design"
+while missing that the package fails on clean extract. Verification is
+a gate, not a dimension.
+
+Required format:
+
+```
+Verification performed: [yes/no, commands run, result]
+```
+
+Examples that pass:
+
+```
+Verification performed: yes. Clean unzip into /tmp; ran
+scripts/verify-integrity.py (returned VERIFIED); ran scripts/
+verify-origin.py --online (returned VERIFIED); confirmed manifest
+version matches page version; confirmed SHA256SUMS covers current
+assets. All checks passed.
+```
+
+```
+Verification performed: no. Reviewed source files directly without
+clean-extract test. This scorecard's Package Design dimension is
+provisional pending verification.
+```
+
+If verification was skipped, dimensions 4 (portability) and 5
+(package design) cap at 75 regardless of apparent quality. Operators
+cannot score above 75 on dimensions that have not been observed in
+action.
+
+For deliverables that are not release artifacts (e.g. forewords,
+strategic plans, single-document drafts), the verification line states
+what was substituted: "Verification performed: yes. Read full artifact;
+checked internal cross-references; verified all cited line numbers
+resolve."
+
+---
+
 ## The output format
 
 ```
 SCORECARD: [artifact name] (reviewed by [reviewer])
+
+Verification performed: [yes/no, commands run, result]
 
 | # | Dimension | Score | Notes |
 |---|---|---:|---|

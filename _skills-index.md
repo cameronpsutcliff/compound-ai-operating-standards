@@ -1,5 +1,5 @@
 # Skills Index
-# Compound AI Operating Standards v2.3.1
+# Compound AI Operating Standards v2.3.2
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 Load this file at session start. It is the complete capability registry. Twenty-one skills total, organized by tier.
@@ -62,6 +62,14 @@ The workhorses. Load when the task calls for them.
 | **stakeholder-mapping** | Map stakeholders for an initiative. Influence-interest grid + engagement strategy. | `tier-2-capabilities/skills/stakeholder-mapping/SKILL.md` | active |
 
 ---
+
+## v2.3.2 changes
+
+- **Discipline pass after Codex's v2.3.1 critique.** SKILL.md files that drifted over 100 lines are pushed back under budget by relocating prose into `reference/` files. The router split into three reference files (`compound-requests.md`, `panel-offer-threshold.md`, `router-rationale.md`); `agent-panel-review`, `agent-panel-planning`, and `stakeholder-mapping` SKILL.md files trimmed; stakeholder-mapping's protocol moved to its own `reference/protocol.md`.
+- **ZIP includes historical release notes**: v2.3.1's ZIP build dropped `releases/v2.1.0|v2.2.0|v2.3.0/RELEASE-NOTES.md`, breaking `verify-integrity.py` on clean extract. Fixed by changing the build to retain release-notes-only history.
+- **Versioned manifests**: `compound-ai/manifest.json` is now the latest stable; each release has its own immutable `compound-ai/releases/v2.3.2/manifest.json`. `verify-origin.py --online` works against either.
+- **Scorecard rubric requires `Verification performed:` opening line**: prevents the scorecard from praising package design while the package fails on clean extract. Dimensions 4 and 5 cap at 75 if verification is skipped.
+- **Website fixes**: field guide reader version badge and `releaseUrl` constant both pointed at v1.0.0; now bound to the current release. Field guide markdown SHA added to `SHA256SUMS`.
 
 ## v2.3.1 changes
 

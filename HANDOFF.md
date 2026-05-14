@@ -1,5 +1,5 @@
 # Agent Handoff
-# Compound AI Operating Standards v2.3.1
+# Compound AI Operating Standards v2.3.2
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 This is the document you hand to a fresh agent (Claude, Codex, Cursor, Aider, Continue, or any other) to get it operational on this kit in under two minutes.
@@ -12,7 +12,7 @@ Copy everything between the rules and paste into a new agent session:
 
 ---
 
-You are about to use the **Compound AI Operating Standards kit v2.3.1** at this path. The kit is a tiered operating layer with 21 skills and 4 project shells. Your job is to load it correctly, then help me work.
+You are about to use the **Compound AI Operating Standards kit v2.3.2** at this path. The kit is a tiered operating layer with 21 skills and 4 project shells. Your job is to load it correctly, then help me work.
 
 **Read these files in this exact order:**
 
@@ -47,7 +47,7 @@ You are about to use the **Compound AI Operating Standards kit v2.3.1** at this 
 ## What the agent sees after running this
 
 ```
-LOADED COMPOUND AI v2.3.1
+LOADED COMPOUND AI v2.3.2
 ═════════════════════════
 
 Tier 1: Session infrastructure (9 skills):
@@ -110,7 +110,7 @@ For a project that uses this kit, write a project-specific handoff that subclass
 ```markdown
 # Project Handoff: [Project Name]
 
-You are working on [project] which uses Compound AI Operating Standards v2.3.1.
+You are working on [project] which uses Compound AI Operating Standards v2.3.2.
 
 Read these files in order:
 1. AGENT.md (root)
