@@ -1,5 +1,5 @@
 # Skill: stakeholder-mapping
-# Compound AI Operating Standards v2.3.2
+# Compound AI Operating Standards v2.4.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does

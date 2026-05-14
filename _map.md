@@ -1,6 +1,6 @@
 # Map
 
-Navigation map for Compound AI Operating Standards v2.3.2. Tier model lives in `_tiers.md`.
+Navigation map for Compound AI Operating Standards v2.4.0. Tier model lives in `_tiers.md`.
 
 ## Root files
 
@@ -12,7 +12,7 @@ Navigation map for Compound AI Operating Standards v2.3.2. Tier model lives in `
 | `INSTALL.md` | Multi-agent setup walkthrough; free-tier options |
 | `CLAUDE.md` | 3-line pointer to AGENT.md (Claude Code convention) |
 | `_tiers.md` | Inheritance model explanation |
-| `_skills-index.md` | Complete skill registry, 21 skills across tiers |
+| `_skills-index.md` | Complete skill registry, 22 skills across tiers |
 | `_citations.md` | Attribution registry; tooltip source for field guide reader |
 | `_map.md` | This file |
 | `Project.md` | Human project overview |
@@ -28,7 +28,7 @@ Navigation map for Compound AI Operating Standards v2.3.2. Tier model lives in `
 | `tier-1-global/conventions/` | style-guide, token-efficiency, skill-author-guide, provenance, session-log-format |
 | `tier-1-global/context/` | tier0.md (always-load), tier1-current.md, tier1-subsystem/ |
 | `tier-1-global/checklists/` | session-start, session-closeout, era transitions, model-routing, new-project, pattern-promotion |
-| `tier-1-global/skills-core/` | request-router + 8 session infrastructure skills (incl. agent-panel-planning and agent-panel-review) |
+| `tier-1-global/skills-core/` | request-router + 9 session infrastructure skills (incl. agent-panel-planning, agent-panel-review, release-captain) |
 | `tier-1-global/design-system/` | Abyssal CSS tokens for use in Tier 3 shells |
 
 ## Tier 2 -- Capabilities (on-demand)

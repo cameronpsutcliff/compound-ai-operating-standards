@@ -1,12 +1,12 @@
 # Skills Index
-# Compound AI Operating Standards v2.3.2
+# Compound AI Operating Standards v2.4.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
-Load this file at session start. It is the complete capability registry. Twenty-one skills total, organized by tier.
+Load this file at session start. It is the complete capability registry. Twenty-two skills total, organized by tier.
 
 ---
 
-## Tier 1 -- Session Infrastructure (9 skills)
+## Tier 1 -- Session Infrastructure (10 skills)
 
 These run the session. Load at session start; the `request-router` then handles dispatch.
 
@@ -21,6 +21,7 @@ These run the session. Load at session start; the `request-router` then handles 
 | provenance-check | "verify origin", "check provenance", "is this the official version" | `tier-1-global/skills-core/provenance-check/SKILL.md` | active |
 | **agent-panel-planning** | "plan this with the panel", "converge on a plan", "split this work across agents", "who should own what". Independent plans, cross-suggestions, voting, strength-matched task split. | `tier-1-global/skills-core/agent-panel-planning/SKILL.md` | active |
 | **agent-panel-review** | "set up a panel", "convene a panel", "multi-agent review", "second opinion". Independent-first-pass, structured-critique, no-ego convergence. | `tier-1-global/skills-core/agent-panel-review/SKILL.md` | active |
+| **release-captain** | "ship gate", "release captain", "is this ready to ship", "pre-release check", "verify the release". Ten-step ship gate including verify-integrity, verify-origin, manifest-version reconciliation, line-count budget, public-download HTTP checks, and screenshots. | `tier-1-global/skills-core/release-captain/SKILL.md` | active |
 
 ---
 
@@ -63,11 +64,17 @@ The workhorses. Load when the task calls for them.
 
 ---
 
+## v2.4.0 changes
+
+- **Added `release-captain`** (Tier 1, session infrastructure). The ten-step ship gate that would have caught every failure Codex flagged in v2.3.1. Steps: clean unzip, `verify-integrity.py`, `verify-origin.py --online`, manifest-version reconciliation, SHA256SUMS coverage, field guide badge match, releaseUrl resolves, all public downloads return 200, `SKILL.md` line-count budget, screenshots. Ships with `reference/checklist.md`, `reference/verification-protocol.md` (exact commands), `reference/output-template.md` (structured SHIP/BLOCK report), and `reference/origin.md` (credits Codex's v2.3.1 cross-feedback). Tier 1 skill count: 9 → 10. Total skills: 21 → 22.
+- **Router updated**: new fast-path trigger row for `release-captain` ("ship gate", "release captain", "pre-release check"). New compound-request entry: "Pre-ship release verification" runs `release-captain` (with optional `agent-panel-review` upstream if the deliverable also warrants editorial review).
+- **Field guide gains a release-captain chapter pointer** in the foreword's release-discipline note (Chapter callout, not a new full chapter).
+
 ## v2.3.2 changes
 
 - **Discipline pass after Codex's v2.3.1 critique.** SKILL.md files that drifted over 100 lines are pushed back under budget by relocating prose into `reference/` files. The router split into three reference files (`compound-requests.md`, `panel-offer-threshold.md`, `router-rationale.md`); `agent-panel-review`, `agent-panel-planning`, and `stakeholder-mapping` SKILL.md files trimmed; stakeholder-mapping's protocol moved to its own `reference/protocol.md`.
 - **ZIP includes historical release notes**: v2.3.1's ZIP build dropped `releases/v2.1.0|v2.2.0|v2.3.0/RELEASE-NOTES.md`, breaking `verify-integrity.py` on clean extract. Fixed by changing the build to retain release-notes-only history.
-- **Versioned manifests**: `compound-ai/manifest.json` is now the latest stable; each release has its own immutable `compound-ai/releases/v2.3.2/manifest.json`. `verify-origin.py --online` works against either.
+- **Versioned manifests**: `compound-ai/manifest.json` is now the latest stable; each release has its own immutable `compound-ai/releases/<version>/manifest.json`. `verify-origin.py --online` works against either.
 - **Scorecard rubric requires `Verification performed:` opening line**: prevents the scorecard from praising package design while the package fails on clean extract. Dimensions 4 and 5 cap at 75 if verification is skipped.
 - **Website fixes**: field guide reader version badge and `releaseUrl` constant both pointed at v1.0.0; now bound to the current release. Field guide markdown SHA added to `SHA256SUMS`.
 

@@ -4,11 +4,11 @@
   "author": "Cameron Sutcliff",
   "canonical_url": "https://cameronsutcliff.com/compound-ai",
   "source_repo": "https://github.com/cameronpsutcliff/compound-ai-operating-standards",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "release_date": "2026-05-14",
   "license_docs": "CC-BY-4.0",
   "license_code": "Apache-2.0",
-  "aggregate_sha256": "baa27c29a73cf6b7b8715858df28c4206e456967d7e3f25b89f72d4ae9b9ed8b",
+  "aggregate_sha256": "d8e8b5e0116c0ee7b2890ccc471794ac667279744bc29398e85ba7da378f57ea",
   "files": [
     {
       "path": ".gitignore",
@@ -22,8 +22,8 @@
     },
     {
       "path": "AGENT.md",
-      "bytes": 4373,
-      "sha256": "395e52be15e1e9ef5ef6a582cdf751abaf609265846573518429f6da0eb55804"
+      "bytes": 4453,
+      "sha256": "7c4e89a01009c201924d9d4568aeef40427453b5fdcaa317dbb2b70d184a4a50"
     },
     {
       "path": "BACKLOG.md",
@@ -42,8 +42,8 @@
     },
     {
       "path": "HANDOFF.md",
-      "bytes": 5706,
-      "sha256": "f8f9af44b1193e432e4e5427774825864358b8d102a616eabde67250f6b07dc3"
+      "bytes": 5812,
+      "sha256": "7f21f4b1e8ed14f41e9f8e12eda1e511655e6195acc2de0b2b45800ac5294382"
     },
     {
       "path": "INSTALL.md",
@@ -67,8 +67,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10132,
-      "sha256": "09637a74debd7806580cc48d6a0e7d4497430e9ed9b121556978ca1663bb4b15"
+      "bytes": 10341,
+      "sha256": "796366f90b99fc1e26d9f0eb0874c78161b34c79f463d1c203465641d3bfb3cd"
     },
     {
       "path": "STATE.md",
@@ -78,17 +78,17 @@
     {
       "path": "_citations.md",
       "bytes": 6206,
-      "sha256": "df957721568559ff83c05e814d623cd75599aeeaf1cf09bd1e749d5dd909e65a"
+      "sha256": "b1c0e60a9a59d378c1d513c23e82140d277c7a56fc71dcb6561a72f9340905f0"
     },
     {
       "path": "_map.md",
-      "bytes": 3199,
-      "sha256": "f7478dc54097792a43d7cb4d25df29b92b487664963f4c7a4e6a9cffc98f2120"
+      "bytes": 3213,
+      "sha256": "838e3d5245d5aa6e450fd681fc451d080aa15a7559d5968d6ea63bf391fb9e6e"
     },
     {
       "path": "_skills-index.md",
-      "bytes": 10078,
-      "sha256": "def4694510b3ef5dcf6e90f8bfcb0c6e9d184e24f1fb4f1d7e79f2dbc0c28c43"
+      "bytes": 11574,
+      "sha256": "5ed45f4f453986c5f9d1715cacc7fe4981521a9661eeefd620f173bd421e6d4f"
     },
     {
       "path": "_tiers.md",
@@ -216,6 +216,16 @@
       "sha256": "97f22911e07194a1495fa490d517b741883f2c44f13fdfbc87d4708997f0c3ab"
     },
     {
+      "path": "releases/v2.4.0/RELEASE-NOTES.md",
+      "bytes": 3980,
+      "sha256": "07a119e60cb5481481c1b6f8aa6ec2837436e598357627cd97f91e52ccc669b8"
+    },
+    {
+      "path": "releases/v2.4.0/ship-gate-report.md",
+      "bytes": 3679,
+      "sha256": "6ee4b0c146cf5ea16a13c6b3e8ef52044719646137a47d0c8e39e3815abf5517"
+    },
+    {
       "path": "scripts/build-manifest.py",
       "bytes": 2365,
       "sha256": "e9233dbe12238527713fce6e0c9258937986577fb975b270faecda59da0791df"
@@ -328,7 +338,7 @@
     {
       "path": "tier-1-global/skills-core/agent-panel-planning/SKILL.md",
       "bytes": 3495,
-      "sha256": "53d052bc574a0d9a1edb6cc7859c13fecb957855489b81cca1ec593d1f02c4b3"
+      "sha256": "84b85966ee186c71eb1928234a0c44c99ea2a376b7f358307c90529d05a8ac8a"
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-planning/reference/concession-discipline.md",
@@ -373,7 +383,7 @@
     {
       "path": "tier-1-global/skills-core/agent-panel-review/SKILL.md",
       "bytes": 3767,
-      "sha256": "4cb3ff897cb23e1a7fcd932a0b929b94d4d5dd50dfa4b6a7f8f8b05c3dce4aed"
+      "sha256": "9f25720bce4980dcf86a94cb9dcfb16a409502f6e8c0a563b0432f51ccb3b731"
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-review/reference/agent-strengths.md",
@@ -446,9 +456,34 @@
       "sha256": "e7d1bfd26e8ea28b38fbc910e88a9ac115e68db521d596e9cf21b93df12484d4"
     },
     {
+      "path": "tier-1-global/skills-core/release-captain/SKILL.md",
+      "bytes": 4737,
+      "sha256": "947bf2b9e2c223919661043f43d7e0dce62abbcb919e5fcf58e7941af8b989ca"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/checklist.md",
+      "bytes": 8851,
+      "sha256": "023f9004b584e02494817752a2376cf44654f5eba5fea5661abeac6a42089437"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/origin.md",
+      "bytes": 3344,
+      "sha256": "8868c7740903abb0534fe535749f876d62ce2977c042cea3534ad4f0092493ae"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/output-template.md",
+      "bytes": 5692,
+      "sha256": "342c14b4390946f9beb1a1e54f983f303babc3804a333d57b1a0da90a33552d2"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/verification-protocol.md",
+      "bytes": 7051,
+      "sha256": "9916b21db4218930eef33113ddd577d5d89978800ae5f7bbf5a179d2f12badb3"
+    },
+    {
       "path": "tier-1-global/skills-core/request-router/SKILL.md",
       "bytes": 5182,
-      "sha256": "cfb426ebdd7921b9d03f8b8f1bf56237cf27dc669cf567c56a6c9e90072ba5b0"
+      "sha256": "de43d58a09a94ee344899b960cc9ca2a71c47e865ac5e783585d68fdbcfa125c"
     },
     {
       "path": "tier-1-global/skills-core/request-router/reference/compound-requests.md",
@@ -728,7 +763,7 @@
     {
       "path": "tier-2-capabilities/skills/stakeholder-mapping/SKILL.md",
       "bytes": 2448,
-      "sha256": "d2ca954cadda85a2841e3f2fbb5a1b4b0857c64af514a1fff5c093054b5cea4a"
+      "sha256": "ed8f92049450b9c8d1d2faabcaf5c32246edec46208125a6b141e37e52ef731d"
     },
     {
       "path": "tier-2-capabilities/skills/stakeholder-mapping/reference/protocol.md",
@@ -846,5 +881,5 @@
       "sha256": "e084a74f7c7c8552d2a49fe2a23ba018310683740ed4117ba66e81213d766bbb"
     }
   ],
-  "generated_at": "2026-05-14T05:02:07.929867+00:00"
+  "generated_at": "2026-05-14T05:16:53.743499+00:00"
 }
