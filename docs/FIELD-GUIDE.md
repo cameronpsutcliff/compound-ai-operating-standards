@@ -41,11 +41,15 @@ If you are a practitioner, this document is yours. Chapter 1 through Chapter 12 
 
 If you are an engineer, the starter kit at `compound-ai-starter-kit/` is yours. Drop it into a project. Rename the templates. Run the integrity verifier. You will be operational in under an hour. The kit is the proof, and the field guide is the explanation of why the kit looks the way it does.
 
-**A note on the word "compound."** Berkeley AI Research published "The Shift from Models to Compound AI Systems" in February 2024, establishing the term for compositional model architectures. This manual sits in dialogue with that frame. Their paper named the shift; this is the operating layer that makes the shift practical for the rest of us, the small teams, the indie operators, the analysts who have a job to do and one machine to do it on.
+**A note on the word "compound."** Berkeley AI Research[^bair-compound-ai] published "The Shift from Models to Compound AI Systems" in February 2024, establishing the term for compositional model architectures. This manual sits in dialogue with that frame. Their paper named the shift; this is the operating layer that makes the shift practical for the rest of us, the small teams, the indie operators, the analysts who have a job to do and one machine to do it on.
 
 **A note on what this is not.** This is not advocacy. There is a chapter near the end called "When NOT to use AI." Read it. AI is a tool with specific properties, and the operators who get the most out of it are the ones who know when to put it down. Hype ages fast. Tools that work age well.
 
 **A note on attribution.** This manual and the kit it ships with are licensed CC BY 4.0 for the writing and Apache 2.0 for the code. Take it, run it, fork it, teach it. Attribute it. Tell someone where it came from. The canonical source is on GitHub and the canonical version is on cameronsutcliff.com. Everything else is a derivative work, and that is fine, that is the point.
+
+**Who this manual is for, briefly.** Practitioners moving from prompt-as-code to operating-standards. Indie operators and small teams running multiple agentic systems on one machine. Engineers handed a kit and asked to make it durable. Future agents inheriting work and trying to figure out which decisions are load-bearing. If you recognize yourself in those, the patterns here are battle-paid.
+
+**Who this manual is not for.** Operators looking for the best model. Teams shopping for a vendor. Anyone wanting a list of clever prompts. The kit assumes you have a model that works and asks how to keep its work from evaporating between sessions.
 
 Read the next page if any of this sounded right.
 
@@ -1407,7 +1411,7 @@ Hype ages fast. Tools that work age well. A field manual that did not include th
 
 *Who this chapter is for: anyone whose high-stakes deliverable does not yet have a locked plan, and who suspects their own framing has gaps.*
 
-Most multi-agent council patterns assume the plan exists and ask agents to evaluate it. The panel pattern that produced this kit started one step earlier: the agents converged on the plan itself. Three sealed independent plans, one round of cross-feedback with element-level voting, a private revise cycle that included path-forward suggestions for the other agents, a reconvene, a vote, a ratification, and finally a strength-matched task split based on what each agent demonstrated in this round. The output was a plan that no single agent could have produced and a task split with explicit empirical justification.
+Most multi-agent council patterns assume the plan exists and ask agents to evaluate it. The panel pattern that produced this kit[^panel-coordination-v1] started one step earlier: the agents converged on the plan itself. Three sealed independent plans, one round of cross-feedback with element-level voting, a private revise cycle that included path-forward suggestions for the other agents, a reconvene, a vote, a ratification, and finally a strength-matched task split based on what each agent demonstrated in this round. The output was a plan that no single agent could have produced and a task split with explicit empirical justification.
 
 The pattern is implemented as the `agent-panel-planning` skill (Tier 1). It is the upstream sibling of `agent-panel-review` (Chapter 32): planning produces what to build and who builds what; review produces "is what we built any good." Run planning when the plan itself is the question. Run review when execution drafts are landing.
 
@@ -1416,6 +1420,8 @@ The pattern is implemented as the `agent-panel-planning` skill (Tier 1). It is t
 A planning panel costs more operator time than a review panel because each agent produces a complete plan, not a focused critique. The threshold should match.
 
 Convene a planning panel when the plan itself is what needs to be right (not just execution); when multiple agents have genuinely different framings of the problem; when the work will be split across agents and the operator needs strength-matched routing; or when the operator suspects their own framing has gaps and wants independent reframings to test against.
+
+One alternative to convening per-deliverable: the **standing panel**[^adam-federman]. Two or three agents in a permanent operating relationship, used as the default operating structure rather than convened anew each time. The standing panel trades role flexibility for accumulated context: it always knows the prior decisions, and its postures refine over time. The trade-off is steeper discipline: every non-trivial decision goes through the panel, not just high-stakes ones. For operators who can sustain that discipline, a standing panel is stronger than convening per-deliverable; for everyone else, the convened pattern in this chapter is the right default.
 
 Do not convene a planning panel when the plan is obvious and only execution matters (go straight to `agent-panel-review` on the drafts), when one agent has already framed the problem well (use `pressure-test` or `nod-protocol` on that framing instead), when time pressure dominates accuracy, or when you already know the answer and want validation. The most common operator-humility signal that warrants planning: "I have a draft plan but I want to test it against alternatives." When the operator says or thinks this, the kit's router offers the panel.
 
@@ -1483,7 +1489,7 @@ The pattern is implemented across `agent-panel-planning/SKILL.md` and its refere
 
 *Who this chapter is for: anyone shipping a high-stakes deliverable who suspects one agent is not enough but does not want to convene a roundtable.*
 
-This chapter operationalizes the pattern that produced the deliverables this kit ships. After the planning panel (Chapter 31) ratifies the plan and assigns tasks, the execution phase produces drafts. The panel review pattern is what catches blind spots in the drafts before they ship. It is the downstream sibling of `agent-panel-planning`: where planning asks "what should we build and who is best at each piece," review asks "is what we built any good."
+This chapter operationalizes the pattern that produced the deliverables this kit ships[^panel-coordination-v1]. After the planning panel (Chapter 31) ratifies the plan and assigns tasks, the execution phase produces drafts. The panel review pattern is what catches blind spots in the drafts before they ship. It is the downstream sibling of `agent-panel-planning`: where planning asks "what should we build and who is best at each piece," review asks "is what we built any good."
 
 The pattern is implemented as the `agent-panel-review` skill (Tier 1). What follows is the staged method.
 
@@ -1542,11 +1548,17 @@ A healthy revision adopts roughly 60-80% of critiques, dissents on the rest with
 
 **Capitulation.** A revision that adopts every critique without judgment. Equally bad. Each panelist should retain some of its original signal. Adopting every critique flattens the panel into groupthink, which is exactly what the panel was supposed to prevent.
 
-After Stage 4 produces three revisions, Stage 5 is the operator's job: pick the merge architecture. The merge takes the strongest layer from each, not an average. Common merge patterns: spine from one agent, body from another, voice from the third; or one agent's revision is dominant and the operator merges in only the specific improvements from the others; or the operator hands all three revisions to one panelist for final integration. Whichever pattern fits, the operator owns the merge. The panel produced the inputs. The operator decides what ships.
+After Stage 4 produces three revisions, Stage 5 is the operator's job: pick the merge architecture. The merge takes the strongest layer from each, not an average. The hard part is executing the principle without operator bias collapsing the panel's signal. It is easy to call the layer that matches your instinct "strongest" and proceed; the merge framework exists to prevent that drift.
 
-Stage 6 is the loop-or-ship decision. Healthy convergence happens between loops 1 and 3. Loop 1 convergence usually means you did not need a panel; the work could have been done by one agent with a good prompt. Loop 4 still arguing usually means the question was framed too broadly; close the loop, narrow the question, restart.
+The merge procedure is per-dimension, not per-revision. List the dimensions of the deliverable (structural spine, substance density, voice, attribution, opening hook, closing arc). For each dimension, score from the panel's own outputs: the Stage 3 strongest-claim cells (which revision did the OTHER panelists name as strongest on this dimension), the Stage 4 concession lines (who conceded to whom on this dimension), and the Stage 4 one-thing-to-steal cells (what each panelist proposed to adopt). The dimension's strongest treatment is whichever revision is most frequently named across these three sources. Tally is the audit trail.
 
-The pattern is implemented as the `agent-panel-review` skill. The skill's `reference/protocol.md` has the full six-stage procedure, `reference/roles.md` covers role templates, `reference/critique-format.md` defines the four-cell template, `reference/when-to-convene.md` is the threshold guide, `reference/agent-strengths.md` lists known model strengths for panel composition, and `reference/worked-example.md` shows the protocol applied to a synthetic deliverable. Run the skill on your next high-stakes deliverable and you will know within one loop whether it was the right call.
+Before locking the strongest call on a dimension, run two operator-bias questions: "am I calling this strongest because I agree with it?" and "if the dominant revision were from the panelist I respect least, would I still call it strongest?" Two yeses means the merge call is safe. A no on either means escalate the merge to a fast mini-panel on that dimension, or accept the override with explicit reasoning. Silent override breaks the panel's audit trail and turns the merge into operator preference dressed up as panel output.
+
+Integrate with attribution: the merge document or commit message names the source revision per dimension and the reason. Without the attribution, the merge looks arbitrary; with it, the merge is defensible from the panel's outputs. The full procedure with operator-bias check, integration patterns, and common failure modes lives in `reference/merge-framework.md`.
+
+Stage 6 is the loop-or-ship decision. Healthy convergence happens between loops 1 and 3. Loop 1 convergence usually means you did not need a panel; the work could have been done by one agent with a good prompt. Loop 4 still arguing is a failure mode with five identifiable causes (question too broad, hidden assumption splitting the panel, wrong panel composition, scope creep, panelist fatigue) and a specific recovery move per cause. The wrong move on Loop 4 is keeping the panel running through the same disagreement; the right move is diagnostic first, recovery move second, then either one more focused loop or ship-the-imperfect. The full procedure lives in `reference/loop-4-recovery.md`.
+
+The pattern is implemented as the `agent-panel-review` skill. The skill's `reference/protocol.md` has the full six-stage procedure, `reference/roles.md` covers role templates, `reference/critique-format.md` defines the four-cell template, `reference/merge-framework.md` covers Stage 5 with operator-bias checks, `reference/loop-4-recovery.md` covers diagnostic-driven recovery, `reference/when-to-convene.md` is the threshold guide, `reference/agent-strengths.md` lists known model strengths for panel composition, and `reference/worked-example.md` shows the protocol applied to a synthetic deliverable. Run the skill on your next high-stakes deliverable and you will know within one loop whether it was the right call.
 
 ---
 

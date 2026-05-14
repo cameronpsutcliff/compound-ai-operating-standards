@@ -1,16 +1,19 @@
 # Map
 
-Navigation map for Compound AI Operating Standards v2.2.0. Tier model lives in `_tiers.md`.
+Navigation map for Compound AI Operating Standards v2.3.0. Tier model lives in `_tiers.md`.
 
 ## Root files
 
 | Path | Purpose |
 |---|---|
-| `README.md` | Public-facing intro, install instructions |
+| `README.md` | Public-facing intro |
 | `AGENT.md` | Root operating contract |
+| `HANDOFF.md` | Drop-in prompt for handing the kit to a fresh agent |
+| `INSTALL.md` | Multi-agent setup walkthrough; free-tier options |
 | `CLAUDE.md` | 3-line pointer to AGENT.md (Claude Code convention) |
 | `_tiers.md` | Inheritance model explanation |
 | `_skills-index.md` | Complete skill registry, 21 skills across tiers |
+| `_citations.md` | Attribution registry; tooltip source for field guide reader |
 | `_map.md` | This file |
 | `Project.md` | Human project overview |
 | `STATE.md` | Current state of this kit's development |

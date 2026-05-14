@@ -60,6 +60,23 @@ one thing worth stealing.
 works with any combination, including three sessions of the same agent
 in three different roles.
 
+## The merge (Stage 5) framework
+
+Stage 5 is the only stage where the operator's judgment is the deciding
+factor, not the panel's. Without a framework, the operator's bias
+reasserts: the layer that matches their instinct gets called "strongest"
+silently. Load `reference/merge-framework.md` for the per-dimension
+scoring procedure, operator-bias check (two questions before locking a
+dimension), and the honest-test for a healthy merge.
+
+## Loop-4 recovery
+
+A panel that has not converged by Loop 4 needs diagnostic, not another
+loop. Load `reference/loop-4-recovery.md` for the five common causes
+(too-broad question, hidden assumption, wrong composition, scope creep,
+fatigue), recovery moves per cause, and the "ship the imperfect" rule
+that protects against sunk-cost panic.
+
 ## Worked example
 
 `reference/worked-example.md` shows the full six-stage protocol on a

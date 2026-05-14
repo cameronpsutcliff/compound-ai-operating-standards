@@ -1,5 +1,5 @@
 # Skills Index
-# Compound AI Operating Standards v2.2.0
+# Compound AI Operating Standards v2.3.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 Load this file at session start. It is the complete capability registry. Twenty-one skills total, organized by tier.
@@ -62,6 +62,16 @@ The workhorses. Load when the task calls for them.
 | **stakeholder-mapping** | Map stakeholders for an initiative. Influence-interest grid + engagement strategy. | `tier-2-capabilities/skills/stakeholder-mapping/SKILL.md` | active |
 
 ---
+
+## v2.3.0 changes
+
+- **Refined `request-router`**: Panel Offer Triggers section replaced with a 5-criteria judgment + soft-offer pattern. Distinguishes T1 normal collab ("what do you think?") from T2 deeper solo collab ("help me think through this") from T3 council-warranted requests. Most humility signals now soft-offer (answer + one-sentence panel mention), not full-derail panel-offer prompts.
+- **`agent-panel-review` gains `merge-framework.md`**: per-dimension scoring procedure for Stage 5 with operator-bias check (two questions before locking each dimension) to prevent the operator's instinct from masquerading as panel signal.
+- **`agent-panel-review` gains `loop-4-recovery.md`**: five common causes of panel failure at loop 4 (too-broad question, hidden assumption, wrong composition, scope creep, fatigue) with recovery moves per cause and the "ship the imperfect" rule.
+- **`agent-panel-planning/reference/when-to-convene.md` gains standing-vs-convened sub-section**: trade-off framing for permanent multi-agent operating structures vs per-deliverable convening. Adam Federman credited via citation in `_citations.md` registry.
+- **New top-level `INSTALL.md`**: walks operators through the multi-agent question; pitches free-tier setups (Claude/GPT/Gemini free tiers, Aider+Ollama, same-model panels) for operators with only one agent.
+- **New top-level `_citations.md`**: canonical attribution registry. Field guide reader resolves `[^key]` markers to superscript tooltips with Name + Contribution on hover.
+- **Field guide foreword gains audience callout**: who this manual is for and who it is not for.
 
 ## v2.2.0 changes
 

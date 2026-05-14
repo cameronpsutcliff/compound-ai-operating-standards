@@ -137,6 +137,47 @@ do not expand to four unless the work genuinely warrants it.
 
 ---
 
+## Standing panels vs convened panels
+
+The default in this kit is the **convened panel**: assemble the
+panelists for a specific deliverable, run the protocol, dissolve. This
+file has been covering convened panels.
+
+A **standing panel** is the other model: two or three agents in
+permanent operating relationship, with defined standing roles, used
+as the default operating structure rather than as a per-deliverable
+convening. Each new question goes through the standing panel without
+the framing-and-seal overhead of a convened panel.
+
+The trade-off:
+
+| Aspect | Standing panel | Convened panel |
+|---|---|---|
+| Convening cost | Near zero (always available) | Real (framing, seal-setup) |
+| Role posture | Refined over time, accumulated context | Per-deliverable role flexibility |
+| Cross-context memory | Yes (the panel knows prior decisions) | No (each panel starts fresh) |
+| Drift risk | Roles can ossify; one panelist can dominate | Lower (composition can change) |
+| Sustaining discipline | High (the panel must stay engaged) | Lower (panel exists only for one job) |
+| Best for | Steady-state work with persistent collaborator | Episodic high-stakes deliverables |
+
+A standing panel is stronger than a convened panel **if you can
+sustain the discipline**. The strong-form discipline includes: keeping
+both panelists engaged on every non-trivial decision, naming the
+operator's adjudication role explicitly (the operator owns the merge
+in standing operation just as in convened), and resisting role
+ossification (occasionally swap roles to keep the postures fresh).
+
+If you cannot sustain the discipline (the panel becomes one agent
+plus an echo), convened panels per high-stakes deliverable are the
+right pattern.
+
+This trade-off was surfaced during cross-kit review.[^adam-federman]
+The convened-panel default in this file is correct for most users;
+the standing-panel option is worth considering for users who have a
+persistent multi-agent operating relationship.
+
+---
+
 ## The retrospective question
 
 After each planning panel ships, run this retrospective:

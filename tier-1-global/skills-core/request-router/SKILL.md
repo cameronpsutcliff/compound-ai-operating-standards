@@ -1,5 +1,5 @@
 # Skill: request-router
-# Compound AI Operating Standards v2.2.0
+# Compound AI Operating Standards v2.3.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does
@@ -7,15 +7,18 @@
 Routes any incoming request to the right skill. Load at session start.
 Once active, scan every request for trigger patterns before responding.
 
-This skill has two modes:
+This skill has three modes:
 
-1. **Routing table** (existing). Pattern matches → invoke skill silently.
-2. **Panel offer triggers** (new in v2.2.0). Humility-signal matches →
-   ask the operator if they want a panel, do NOT auto-invoke.
+1. **Routing table** (existing). Pattern matches invoke a skill silently.
+2. **Panel Offer fast-path** (refined in v2.3.0). Explicit panel phrases
+   auto-invoke. No ambiguity.
+3. **Panel Offer judgment** (refined in v2.3.0). Borderline requests get
+   evaluated against five criteria. Match means OFFER, not auto-invoke.
+   Operator decides.
 
-The second mode is what makes the kit responsive to operator humility:
-when the operator signals uncertainty, the agent offers wider input
-rather than deciding solo.
+The judgment mode is what keeps the kit from spamming "want a panel?" on
+every "what do you think?" message. Normal user-agent collaboration stays
+solo unless the request actually signals council-tier intent.
 
 ## Load at session start
 
@@ -42,7 +45,7 @@ Add to your session-start: load `_skills-index.md`, then load this file.
 | If the request contains...                                                                         | Apply this skill                  |
 |----------------------------------------------------------------------------------------------------|-----------------------------------|
 | "think deeply", "multi-angle", "ultra think", high-stakes architecture decision                   | `ultra-think`                     |
-| "pressure test", "critique this", "rip this apart", "is this ambitious enough", "rethink this plan" | `pressure-test`                 |
+| "pressure test", "critique this", "rip this apart", "tear this apart", "is this ambitious enough" | `pressure-test`                   |
 | "code audit", "dead code", "dependency check", "security review", "test coverage"                  | `code-audit`                      |
 | "research this", "find sources", "structured research", "investigate"                              | `autoresearch`                    |
 | "build a skill", "create a skill", "new skill for", "extend the kit"                               | `skill-creator`                   |
@@ -54,12 +57,14 @@ Add to your session-start: load `_skills-index.md`, then load this file.
 | "viz", "what chart", "dashboard design", "chart critique", "data viz", "data visualization"        | `viz`                             |
 | "stakeholder map", "influence interest", "stakeholder analysis", "engagement strategy"             | `stakeholder-mapping`             |
 
-### Session infrastructure (Tier 1)
+### Session infrastructure (Tier 1) -- explicit panel invocation (fast-path)
 
 | If the request contains...                                                                         | Apply this skill                  |
 |----------------------------------------------------------------------------------------------------|-----------------------------------|
-| "set up a panel", "convene a panel", "have agents review each other", "multi-agent review", "panel review", "second opinion on this draft", "independent review", "third opinion" | `agent-panel-review`              |
-| "plan this with the panel", "set up a planning panel", "have agents propose plans", "converge on a plan", "split this work across agents", "who should own what", "compare independent plans" | `agent-panel-planning`            |
+| "convene a panel", "set up a panel", "let's run a panel", "panel review on this", "multi-agent review", "panel this" | `agent-panel-review`              |
+| "convene a planning panel", "set up a planning panel", "plan this with the panel", "split this work across agents", "have agents propose plans" | `agent-panel-planning`            |
+
+These are unambiguous: the operator named a panel. Auto-invoke without offering.
 
 ## How to apply a routed skill
 
@@ -67,60 +72,135 @@ Add to your session-start: load `_skills-index.md`, then load this file.
 2. State: "Applying [skill-name] to this request."
 3. Load the SKILL.md from the matching tier and follow it exactly.
 
-Cognitive mode skills and capability skills live in `tier-2-capabilities/skills/`. Infrastructure skills live in `tier-1-global/skills-core/` and are usually loaded already.
+---
+
+## Panel Offer judgment (criteria, not phrase list)
+
+The fast-path above catches explicit panel invocations. The judgment mode
+catches the harder case: when the operator is signaling council-tier intent
+without using the word "panel."
+
+Before responding to any request, scan against these five criteria. **Match
+on at least ONE means OFFER the panel.** No match means just answer.
+
+### The five criteria
+
+1. **Explicit invitation to another model or agent.** The operator gestures
+   toward an agent OTHER than the one they're talking to. Examples: "I want
+   another model's read on this," "what would [other agent] say," "second
+   opinion from a different model," "let's get [Codex/Gemini/Kiro] in on this."
+
+2. **Stuck-state signal: their own reasoning is looping.** The operator
+   describes being unable to decide. Examples: "I keep going back and
+   forth," "I've changed my mind three times," "I can't decide between X
+   and Y," "I keep talking myself out of it."
+
+3. **High-stakes, hard-to-reverse decision with explicit "don't want to
+   decide alone" framing.** Not just "this is important," but explicit
+   signaling that the operator does not want to commit solo. Examples:
+   "this is too important to decide alone," "I don't want to commit without
+   more eyes on it," "this is irreversible and I'm not confident."
+
+4. **Explicit panel or council words.** Even outside the fast-path phrasings.
+   Examples: "I want a council on this," "let's get a few agents together,"
+   "I want this run through the panel pattern."
+
+5. **Complete draft plan + explicit desire for alternative framings.** The
+   operator has a plan they wrote, and they explicitly want it tested
+   against other plans. Examples: "I drafted this plan, want to test it
+   against alternatives," "I have a framing but want to see other framings."
+
+### What does NOT trigger an offer (treat as normal collaboration)
+
+The most important part of this section. Without it, the kit spams panel
+offers on routine collaborative dialogue.
+
+| Operator says... | Treat as... |
+|---|---|
+| "what do you think?", "your thoughts?", "your take?" | Normal collab. Just answer. |
+| "is this any good?", "any feedback?" | Normal collab. Just answer. |
+| "I'm not sure how to approach this" | Engage deeper solo. T2, not T3. |
+| "help me think through this", "walk me through it" | Engage deeper solo. T2. |
+| "I'm stuck on this" | Engage deeper solo. T2, unless paired with criterion 2 above. |
+| "tear this apart", "rip this apart" | Invoke `pressure-test`, not a panel. |
+| "is this important?" or "is this risky?" | Ask back, do not assume T3. |
+
+The distinction is whether the operator is gesturing toward OTHER agents
+or just asking THIS agent to engage. Asking this agent more deeply is solo
+collaboration. Asking for OTHER agents' input is council-tier.
 
 ---
 
-## Panel offer triggers (matches OFFER a panel, do NOT auto-invoke)
+## The offer response template
 
-These trigger patterns signal operator humility. When matched, the
-correct behavior is to OFFER the panel, not invoke one. The operator
-opts in (or declines) before the panel runs.
+When a Panel Offer judgment criterion matches, respond with the template
+BEFORE doing anything else. The operator opts in or declines.
 
-| If the request contains... (operator humility signals)                                              | Offer this skill                  |
-|-----------------------------------------------------------------------------------------------------|-----------------------------------|
-| "I'm not sure", "I'm uncertain how to", "what's the right approach", "what's the best way to"      | `agent-panel-planning`            |
-| "your thoughts", "what do you think", "want a second opinion", "what am I missing"                  | `agent-panel-planning`            |
-| "high-stakes", "irreversible", "can't walk this back", "before I commit", "this feels risky"        | `agent-panel-planning`            |
-| "I have a draft plan but want to test it", "test my framing", "is my plan right"                    | `agent-panel-planning`            |
-| "I've drafted this, is it any good", "review this before I ship", "is this ready"                   | `agent-panel-review`              |
+```
+This sounds like [reason matching the triggered criterion].
+Want me to set up a panel? [Two or three] agents would each
+[propose an approach / produce a sealed first-pass review]
+independently, then we'd converge. I can sketch the panel
+composition or you can name the agents.
 
-### Offer response template
+If you'd rather think alone first, just say so and I'll proceed solo.
+```
 
-When a panel-offer trigger matches, respond before doing anything else
-with something like:
+### The soft-offer pattern (for borderline cases)
 
-> "This sounds like a [high-uncertainty decision / high-stakes
-> deliverable / planning question]. Want me to set up a panel? Two or
-> three agents could each [propose an approach independently / produce
-> a sealed first-pass review], then converge. I can sketch the panel
-> composition if useful, or you can name the agents.
+When the operator's signal is borderline (matches a criterion weakly, or
+sits between T2 and T3), do NOT derail with a full panel offer question.
+Instead:
+
+1. Answer the question as posed.
+2. End with one sentence mentioning the panel as available.
+
+Example response shape:
+
+> [Full answer to the operator's question.]
 >
-> If you'd rather think alone first, just say so and I'll proceed solo."
+> If you want another model's perspective specifically, I can set up a
+> panel with [Codex / Kiro / Gemini] -- we'd each propose independently
+> then converge. Up to you.
 
-### When NOT to offer
+The operator can ignore it (continue the conversation) or take it ("yes,
+set up the panel"). No friction either way. The soft-offer keeps the kit
+responsive without being naggy.
 
-Some humility signals do not warrant a panel offer:
+---
 
-- The question is small and reversible at low cost — just answer
-- The operator has already declined a panel offer in this session for
-  the same topic — do not re-offer
-- The operator has explicitly said "let me think alone" — respect it
-- The matched phrase is incidental ("I'm not sure I follow your last
-  message" is not a planning panel signal)
+## When NOT to offer (even on a criterion match)
 
-If you are unsure whether to offer, lean toward offering. A declined
-offer takes one line of operator response. A skipped offer that should
-have happened costs much more.
+Some criterion matches do not warrant an offer:
 
-### Why this mode exists
+- The question is small and reversible at low cost. Just answer.
+- The operator has already declined a panel offer in this session for the
+  same topic. Do not re-offer.
+- The operator has explicitly said "let me think alone." Respect it.
+- The matched phrase is incidental. "I'm not sure I follow your last
+  message" is not a planning panel signal even though it matches criterion 2.
 
-Standard agent behavior is reactive: the operator asks, the agent
-answers. The panel-offer pattern adds a proactive layer: when the
-operator signals uncertainty, the agent surfaces the panel option
-before deciding solo. This is operator humility (asking for wider
-input) wired into the kit as a default behavior, not as a manual
-gesture.
+If you are unsure whether to offer, lean toward the **soft-offer pattern**
+(answer + one-sentence panel mention at the end). A declined soft-offer
+takes zero operator response (they just continue). A skipped offer that
+should have happened costs much more.
+
+---
+
+## Why judgment, not pattern matching
+
+Substring matching is brittle. "I keep going in circles" and "I've been
+spinning on this all day" are the same intent in different lexemes. A
+phrase list rots; criteria document the judgment.
+
+The agent reading this file IS the classifier. There is no external hook.
+The discipline is: before responding, scan the request against the five
+criteria above. Match means offer (or soft-offer if borderline). No match
+means just answer. The criteria do the routing; the agent does the
+judgment.
+
+This is operator humility wired into the kit as a default behavior, not
+as a phrase-list-driven feature.
 
 ---
 
@@ -137,12 +217,15 @@ Some requests need more than one skill. Apply in sequence:
 
 ## Passthrough
 
-No pattern match: respond directly. Not every request needs a routed skill.
-Routing overhead is only worth it when the task has real analytical complexity.
+No pattern match AND no Panel Offer criterion match: respond directly.
+Most requests fall here. Not every request needs a routed skill or a panel
+offer. Routing overhead is only worth it when the task has real analytical
+complexity; panel offers are only worth it when the operator is signaling
+council-tier intent.
 
 ## Source references
 
-- `_skills-index.md` -- complete skill registry, both infrastructure and capabilities
+- `_skills-index.md` -- complete skill registry
 - `tier-1-global/AGENT.md` -- tier-level operating rules
-- `AGENT.md` (root) -- model routing table (use synthesis-tier model for any routed skill)
+- `AGENT.md` (root) -- model routing table
 - `tier-1-global/skills-core/agent-panel-planning/reference/when-to-convene.md` -- the threshold guide for panel-offer responses
