@@ -1,12 +1,12 @@
 # Skills Index
-# Compound AI Operating Standards v2.4.0
+# Compound AI Operating Standards v2.5.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
-Load this file at session start. It is the complete capability registry. Twenty-two skills total, organized by tier.
+Load this file at session start. It is the complete capability registry. Twenty-three skills total, organized by tier.
 
 ---
 
-## Tier 1 -- Session Infrastructure (10 skills)
+## Tier 1 -- Session Infrastructure (11 skills)
 
 These run the session. Load at session start; the `request-router` then handles dispatch.
 
@@ -22,6 +22,7 @@ These run the session. Load at session start; the `request-router` then handles 
 | **agent-panel-planning** | "plan this with the panel", "converge on a plan", "split this work across agents", "who should own what". Independent plans, cross-suggestions, voting, strength-matched task split. | `tier-1-global/skills-core/agent-panel-planning/SKILL.md` | active |
 | **agent-panel-review** | "set up a panel", "convene a panel", "multi-agent review", "second opinion". Independent-first-pass, structured-critique, no-ego convergence. | `tier-1-global/skills-core/agent-panel-review/SKILL.md` | active |
 | **release-captain** | "ship gate", "release captain", "is this ready to ship", "pre-release check", "verify the release". Ten-step ship gate including verify-integrity, verify-origin, manifest-version reconciliation, line-count budget, public-download HTTP checks, and screenshots. | `tier-1-global/skills-core/release-captain/SKILL.md` | active |
+| **adoption-captain** | "adopt this kit", "install into my current repo", "optimize this existing agent", "use these techniques going forward", "do not break my stack". Eight-stage protocol for adopting the kit into an existing project: discover host context, preserve host rules, inventory kit, map skills, propose plan, apply additively, validate non-breakage, commit kit awareness to host agent's instruction surfaces. | `tier-1-global/skills-core/adoption-captain/SKILL.md` | active |
 
 ---
 
@@ -64,11 +65,18 @@ The workhorses. Load when the task calls for them.
 
 ---
 
+## v2.5.0 changes
+
+- **Added `adoption-captain`** (Tier 1, session infrastructure). The inbound mirror of `release-captain`. Eight-stage protocol for adopting the kit into an existing project: discover host context (existing agent files, package files, test/build/lint commands, state logs); preserve host rules (Preserve / Add / Modify / Defer / Conflict map); inventory kit surface; map kit to stack (adopt now / adapt / defer / skip / conflict per skill); propose phased plan; apply additively under `.compound-ai/`; validate with host project's own tests; document and **commit kit awareness to host agent's instruction surfaces** (CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules, etc.) via marker-bounded sections so future sessions inherit the kit without re-discovery. Ships with eight reference files including the load-bearing `memory-commit-protocol.md`. Tier 1 skill count: 10 → 11. Total skills: 22 → 23.
+- **New top-level `ADOPT.md`**: entry point for adopting the kit into existing projects. Companion to `HANDOFF.md` which serves new-project bootstrap. Includes the drop-in prompt for adopting agents and the full description of the eight-stage protocol.
+- **`HANDOFF.md` forks**: explicit "new project vs existing project" branch at the top. New projects continue with `HANDOFF.md` + `engagement-bootstrap`; existing projects route to `ADOPT.md` + `adoption-captain`.
+- **Router updated**: new fast-path trigger row for `adoption-captain` ("adopt this kit", "install into my current repo", "do not break my stack", "migrate my agent instructions"). New "two-mode bootstrap distinction" section disambiguates new-project vs existing-project entry points.
+- **Codex polish from v2.4.0 critique**: INSTALL.md version bumped (was stuck at v2.3.0); skill-count references updated throughout README/AGENT.md (was reporting 18 in places after the kit grew to 22, now 23); AGENT.md "Tier 2 = 12 skills" typo fixed (the list contains 14, broken into 7 cognitive + 5 analytical + 2 domain); "pointer skills under 80 lines" rewording to "under 100 lines, target 80" matches the actual budget enforced by release-captain Step 9.
+
 ## v2.4.0 changes
 
 - **Added `release-captain`** (Tier 1, session infrastructure). The ten-step ship gate that would have caught every failure Codex flagged in v2.3.1. Steps: clean unzip, `verify-integrity.py`, `verify-origin.py --online`, manifest-version reconciliation, SHA256SUMS coverage, field guide badge match, releaseUrl resolves, all public downloads return 200, `SKILL.md` line-count budget, screenshots. Ships with `reference/checklist.md`, `reference/verification-protocol.md` (exact commands), `reference/output-template.md` (structured SHIP/BLOCK report), and `reference/origin.md` (credits Codex's v2.3.1 cross-feedback). Tier 1 skill count: 9 → 10. Total skills: 21 → 22.
 - **Router updated**: new fast-path trigger row for `release-captain` ("ship gate", "release captain", "pre-release check"). New compound-request entry: "Pre-ship release verification" runs `release-captain` (with optional `agent-panel-review` upstream if the deliverable also warrants editorial review).
-- **Field guide gains a release-captain chapter pointer** in the foreword's release-discipline note (Chapter callout, not a new full chapter).
 
 ## v2.3.2 changes
 

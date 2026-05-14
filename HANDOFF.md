@@ -1,18 +1,39 @@
 # Agent Handoff
-# Compound AI Operating Standards v2.4.0
+# Compound AI Operating Standards v2.5.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 This is the document you hand to a fresh agent (Claude, Codex, Cursor, Aider, Continue, or any other) to get it operational on this kit in under two minutes.
 
 ---
 
-## Drop-in prompt
+## The fork: new project or existing project?
+
+Pick the right entry point.
+
+| If your situation is... | Use this entry point |
+|---|---|
+| **New project**, building from scratch with the kit | This file (`HANDOFF.md`) + `engagement-bootstrap` skill |
+| **Existing project**, adopt kit alongside what already works | `ADOPT.md` + `adoption-captain` skill |
+
+If you have an existing AGENT.md / CLAUDE.md / AGENTS.md / .cursorrules in your project that you do NOT want overwritten, you are adopting. Switch to `ADOPT.md` now.
+
+If you are unsure, ask the operator: "are you starting fresh or adopting into an existing project?"
+
+---
+
+## Drop-in prompt (for new projects)
 
 Copy everything between the rules and paste into a new agent session:
 
 ---
 
-You are about to use the **Compound AI Operating Standards kit v2.4.0** at this path. The kit is a tiered operating layer with 22 skills and 4 project shells. Your job is to load it correctly, then help me work.
+You are about to use the **Compound AI Operating Standards kit v2.5.0** at this path. The kit is a tiered operating layer with 23 skills and 4 project shells. Your job is to load it correctly, then help me work.
+
+**First check: am I in a new project or an existing one?**
+
+If the directory at this path contains ONLY the kit (and nothing else of the user's work yet), you are in a new project. Proceed below.
+
+If the directory contains the user's existing code, README, package files, agent instruction files, etc., you should NOT use this drop-in prompt. Instead, switch to `ADOPT.md` and use the `adoption-captain` skill, which is designed to preserve the existing stack while layering the kit alongside it.
 
 **Read these files in this exact order:**
 
@@ -25,7 +46,7 @@ You are about to use the **Compound AI Operating Standards kit v2.4.0** at this 
 
 **After loading, confirm by stating:**
 
-- The 10 Tier 1 infrastructure skills you have access to (request-router + 6 session skills + agent-panel-planning + agent-panel-review + release-captain)
+- The 11 Tier 1 infrastructure skills you have access to (request-router + 6 session skills + agent-panel-planning + agent-panel-review + release-captain + adoption-captain)
 - The 12 Tier 2 capability skills you have access to (7 cognitive modes, 5 analytical, 2 domain)
 - The router has THREE modes: the routing table (matches invoke a skill silently), the Panel Offer fast-path (explicit panel phrasings auto-invoke), and the Panel Offer judgment (5-criteria match means OFFER, do not auto-invoke). Acknowledge all three.
 - The 4 Tier 3 shells available (slide, scroll, mission-control, course)
@@ -47,10 +68,10 @@ You are about to use the **Compound AI Operating Standards kit v2.4.0** at this 
 ## What the agent sees after running this
 
 ```
-LOADED COMPOUND AI v2.4.0
+LOADED COMPOUND AI v2.5.0
 ═════════════════════════
 
-Tier 1: Session infrastructure (10 skills):
+Tier 1: Session infrastructure (11 skills):
   ✓ request-router (active, auto-routing + panel-offer mode enabled)
   ✓ context-loader
   ✓ token-economist
@@ -61,6 +82,7 @@ Tier 1: Session infrastructure (10 skills):
   ✓ agent-panel-planning
   ✓ agent-panel-review
   ✓ release-captain
+  ✓ adoption-captain
 
 Tier 2: Cognitive modes (7 skills):
   ✓ parallel-lens-synthesis
@@ -111,7 +133,7 @@ For a project that uses this kit, write a project-specific handoff that subclass
 ```markdown
 # Project Handoff: [Project Name]
 
-You are working on [project] which uses Compound AI Operating Standards v2.4.0.
+You are working on [project] which uses Compound AI Operating Standards v2.5.0.
 
 Read these files in order:
 1. AGENT.md (root)

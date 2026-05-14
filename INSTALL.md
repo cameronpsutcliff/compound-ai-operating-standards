@@ -1,5 +1,5 @@
 # Install
-# Compound AI Operating Standards v2.3.0
+# Compound AI Operating Standards v2.5.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 The kit is a tiered set of files. There is no install script to run.
@@ -21,7 +21,7 @@ dominance. **A panel needs at least two agents.**
 
 If you have access to two or more agents already, the panel skills light
 up immediately. If you only have one, the rest of the kit still works
-(18 of the 21 skills are single-agent skills), but you are leaving the
+(19 of the 23 skills are single-agent skills), but you are leaving the
 highest-leverage patterns on the table.
 
 The good news: forming a panel does not require paid subscriptions to

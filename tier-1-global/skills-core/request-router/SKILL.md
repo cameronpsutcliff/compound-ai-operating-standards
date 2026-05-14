@@ -1,5 +1,5 @@
 # Skill: request-router
-# Compound AI Operating Standards v2.4.0
+# Compound AI Operating Standards v2.5.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does
@@ -53,6 +53,7 @@ The judgment mode is what keeps the kit from spamming "want a panel?" on every "
 | "convene a panel", "set up a panel", "panel review on this", "multi-agent review", "panel this" | `agent-panel-review` |
 | "convene a planning panel", "plan this with the panel", "split this work across agents", "have agents propose plans" | `agent-panel-planning` |
 | "ship gate", "release captain", "is this ready to ship", "pre-release check", "verify the release" | `release-captain` |
+| "adopt this kit", "optimize this existing agent", "install this into my current repo", "use these techniques going forward", "reconfigure my agents", "take this tech stack and implement the kit", "do not break my stack", "migrate my agent instructions" | `adoption-captain` |
 
 ## How to apply a routed skill
 
@@ -60,28 +61,26 @@ The judgment mode is what keeps the kit from spamming "want a panel?" on every "
 2. State: "Applying [skill-name] to this request."
 3. Load the SKILL.md from the matching tier and follow it exactly.
 
+### Two-mode bootstrap distinction
+
+Before applying any bootstrap-style skill, identify the project type:
+
+- **New project**, no existing user code at this path: `engagement-bootstrap`
+- **Existing project**, kit being adopted alongside existing code: `adoption-captain`
+
+If the request mentions an existing repo, current stack, "do not break," or asks to update agent instructions on an established project, route to `adoption-captain`. Never use `engagement-bootstrap` on an existing project; it copies templates that would overwrite real files.
+
 ## Panel Offer judgment (five criteria)
 
-Before responding, scan against these. Match on at least ONE means OFFER the panel (do not auto-invoke).
+Match on at least ONE means OFFER the panel (do not auto-invoke):
 
-1. **Explicit invitation to another model or agent.** "I want another model's read", "what would [other agent] say."
-2. **Stuck-state signal.** "I keep going back and forth", "I've changed my mind three times."
-3. **High-stakes + don't-decide-alone framing.** "Too important to decide alone", "irreversible and I'm not confident."
-4. **Explicit panel or council words** outside the fast-path. "I want a council on this", "run this through the panel pattern."
-5. **Complete draft plan + desire for alternative framings.** "I drafted this, want to test against alternatives."
+1. Explicit invitation to another model ("another model's read")
+2. Stuck-state ("I keep going back and forth")
+3. High-stakes + don't-decide-alone ("too important to decide alone")
+4. Explicit panel/council words outside fast-path
+5. Complete draft + desire for alternative framings
 
-For each criterion: detailed examples, full offer template, soft-offer pattern, and when NOT to offer live in `reference/panel-offer-threshold.md`.
-
-### What does NOT trigger an offer
-
-Quick reference. Full table in `reference/panel-offer-threshold.md`.
-
-- "what do you think?", "your thoughts?" -- normal collab
-- "I'm not sure how to approach this" -- engage deeper solo
-- "tear this apart" -- invoke `pressure-test`, not a panel
-- "what could go wrong" -- invoke `consequence-simulation`
-
-The distinction: gesturing toward OTHER agents vs asking THIS agent to engage. Solo collaboration stays solo.
+Examples per criterion, full offer template, soft-offer pattern, and the NOT-trigger table (which keeps "what do you think?", "I'm not sure", etc. as normal solo collab) live in `reference/panel-offer-threshold.md`. Distinction: gesturing toward OTHER agents vs asking THIS agent to engage.
 
 ## Compound requests
 

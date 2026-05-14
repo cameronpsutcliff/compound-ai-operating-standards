@@ -1,8 +1,10 @@
-# Compound AI Operating Standards -- Starter Kit v2.4.0
+# Compound AI Operating Standards -- Starter Kit v2.5.0
 
-A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 22 ready-to-load skills, four project shells, and a complete field guide explaining why the kit is shaped this way.
+A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 23 ready-to-load skills, four project shells, and a complete field guide explaining why the kit is shaped this way.
 
-**New in v2.4.0:** `release-captain` (Tier 1) ships the ten-step ship gate that would have caught every failure Codex flagged in v2.3.1. Clean unzip, integrity, origin, manifest reconciliation, SHA256 coverage, field guide badge match, releaseUrl resolves, downloads return 200, `SKILL.md` line-count budget, screenshots. Structured SHIP/BLOCK report. The kit ships its own release metabolism.
+**New in v2.5.0:** `adoption-captain` (Tier 1) closes the inbound metabolism loop. Eight-stage protocol for safely adopting the kit into an existing project: discover host context, preserve host rules, inventory kit, map kit to stack, propose plan, apply additively, validate with host's own tests, and commit kit awareness to host agent's instruction surfaces (CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules) via marker-bounded sections so future sessions inherit the kit without re-discovery. New `ADOPT.md` is the entry point for existing projects; `HANDOFF.md` forks new vs existing at the top.
+
+**Carried from v2.4.0:** `release-captain` (Tier 1) ships the ten-step ship gate. Clean unzip, verify-integrity, verify-origin, manifest reconciliation, SHA256 coverage, badge match, releaseUrl resolves, downloads return 200, `SKILL.md` line-count budget, screenshots.
 
 **Carried from v2.3.2:** Discipline pass after Codex's v2.3.1 critique. SKILL.md files trimmed under the 100-line budget. ZIP build retains historical release notes (clean extract passes `verify-integrity.py`). Versioned manifests under `releases/<version>/manifest.json`. Scorecard rubric requires `Verification performed:` opening line. Field guide reader version badge and `releaseUrl` no longer point at v1.0.0.
 
@@ -28,7 +30,7 @@ compound-ai-operating-standards/
 ├── AGENT.md                      ← root operating contract (every agent reads this)
 ├── CLAUDE.md                     ← 3-line pointer to AGENT.md
 ├── _tiers.md                     ← inheritance model (Tier 1 / 2 / 3)
-├── _skills-index.md              ← complete skill registry, 18 skills
+├── _skills-index.md              ← complete skill registry, 23 skills
 ├── _map.md                       ← navigation map
 │
 ├── tier-1-global/                ← universal: everything inherits this
@@ -55,11 +57,11 @@ compound-ai-operating-standards/
 
 ## What you get
 
-**22 skills** organized by tier, every one a pointer file under 100 lines that dispatches to richer reference material on demand:
+**23 skills** organized by tier, every one a pointer file under 100 lines that dispatches to richer reference material on demand:
 
 | Tier | Count | Skills |
 |---|---|---|
-| **1 -- Session infrastructure** | 10 | request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-planning, agent-panel-review, release-captain |
+| **1 -- Session infrastructure** | 11 | request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-planning, agent-panel-review, release-captain, adoption-captain |
 | **2 -- Cognitive modes** | 7 | parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol |
 | **2 -- Analytical capabilities** | 5 | ultra-think, pressure-test, code-audit, autoresearch, skill-creator |
 | **2 -- Domain capabilities** | 2 | viz, stakeholder-mapping |
@@ -96,7 +98,7 @@ at <path-to-kit>. Read these files in order:
   4. tier-1-global/checklists/session-start.md (the bootstrap routine)
   5. tier-1-global/skills-core/request-router/SKILL.md
 
-After loading, you have access to 18 skills. The request-router will
+After loading, you have access to 23 skills. The request-router will
 auto-dispatch based on what I ask. For deliverables, pick a shell from
 tier-3-shells/.
 
@@ -126,7 +128,7 @@ The compounding part: every session that runs through this kit reinforces the sa
 
 ## Versioning
 
-This is **v2.4.0**. Minor version bump from v2.3.2 to add `release-captain` (Tier 1), the ten-step ship gate that mechanically catches the class of failure that produced v2.3.1's verify-integrity break. v2.3.2 was the discipline patch in response to Codex's cross-feedback. v2.3.1 added the scorecard rubric. v2.3.0 added merge framework, loop-4 recovery, standing-vs-convened framing, INSTALL.md, _citations.md, refined router. The v2.0.0 line is the major-version anchor: directory structure changed and the skill count grew from 6 to 18; v2.1.0 took it to 20; v2.2.0 to 21; v2.4.0 to 22.
+This is **v2.5.0**. Minor version bump from v2.4.0 to add `adoption-captain` (Tier 1), the inbound mirror of `release-captain`. Eight-stage protocol for safely adopting the kit into an existing project: discover host context, preserve host rules, inventory kit, map skills, propose plan, apply additively, validate non-breakage, commit kit awareness to host agent instruction surfaces. The metabolic loop is now complete: engagement-bootstrap for new projects, adoption-captain for existing projects, release-captain for shipping releases. v2.4.0 added release-captain. v2.3.2 was the discipline patch in response to Codex's cross-feedback. v2.3.1 added the scorecard rubric. v2.3.0 added merge framework, loop-4 recovery, standing-vs-convened framing, INSTALL.md, _citations.md, refined router. The v2.0.0 line is the major-version anchor: directory structure changed and the skill count grew from 6 to 18; v2.1.0 took it to 20; v2.2.0 to 21; v2.4.0 to 22; v2.5.0 to 23.
 
 See `releases/` for full version history.
 
