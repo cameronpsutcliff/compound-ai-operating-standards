@@ -94,6 +94,17 @@ producing agent revises in Stage 4. The reviewer does not rewrite.
 
 ---
 
+## When to use scorecard instead
+
+The four-cell template is the default at Stage 3. For heavier
+deliverables where quantitative comparison across drafts justifies more
+structure, swap in the **scorecard rubric** from
+`reference/scorecard-rubric.md`: ten dimensions, 0-100 score per
+dimension with evidence citation, composite + dual grade. Pick one
+format per loop; do not mix within a single loop.
+
+---
+
 ## Self-critique (optional but recommended)
 
 After producing critiques of the other panelists, each agent can

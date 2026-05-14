@@ -1,8 +1,10 @@
-# Compound AI Operating Standards -- Starter Kit v2.3.0
+# Compound AI Operating Standards -- Starter Kit v2.3.1
 
 A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 21 ready-to-load skills, four project shells, and a complete field guide explaining why the kit is shaped this way.
 
-**New in v2.3.0:** Merge framework with operator-bias check for `agent-panel-review` Stage 5. Loop-4 recovery framework (five causes + recovery moves). Standing-vs-convened panel trade-off in `agent-panel-planning/reference/when-to-convene.md`. New top-level `INSTALL.md` with multi-agent setup pitch (free-tier options for operators with one agent). New top-level `_citations.md` registry; field guide reader resolves citation markers to hover tooltips. Router's Panel Offer Triggers refined into a 5-criteria judgment with soft-offer pattern (no more panel-offer derailment on routine "what do you think?" dialogue).
+**New in v2.3.1:** `agent-panel-review` gains `scorecard-rubric.md`: a ten-dimension quantitative evaluation rubric with 0-100 scoring per dimension, evidence-cited notes, composite score, and dual grade (strategy vs artifact production). Heavier alternative to the four-cell template. The dimensions are Thesis sharpness, Audience layering, Substance density, Portability/vendor-neutrality, Package design, Reference artifact/immediate utility, Audience signaling, Discipline, Originality, Critique-readiness.
+
+**Carried from v2.3.0:** Merge framework with operator-bias check for `agent-panel-review` Stage 5. Loop-4 recovery framework (five causes + recovery moves). Standing-vs-convened panel trade-off in `agent-panel-planning/reference/when-to-convene.md`. New top-level `INSTALL.md` with multi-agent setup pitch. New top-level `_citations.md` registry; field guide reader resolves citation markers to hover tooltips. Router's Panel Offer Triggers refined into a 5-criteria judgment with soft-offer pattern.
 
 **Carried from v2.2.0:** `agent-panel-planning` (Tier 1) for upstream plan convergence with independent plans, element-level voting, cross-suggestions, and strength-matched task split. Field guide Ch 31 (Planning) + Ch 32 (Review) + Ch 33 (Before and After).
 
@@ -120,7 +122,7 @@ The compounding part: every session that runs through this kit reinforces the sa
 
 ## Versioning
 
-This is **v2.3.0**. Minor version bump from v2.2.0 to add the merge framework + loop-4 recovery for panel-review, the standing-vs-convened panel trade-off in panel-planning, `INSTALL.md` with multi-agent setup pitch, `_citations.md` registry with reader-side tooltip resolution, and a refined router with 5-criteria panel-offer judgment + soft-offer pattern. The v2.0.0 line is the major-version anchor: directory structure changed and the skill count grew from 6 to 18; v2.1.0 took it to 20; v2.2.0 to 21; v2.3.0 holds at 21 while deepening operability.
+This is **v2.3.1**. Patch on v2.3.0 to add the scorecard rubric to `agent-panel-review` (ten-dimension quantitative evaluation as a heavier alternative to the four-cell template). v2.3.0 added the merge framework + loop-4 recovery for panel-review, standing-vs-convened panel trade-off, `INSTALL.md`, `_citations.md`, and the refined router. The v2.0.0 line is the major-version anchor: directory structure changed and the skill count grew from 6 to 18; v2.1.0 took it to 20; v2.2.0 to 21; v2.3.x holds at 21 while deepening operability.
 
 See `releases/` for full version history.
 

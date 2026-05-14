@@ -1,5 +1,5 @@
 # Skills Index
-# Compound AI Operating Standards v2.3.0
+# Compound AI Operating Standards v2.3.1
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 Load this file at session start. It is the complete capability registry. Twenty-one skills total, organized by tier.
@@ -62,6 +62,10 @@ The workhorses. Load when the task calls for them.
 | **stakeholder-mapping** | Map stakeholders for an initiative. Influence-interest grid + engagement strategy. | `tier-2-capabilities/skills/stakeholder-mapping/SKILL.md` | active |
 
 ---
+
+## v2.3.1 changes
+
+- **`agent-panel-review` gains `scorecard-rubric.md`**: ten-dimension quantitative evaluation rubric with 0-100 scoring, evidence-cited notes, composite score, and dual grade (strategy vs artifact production). Heavier alternative to the four-cell template; use for high-stakes panels, standalone single-deliverable evaluation, or post-mortems. The ten dimensions are Thesis sharpness, Audience layering, Substance density, Portability/vendor-neutrality, Package design, Reference artifact/immediate utility, Audience signaling, Discipline, Originality, Critique-readiness.
 
 ## v2.3.0 changes
 

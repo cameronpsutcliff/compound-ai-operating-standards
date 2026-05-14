@@ -54,6 +54,14 @@ template is what prevents critique from becoming negging. Every critique
 covers four cells: strongest claim, weakest claim, shared blind spot,
 one thing worth stealing.
 
+For heavier evaluation, the **scorecard rubric** in `reference/scorecard-rubric.md`
+is a quantitative alternative: ten dimensions, 0-100 score per dimension
+with evidence citation, composite + dual grade (strategy vs artifact
+production). Use scorecard when comparison across drafts justifies the
+heavier output; use four-cell when fast qualitative signal is enough.
+Pick one per loop; mixing within a single loop produces inconsistent
+panelist signal.
+
 ## Which agents excel at what
 
 `reference/agent-strengths.md` covers known model strengths. The skill

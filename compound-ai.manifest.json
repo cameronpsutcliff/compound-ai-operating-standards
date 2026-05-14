@@ -4,11 +4,11 @@
   "author": "Cameron Sutcliff",
   "canonical_url": "https://cameronsutcliff.com/compound-ai",
   "source_repo": "https://github.com/cameronpsutcliff/compound-ai-operating-standards",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "release_date": "2026-05-13",
   "license_docs": "CC-BY-4.0",
   "license_code": "Apache-2.0",
-  "aggregate_sha256": "cf210cffd302342f9c3337b398176daaadc5262f11097bd492324cde8a2115cc",
+  "aggregate_sha256": "b920eaf5c3abadfb9571ce25ddbb78d6068a52563e092b3e3216c539040499fd",
   "files": [
     {
       "path": ".gitignore",
@@ -23,7 +23,7 @@
     {
       "path": "AGENT.md",
       "bytes": 4373,
-      "sha256": "0da9ce993e75681bcd78f1693efe2af99d25e582f5c0a1d3cbe9c6b21cde8d5e"
+      "sha256": "7934d82829deffe35799d7832b11e573814231775690fab29fda0a122954642b"
     },
     {
       "path": "BACKLOG.md",
@@ -43,7 +43,7 @@
     {
       "path": "HANDOFF.md",
       "bytes": 5706,
-      "sha256": "9d8cdb479b6a52bf462b827d386bc190fe2b642dc25eb81a443a96c86f277ecb"
+      "sha256": "2b0cfe3494b00fb51319316b0d1017aa7d982e99627f0fbff55145720fb7c708"
     },
     {
       "path": "INSTALL.md",
@@ -67,8 +67,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9354,
-      "sha256": "b4a1c83c7670a2d3f98c6d13dee565682a0b883e84e0afdff028dd6f92d04349"
+      "bytes": 9732,
+      "sha256": "6e5161ac2012ecb59b173caf816ac08877d8ce0e34e9e0daec6b0a39cc2d292f"
     },
     {
       "path": "STATE.md",
@@ -78,17 +78,17 @@
     {
       "path": "_citations.md",
       "bytes": 6206,
-      "sha256": "0dd4c32a22fd99f87fcc937916cfeca313b3f121f15091fba8dac8a6903775c3"
+      "sha256": "6347f07cd8c242d3196d8374c09f6d800dba3576dc3b19c16015e1c1d597c5f7"
     },
     {
       "path": "_map.md",
       "bytes": 3199,
-      "sha256": "edf6fff552383fa7178c96afb23906341226680e977b1bc1166a9173895ad1f6"
+      "sha256": "e261e4ef793af7a19e7b202efe211383361b1821c3429d3812e816a052e73d0c"
     },
     {
       "path": "_skills-index.md",
-      "bytes": 8148,
-      "sha256": "59bc54304065cd46c4264213247ec1742d987f6c8d2574424fac33c704ba521a"
+      "bytes": 8741,
+      "sha256": "16713f4ffcc2a8e96f91078193010d012d33b16bc88acddb41c5ed3450c62ef5"
     },
     {
       "path": "_tiers.md",
@@ -122,8 +122,8 @@
     },
     {
       "path": "docs/FIELD-GUIDE.md",
-      "bytes": 149972,
-      "sha256": "80429528c65ee3d30862469f614bb6e7fb7fccb419960380ccac6820d66f4dba"
+      "bytes": 150703,
+      "sha256": "4f6fd1adfd5103b6913d46e0535c059a7908a15b788f29c0f97b1dad601120f4"
     },
     {
       "path": "docs/FINAL-REVIEW.md",
@@ -362,8 +362,8 @@
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-review/SKILL.md",
-      "bytes": 4568,
-      "sha256": "3fc7df2970d658acad7632fbf7e9c81c5d431063c0716c8b6f4d7aed4b5b766a"
+      "bytes": 5022,
+      "sha256": "129959cd8b66b8e61cfaf6e1a25aa8c3f66596a3d78fb83845c212623629c7b2"
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-review/reference/agent-strengths.md",
@@ -372,8 +372,8 @@
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-review/reference/critique-format.md",
-      "bytes": 4112,
-      "sha256": "e111a544da59ddf0848ac483a8ac795ee4333ed58f296ba52b0d61a85b6cb49c"
+      "bytes": 4517,
+      "sha256": "8310ffc8713ae7d041a3e044023ac2febd9bc6f1d6d97b4de4e0695fae8dbbea"
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-review/reference/loop-4-recovery.md",
@@ -394,6 +394,11 @@
       "path": "tier-1-global/skills-core/agent-panel-review/reference/roles.md",
       "bytes": 3837,
       "sha256": "4edf4434d14d0bd224231488cb3360bb2f1a65016574438f1278fb6e0faac253"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/scorecard-rubric.md",
+      "bytes": 12070,
+      "sha256": "9e753ce065f30d628c87a04a7932cc6127286658e617e8cbcd301da4fa2fda00"
     },
     {
       "path": "tier-1-global/skills-core/agent-panel-review/reference/when-to-convene.md",
@@ -433,7 +438,7 @@
     {
       "path": "tier-1-global/skills-core/request-router/SKILL.md",
       "bytes": 11831,
-      "sha256": "03ea4a91b6b8b49189af3159351b002bdb5ca8f868165ce3d109080f987cd819"
+      "sha256": "b2f9faa77afe6ed67b4b6e5e6dd2cb244c4662e2952d8fda6757277935979362"
     },
     {
       "path": "tier-1-global/skills-core/token-economist/SKILL.md",
@@ -811,5 +816,5 @@
       "sha256": "e084a74f7c7c8552d2a49fe2a23ba018310683740ed4117ba66e81213d766bbb"
     }
   ],
-  "generated_at": "2026-05-14T03:59:44.450229+00:00"
+  "generated_at": "2026-05-14T04:22:49.878728+00:00"
 }

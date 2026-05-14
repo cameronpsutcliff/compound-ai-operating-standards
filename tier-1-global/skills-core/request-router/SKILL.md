@@ -1,5 +1,5 @@
 # Skill: request-router
-# Compound AI Operating Standards v2.3.0
+# Compound AI Operating Standards v2.3.1
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does
@@ -10,9 +10,9 @@ Once active, scan every request for trigger patterns before responding.
 This skill has three modes:
 
 1. **Routing table** (existing). Pattern matches invoke a skill silently.
-2. **Panel Offer fast-path** (refined in v2.3.0). Explicit panel phrases
+2. **Panel Offer fast-path** (refined in v2.3.1). Explicit panel phrases
    auto-invoke. No ambiguity.
-3. **Panel Offer judgment** (refined in v2.3.0). Borderline requests get
+3. **Panel Offer judgment** (refined in v2.3.1). Borderline requests get
    evaluated against five criteria. Match means OFFER, not auto-invoke.
    Operator decides.
 
