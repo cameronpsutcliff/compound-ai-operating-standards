@@ -151,7 +151,7 @@ Adopt accepted suggestions silently. Reject rejected ones tersely.
 Re-stating one's original position is wasted motion.
 
 **What the operator does at Stage 5.** The operator reads all three
-responses and identifies remaining splits — decision points where the
+responses and identifies remaining splits  -  decision points where the
 panel still disagrees after the reconvene. Those become Stage 6's
 voting block.
 
@@ -159,19 +159,19 @@ voting block.
 
 ## Stage 6: Voting + ratification + strength-matched task split
 
-**Operator action — voting.** Surface remaining contested decision
+**Operator action  -  voting.** Surface remaining contested decision
 points. For each, request a final vote from each panelist with one-line
 reasoning. The operator may add their own vote and reasoning (operator
 humility: the panel is advisory, the operator decides).
 
-**Operator action — ratification.** Lock the plan. Write a one-page
+**Operator action  -  ratification.** Lock the plan. Write a one-page
 ratification covering:
 - The final structural spine
 - Locked decisions (with attribution to whoever proposed the winning move)
 - Open questions deferred to execution
 - Success criteria (what counts as done)
 
-**Operator action — strength-matched task split.** Assign owners. The
+**Operator action  -  strength-matched task split.** Assign owners. The
 rule: tasks go to whoever **demonstrated dominant capability on that
 dimension in this round**, not to whoever has the role label.
 

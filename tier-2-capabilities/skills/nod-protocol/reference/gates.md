@@ -122,7 +122,7 @@ has its own discipline.
 papers over a Gate 3 problem is a failed Gate 5.
 
 **Common failures.**
-- "Both sides have a point" — averaging is not deciding
+- "Both sides have a point"  -  averaging is not deciding
 - Decide because deciding feels productive (Gate 3 was skipped)
 - Refuse because deciding feels risky (escape hatch)
 

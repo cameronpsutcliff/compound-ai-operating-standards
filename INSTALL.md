@@ -1,10 +1,10 @@
 # Install
-# Compound AI Operating Standards v2.5.0
+# Compound AI Operating Standards v2.6.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 The kit is a tiered set of files. There is no install script to run.
 Drop the directory into your project (or next to it), point your agent
-at `AGENT.md`, and you are operational.
+at `ADOPT.md` for an existing project or `HANDOFF.md` for a new one.
 
 What follows is the one decision that affects how much value you get
 out of the kit: **do you have access to multiple AI agents?**
@@ -21,7 +21,7 @@ dominance. **A panel needs at least two agents.**
 
 If you have access to two or more agents already, the panel skills light
 up immediately. If you only have one, the rest of the kit still works
-(19 of the 23 skills are single-agent skills), but you are leaving the
+(25 of the 27 skills are single-agent skills), but you are leaving the
 highest-leverage patterns on the table.
 
 The good news: forming a panel does not require paid subscriptions to
@@ -122,11 +122,11 @@ when you hit a deliverable that genuinely warrants it.
 
 ## What to read next
 
-1. `README.md` -- what ships in the kit
-2. `HANDOFF.md` -- the drop-in prompt for handing the kit to a fresh agent
-3. `AGENT.md` -- the root operating contract
-4. `_skills-index.md` -- complete skill registry with triggers
-5. `tier-1-global/skills-core/request-router/SKILL.md` -- the routing
+1. `README.md`: what ships in the kit
+2. `HANDOFF.md`: the drop-in prompt for handing the kit to a fresh agent
+3. `AGENT.md`: the root operating contract
+4. `_skills-index.md`: complete skill registry with triggers
+5. `tier-1-global/skills-core/request-router/SKILL.md`: the routing
    table that matches your requests to skills
 
 That is the minimum read. Twenty minutes total. After that, the kit is

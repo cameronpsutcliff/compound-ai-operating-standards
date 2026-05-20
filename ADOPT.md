@@ -1,5 +1,5 @@
 # Adopt
-# Compound AI Operating Standards v2.5.0
+# Compound AI Operating Standards v2.6.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 This file is the entry point for adopting the Compound AI kit into an
@@ -10,7 +10,7 @@ The kit is not designed to flatten your project into its conventions.
 It is designed to layer alongside your existing stack, propose only
 safe changes, validate against your project's own tests, and update
 your agent's instruction surfaces so future sessions inherit the kit's
-techniques automatically.
+durable behavioral overlay automatically.
 
 ---
 
@@ -43,12 +43,14 @@ win unless I explicitly approve a change.
 
 **First read the kit files (in this exact order):**
 
-1. `AGENT.md` -- the kit's operating contract
-2. `_tiers.md` -- the kit's tier model
-3. `_skills-index.md` -- the kit's skill registry (do NOT load all skills; this is just the index)
-4. `tier-1-global/checklists/session-start.md` -- the bootstrap routine
-5. `tier-1-global/skills-core/request-router/SKILL.md` -- the routing table
-6. `tier-1-global/skills-core/adoption-captain/SKILL.md` -- the adoption protocol
+1. `AGENT.md`: the kit's operating contract
+2. `_tiers.md`: the kit's tier model
+3. `_skills-index.md`: the kit's skill registry (do NOT load all skills; this is just the index)
+4. `tier-1-global/checklists/session-start.md`: the bootstrap routine
+5. `tier-1-global/conventions/trigger-registry.yaml`: machine-readable routing surface
+6. `tier-1-global/skills-core/request-router/SKILL.md`: router procedure
+7. `tier-1-global/skills-core/goal-runner/SKILL.md`: durable goal loop
+8. `tier-1-global/skills-core/adoption-captain/SKILL.md`: the adoption protocol
 
 Do NOT read the full field guide. It is the deep manual, not the
 startup payload. Load specific chapters only when an adopted skill asks
@@ -76,7 +78,9 @@ stages):
    - Write `.compound-ai/adoption-report.md`
    - Update the host agent's instruction surfaces (CLAUDE.md, AGENT.md,
      etc.) with a bounded `## Compound AI Operating Standards` section so
-     future sessions inherit kit awareness. Operator-gated per surface.
+     future sessions check triggers, use goal contracts, budget context,
+     validate rendered contracts, and write useful memory. Operator-gated
+     per surface.
 
 **Do not edit anything before producing the adoption plan and getting
 my approval.**
@@ -86,7 +90,7 @@ my approval.**
 ## What you should see when the agent finishes
 
 ```
-ADOPTION COMPLETE: Compound AI v2.5.0 → [your project]
+ADOPTION COMPLETE: Compound AI v2.6.0 → [your project]
 ═══════════════════════════════════════════════════════
 
 Discovery:
@@ -108,6 +112,7 @@ Files added:
 
 Memory commit:
   Updated: [list of host agent instruction files with bounded sections]
+  Overlay: trigger registry + goal-runner + validation + memory closeout
   Global surfaces touched: [yes / no]
 
 Validation:
@@ -115,7 +120,7 @@ Validation:
   [host project build command]: PASS / FAIL / NOT-FOUND
   [host project lint command]: PASS / FAIL / NOT-FOUND
 
-Routing active. Future requests will route through the kit.
+Routing active. Future substantial work will use the kit's behavioral overlay.
 ```
 
 If the output does not look like this, the adoption is incomplete.
@@ -133,8 +138,10 @@ removable if you decide adoption was the wrong call.
 Your project's root stays yours. Your `AGENT.md`, `CLAUDE.md`,
 `README.md`, `STATE.md`, and configuration files are NOT overwritten.
 The agent adds a bounded `## Compound AI Operating Standards` section
-to your existing agent instruction file(s) (with your approval); the
-rest of those files is left alone.
+to your existing agent instruction file(s) (with your approval). The
+section lists the kit path, adopted skills, trigger registry, goal-runner
+contract, preserve rules, validation commands, and closeout memory rules.
+The rest of those files is left alone.
 
 ---
 
@@ -173,10 +180,10 @@ replacement for what you already had.
 
 This adoption flow has been validated against:
 
-- **Claude Code** -- reads `CLAUDE.md` first, then proceeds through the adoption-captain protocol; updates `<project>/CLAUDE.md` with the marker-bounded section
-- **Codex CLI** -- reads `AGENT.md` natively; updates `<project>/AGENT.md` or `<project>/AGENTS.md` with the marker-bounded section
-- **Cursor** -- reads `.cursorrules`; updates with a YAML or rules-block version of the kit section
-- **Aider** -- reads `CONVENTIONS.md`; updates with a markdown section
+- **Claude Code**: reads `CLAUDE.md` first, then proceeds through the adoption-captain protocol; updates `<project>/CLAUDE.md` with the marker-bounded section
+- **Codex CLI**: reads `AGENT.md` natively; updates `<project>/AGENT.md` or `<project>/AGENTS.md` with the marker-bounded section
+- **Cursor**: reads `.cursorrules`; updates with a YAML or rules-block version of the kit section
+- **Aider**: reads `CONVENTIONS.md`; updates with a markdown section
 
 If your agent reads a different file convention, the adoption-captain
 skill will discover it and ask you to confirm before updating.
@@ -195,7 +202,9 @@ starting points, not rigid mandates.
 
 ## Companion files
 
-- `HANDOFF.md` -- the entry point for FRESH agents on NEW projects
-- `INSTALL.md` -- the multi-agent setup question (do you have multiple agents available?)
-- `AGENT.md` -- the kit's root operating contract (loaded by both HANDOFF and ADOPT flows)
-- `_skills-index.md` -- the complete skill registry
+- `HANDOFF.md`: the entry point for FRESH agents on NEW projects
+- `INSTALL.md`: the multi-agent setup question (do you have multiple agents available?)
+- `AGENT.md`: the kit's root operating contract (loaded by both HANDOFF and ADOPT flows)
+- `_skills-index.md`: the complete skill registry
+- `tier-1-global/conventions/trigger-registry.yaml`: machine-readable triggers
+- `tier-1-global/skills-core/goal-runner/SKILL.md`: durable goal loop

@@ -1,12 +1,12 @@
 # Skill: adoption-captain
-# Compound AI Operating Standards v2.5.0
+# Compound AI Operating Standards v2.6.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does
 
 Adopts the Compound AI kit into an existing project safely. Pairs with `release-captain`: where release-captain governs what leaves the kit, **adoption-captain governs how the kit enters an existing project**.
 
-Eight-stage protocol that (a) preserves the host stack, (b) maps kit skills to the project's actual needs, (c) applies changes additively under `.compound-ai/`, (d) validates non-breakage with the project's own tests, and (e) **commits kit awareness to the host agent's persistent instruction surfaces** (CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules, etc.) so future sessions inherit the kit's techniques without re-discovery.
+Eight-stage protocol that (a) preserves the host stack, (b) maps kit skills to the project's actual needs, (c) applies changes additively under `.compound-ai/`, (d) validates non-breakage with the project's own tests, and (e) **commits a durable behavioral overlay** to the host agent's persistent instruction surfaces (CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules, etc.) so future sessions route, budget, validate, and remember by default.
 
 Required when adopting the kit into ANY existing project. Do NOT use `engagement-bootstrap` on an existing project; that skill copies fresh templates that overwrite real files.
 
@@ -25,7 +25,7 @@ Required when adopting the kit into ANY existing project. Do NOT use `engagement
 | 5. Propose phased plan | Phase 1 = additive scaffolding only; Phase 2+ = behavior changes (operator-gated) | Plan written; operator reviews before edits |
 | 6. Apply additively | Default placement `.compound-ai/`. Never overwrite host files without explicit approval. | All changes are additive; nothing destroyed |
 | 7. Validate non-breakage | Run host project's own test, build, lint, typecheck. Report PASS / FAIL / NOT-FOUND honestly. | All discovered checks pass, or operator approves remediation |
-| 8. Document + commit to memory | Write `.compound-ai/adoption-report.md`. **Update host agent's instruction surfaces** with bounded `## Compound AI Operating Standards` section listing adopted skills, triggers, preserve rules, validation commands. Operator approves each surface. | Memory-commit complete; future sessions auto-load kit awareness |
+| 8. Document + commit to memory | Write `.compound-ai/adoption-report.md`. **Update host agent's instruction surfaces** with bounded `## Compound AI Operating Standards` section listing adopted skills, trigger registry, goal contract behavior, preserve rules, validation commands. Operator approves each surface. | Memory-commit complete; future sessions use the overlay |
 
 Full procedure per stage in `reference/`:
 - `reference/discovery-checklist.md` (Stage 1)
@@ -43,9 +43,9 @@ Kit goes in `.compound-ai/` at the host project root. Never the project root its
 
 ## The memory-commit discipline (Stage 8b)
 
-The skill ends not when files are dropped, but when the host agent's persistent operating memory has been updated to USE the kit in future sessions. Without this, every session starts adoption from zero. With it, the kit's techniques become part of the agent's default operating context.
+The skill ends not when files are dropped, but when the host agent's persistent operating memory has been updated to USE the kit in future sessions. Without this, every session starts adoption from zero. With it, routing, token discipline, goal loops, validation, and memory closeout become part of the agent's default operating context.
 
-Concretely: a bounded `## Compound AI Operating Standards` section gets appended to the host agent's instruction file(s) -- CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules, AGENTS.codex.md, etc. The section is operator-approved, marker-delimited (so future updates can find and replace it), and lists exactly what the agent should remember: where the kit lives, which skills are adopted, which triggers fire which skills, what to preserve, what to validate.
+Concretely: a bounded `## Compound AI Operating Standards` section gets appended to the host agent's instruction file(s) -- CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules, AGENTS.codex.md, etc. The section is operator-approved, marker-delimited, and lists exactly what the agent should do: check the trigger registry before complex replies, use `goal-runner` for verifiable multi-step work, preserve host rules, validate rendered contracts, and write useful memory.
 
 Full procedure in `reference/memory-commit-protocol.md`.
 

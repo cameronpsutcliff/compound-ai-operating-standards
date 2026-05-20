@@ -75,7 +75,7 @@ The kit bakes in patterns learned from production agentic systems, including the
 
 1. Tiered context loading.
 2. File-based handoffs.
-3. Pointer skills under 80 lines.
+3. Pointer skills under 100 lines, target 80.
 4. Input-fingerprint caching.
 5. Model routing by cognitive load.
 6. Schema validation at LLM boundaries.

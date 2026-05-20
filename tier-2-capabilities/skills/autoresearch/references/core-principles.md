@@ -1,4 +1,4 @@
-# Core Principles — From Karpathy's Autoresearch
+# Core Principles  -  From Karpathy's Autoresearch
 
 7 universal principles extracted from autoresearch, applicable to ANY autonomous work.
 
@@ -73,10 +73,10 @@ Software: 10-second test → 360 experiments/hour.
 ## 6. Git as Memory and Audit Trail
 
 Every successful change is committed. This enables:
-- **Causality tracking** — which change drove improvement?
-- **Stacking wins** — each commit builds on prior successes
-- **Pattern learning** — agent sees what worked in THIS codebase
-- **Human review** — researcher inspects agent's decision sequence
+- **Causality tracking**  -  which change drove improvement?
+- **Stacking wins**  -  each commit builds on prior successes
+- **Pattern learning**  -  agent sees what worked in THIS codebase
+- **Human review**  -  researcher inspects agent's decision sequence
 
 **Apply:** Commit before verify. Revert on failure. Agent reads its own git history to inform next experiment.
 

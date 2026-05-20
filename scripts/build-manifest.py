@@ -15,6 +15,9 @@ EXCLUDED = {
     "compound-ai.manifest.json",
     "compound-ai.sha256",
 }
+EXCLUDED_NAMES = {
+    ".DS_Store",
+}
 
 
 def sha256_file(path: Path) -> str:
@@ -32,6 +35,8 @@ def iter_files() -> list[Path]:
             continue
         rel = path.relative_to(ROOT).as_posix()
         if rel in EXCLUDED:
+            continue
+        if path.name in EXCLUDED_NAMES:
             continue
         if "/.git/" in f"/{rel}/":
             continue
@@ -78,4 +83,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

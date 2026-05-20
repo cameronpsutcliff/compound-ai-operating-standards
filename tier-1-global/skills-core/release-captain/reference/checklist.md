@@ -214,7 +214,7 @@ find . -name SKILL.md -exec wc -l {} \; | awk '$1 > 100'
 **Pass criterion.** Empty output (no file over 100 lines).
 
 **Why this matters.** The kit ships claiming `SKILL.md` files are
-pointer files under 80 lines. v2.3.1 shipped with `request-router/
+pointer files under 100 lines, target 80. v2.3.1 shipped with `request-router/
 SKILL.md` at 231 lines (2.9x the ceiling). The kit must practice the
 token optimization discipline it teaches.
 

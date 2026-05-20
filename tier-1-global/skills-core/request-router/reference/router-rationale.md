@@ -78,17 +78,15 @@ top-of-mind by being short, declarative, and loaded at session start.
 
 ---
 
-## Why the routing table is exhaustive
+## Why the registry is canonical
 
-Every skill in the kit has at least one trigger row in the routing
-table. This is intentional: it surfaces the full skill registry at the
-router level. An operator who reads only the router knows what the kit
-can do, without having to load `_skills-index.md`.
+Every active skill in the kit has at least one entry in
+`trigger-registry.yaml`. This is intentional: the router can stay short,
+while the routing surface remains complete and machine-readable.
 
-The cost: the routing table is long. The discipline that keeps it
-manageable: one-line trigger phrases per row, grouped by tier. No
-explanation in the table itself. Explanations live in each skill's
-own `SKILL.md` and reference files.
+The cost: the registry must be maintained. That is why v2.6.0 adds
+`trigger-indexer`, which checks active `SKILL.md` files, pointer paths,
+and count math whenever skills change.
 
 ---
 

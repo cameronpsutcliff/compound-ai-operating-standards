@@ -63,7 +63,7 @@ Failure modes:
   1. [mode] -- P:[high/med/low], I:[high/med/low], detectable:[yes/no]
   2. ...
 
-Recommendation: [proceed / modify / pause — with rationale]
+Recommendation: [proceed / modify / pause  -  with rationale]
 ```
 
 ## Source references

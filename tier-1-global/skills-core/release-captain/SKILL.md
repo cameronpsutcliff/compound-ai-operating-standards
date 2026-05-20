@@ -1,10 +1,10 @@
 # Skill: release-captain
-# Compound AI Operating Standards v2.5.0
+# Compound AI Operating Standards v2.6.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does
 
-Runs the ten-step ship gate on a candidate release. Either every check passes and the release ships, or any failure blocks the ship until fixed. The kit ships its own metabolism: this skill exists because v2.3.1 shipped with a verify-integrity failure that v2.5.0 had to correct. `release-captain` makes that class of failure mechanically catchable before the push, not after.
+Runs the ten-step ship gate on a candidate release. Either every check passes and the release ships, or any failure blocks the ship until fixed. The kit ships its own metabolism: this skill exists because v2.3.1 shipped with a verify-integrity failure that later patches had to correct. `release-captain` makes that class of failure mechanically catchable before the push, not after.
 
 Tier 1 infrastructure skill. Required for any release that produces a public download or public-facing artifact.
 

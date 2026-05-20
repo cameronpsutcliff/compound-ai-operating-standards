@@ -8,8 +8,8 @@ infrastructure for how sessions run but a lighter adversarial reasoning
 layer. The `detached-judgment` skill gestured at structured disagreement;
 no skill enforced it with gates.
 
-The "NOD" framing — the ability to look at opposite perspectives without
-emotion — was contributed by **Adam Federman**, who built an
+The "NOD" framing  -  the ability to look at opposite perspectives without
+emotion  -  was contributed by **Adam Federman**, who built an
 opposite-perspectives protocol in his own work and pointed out the gate-
 structure gap in v2.0.0. The five-gate procedure in this skill is the
 kit's adaptation of that pattern: position, opposite-construction,

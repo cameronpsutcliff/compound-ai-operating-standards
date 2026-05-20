@@ -69,7 +69,7 @@ the right tool for the moment.
 | "Is what we built any good?" | `agent-panel-review` |
 | "What might go wrong with this plan?" | `pressure-test` or `consequence-simulation` |
 | "Is there a strong opposing view to this plan?" | `nod-protocol` |
-| "Should this even be AI's job?" | Field guide Chapter 30 — When NOT to use AI |
+| "Should this even be AI's job?" | Field guide Chapter 30  -  When NOT to use AI |
 
 ---
 

@@ -6,7 +6,7 @@
 User asks to: audit code, find problems, review project health, identify issues, check for bugs, system cleanup.
 
 ## What This Does
-Systematic code and project structure audit across all initiatives. Surfaces structural problems, dead code, broken pipelines, missing dependencies, and skill opportunities — not nitpicky style issues.
+Systematic code and project structure audit across all initiatives. Surfaces structural problems, dead code, broken pipelines, missing dependencies, and skill opportunities  -  not nitpicky style issues.
 
 ## Audit Checklist
 
@@ -66,7 +66,7 @@ Check each project's `CLAUDE.md` "Known Issues" section. For each:
 
 After running the audit, produce:
 ```
-## Code Audit Report — [DATE]
+## Code Audit Report  -  [DATE]
 
 ### Critical Issues (block production)
 - [list]

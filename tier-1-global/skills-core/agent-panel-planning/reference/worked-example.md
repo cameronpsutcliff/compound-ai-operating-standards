@@ -25,11 +25,11 @@ Operator's prompt to all three panelists:
 > internal subsystems. Plain attribution to outside sources where used.
 >
 > Decision points for the panel to vote on at Stage 3:
->   D1 — Canonical title
->   D2 — Structural spine (what are the layers / parts)
->   D3 — License split (single license vs split docs/code)
->   D4 — Provenance verification (mandatory phone-home vs optional)
->   D5 — In-scope chapter list (which 25-40 chapters)
+>   D1  -  Canonical title
+>   D2  -  Structural spine (what are the layers / parts)
+>   D3  -  License split (single license vs split docs/code)
+>   D4  -  Provenance verification (mandatory phone-home vs optional)
+>   D5  -  In-scope chapter list (which 25-40 chapters)
 
 The frame surfaces five decision points and locks the constraints
 (vendor neutrality, no proprietary internals, attribution discipline).
@@ -207,9 +207,9 @@ section.
 The operator surfaces the one remaining split as a Stage 6 vote:
 
 ```
-R1 — Owner of "what this is NOT" section:
-  A: C — was first to surface negative-space discipline.
-  B: C — defer to C.
+R1  -  Owner of "what this is NOT" section:
+  A: C  -  was first to surface negative-space discipline.
+  B: C  -  defer to C.
   C: C accept ownership; the discipline is mine.
   Operator: C.
   Locked: C owns "what this is NOT".

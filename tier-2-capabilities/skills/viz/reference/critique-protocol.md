@@ -4,19 +4,19 @@
 
 The before / after critique pattern, built on Andy Kriebel's #MakeoverMonday method. Use when the user pastes a chart, links to one, or asks "is this chart wrong" / "makeover this" / "critique this viz".
 
-## Phase 1 — Read what is on the page
+## Phase 1  -  Read what is on the page
 
 Before judging, describe what is actually there:
 
 - **Chart type** (bar, line, pie, scatter, dashboard tile, etc.)
 - **What the data shows** (one sentence summary of the visual content)
 - **What the chart is trying to say** (the title's claim, or the absence of one)
-- **Audience signal** (executive, analyst, operational, public — inferred from context)
+- **Audience signal** (executive, analyst, operational, public  -  inferred from context)
 - **Likely tool / output medium** (Excel, Tableau, Power BI, slide deck, web page, print)
 
 Resist the temptation to start with critique. The reader's first move is to understand the chart on its own terms.
 
-## Phase 2 — Apply the rules from `rules.md`
+## Phase 2  -  Apply the rules from `rules.md`
 
 Walk the 10 rules and check each. For every rule violated, note:
 
@@ -25,15 +25,15 @@ Walk the 10 rules and check each. For every rule violated, note:
 3. **The cost** (what the reader cannot do because of the violation: cannot compare magnitudes, cannot find the highlight, cannot judge the trend, etc.)
 
 Example findings:
-- "Pie chart with seven slices, three rotating away from anchor positions. Violates Rule 1 (Save the Pies for Dessert — Stephen Few). Reader cannot accurately compare slice magnitudes."
+- "Pie chart with seven slices, three rotating away from anchor positions. Violates Rule 1 (Save the Pies for Dessert  -  Stephen Few). Reader cannot accurately compare slice magnitudes."
 - "Rainbow palette across all bars in a single category. Violates Rule 2 (Color must encode meaning). Reader's eye wanders; no highlight."
 - "KPI tile shows '$4.2M' with no comparison. Violates Rule 6 (Comparison context is mandatory). Reader cannot judge whether this is good or bad."
 
 If a chart passes all 10 rules cleanly, say so. Critique is not synonymous with finding fault.
 
-## Phase 3 — Propose a specific fix
+## Phase 3  -  Propose a specific fix
 
-For each violation, propose a concrete alternative. Do not say "use a better chart" — say "use a horizontal bar chart sorted by value, with a single accent color on the bar the title is asking the reader to compare."
+For each violation, propose a concrete alternative. Do not say "use a better chart"  -  say "use a horizontal bar chart sorted by value, with a single accent color on the bar the title is asking the reader to compare."
 
 Format:
 ```
@@ -42,7 +42,7 @@ Fix: [specific replacement, including chart type, palette decision, annotation s
 Why: [the principle, named]
 ```
 
-## Phase 4 — Render the makeover (optional)
+## Phase 4  -  Render the makeover (optional)
 
 If the user wants the makeover produced, not just described:
 
@@ -64,13 +64,13 @@ What the chart is trying to say: [the claim being made]
 Audience signal: [executive / analyst / operational / public]
 
 Rules check:
-  Rule 1 (No pies):                [pass / fail — reason]
-  Rule 2 (Color encodes meaning):  [pass / fail — reason]
-  Rule 4 (Monitoring vs analysis): [pass / fail — reason]
+  Rule 1 (No pies):                [pass / fail  -  reason]
+  Rule 2 (Color encodes meaning):  [pass / fail  -  reason]
+  Rule 4 (Monitoring vs analysis): [pass / fail  -  reason]
   ... (only list rules that fired)
 
 Findings:
-  1. [Issue]: [Specific fix] — [Why, with named principle]
+  1. [Issue]: [Specific fix]  -  [Why, with named principle]
   2. ...
 
 Recommended makeover:

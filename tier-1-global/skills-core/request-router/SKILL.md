@@ -1,97 +1,75 @@
 # Skill: request-router
-# Compound AI Operating Standards v2.5.0
+# Compound AI Operating Standards v2.6.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 ## What this skill does
 
-Routes any incoming request to the right skill. Load at session start.
-Once active, scan every request for trigger patterns before responding.
+Routes incoming requests to the right skill using the canonical trigger
+registry. Load at session start. Before answering a non-trivial request, scan
+the registry and invoke, offer, or skip skills according to match strength.
 
-Three modes:
+Canonical registry:
+`tier-1-global/conventions/trigger-registry.yaml`
 
-1. **Routing table** -- explicit pattern matches auto-invoke a skill.
-2. **Panel Offer fast-path** -- explicit panel phrasings auto-invoke a panel skill.
-3. **Panel Offer judgment** -- borderline requests evaluated against five criteria; match means OFFER, operator decides.
+## Routing modes
 
-The judgment mode is what keeps the kit from spamming "want a panel?" on every "what do you think?" message. Rationale lives in `reference/router-rationale.md`.
-
-## Routing table
-
-### Cognitive modes (Tier 2)
-
-| If the request contains... | Apply this skill |
+| Mode | Behavior |
 |---|---|
-| "multiple perspectives", "what would X say", "steelman", "red-team", "debate", "ensemble" | `parallel-lens-synthesis` |
-| "what could go wrong", "premortem", "stress test", "simulate outcomes", "second-order effects" | `consequence-simulation` |
-| "explain to [audience]", "translate for", "rewrite for", "make this accessible", "exec summary" | `cross-domain-translation` |
-| "pattern across", "common thread", "root cause", "what connects these", "why does this keep" | `convergence-detection` |
-| "devil's advocate", "base rate", "am I being objective", "weight the evidence", "calibrated" | `detached-judgment` |
-| "what should we do", "make this actionable", "next steps", "who owns", "OODA", "turn into a plan" | `simulation-to-action-bridge` |
-| "play devil's advocate", "argue the opposite", "construct the opposite case", "NOD this" | `nod-protocol` |
+| `auto` | Invoke when the request clearly matches a trigger. |
+| `offer` | Mention the skill and ask before invoking. |
+| `manual` | Use only when explicitly requested. |
+| `internal` | Used by another skill or at session start. |
 
-### Analytical capabilities (Tier 2)
+## Procedure
 
-| If the request contains... | Apply this skill |
-|---|---|
-| "think deeply", "multi-angle", "ultra think" | `ultra-think` |
-| "pressure test", "critique this", "rip this apart", "tear this apart" | `pressure-test` |
-| "code audit", "dead code", "dependency check", "security review", "test coverage" | `code-audit` |
-| "research this", "find sources", "structured research", "investigate" | `autoresearch` |
-| "build a skill", "create a skill", "new skill for", "extend the kit" | `skill-creator` |
+1. Read the current request.
+2. Check `trigger-registry.yaml` for exact, phrase, and intent matches.
+3. If one `auto` match is clear, state `Applying [skill-name]` and load it.
+4. If several skills match, choose the smallest useful chain and state the
+   order.
+5. If an `offer` match fires, answer briefly and offer the panel or workflow.
+6. If no match fires, answer directly.
+7. If routing feels stale, invoke `trigger-indexer`.
 
-### Domain capabilities (Tier 2)
+## Durable goal fast path
 
-| If the request contains... | Apply this skill |
-|---|---|
-| "viz", "what chart", "dashboard design", "chart critique", "data viz" | `viz` |
-| "stakeholder map", "influence interest", "stakeholder analysis" | `stakeholder-mapping` |
+If the request has a verifiable finish line, multiple steps, queue/backlog
+language, or asks the agent to continue until something is true, route to
+`goal-runner` before any domain skill. Claude Code `/goal` is only an adapter;
+the portable behavior is the `goal-runner` contract.
 
-### Session infrastructure (Tier 1) -- explicit invocation
+## Bootstrap distinction
 
-| If the request contains... | Apply this skill |
-|---|---|
-| "convene a panel", "set up a panel", "panel review on this", "multi-agent review", "panel this" | `agent-panel-review` |
-| "convene a planning panel", "plan this with the panel", "split this work across agents", "have agents propose plans" | `agent-panel-planning` |
-| "ship gate", "release captain", "is this ready to ship", "pre-release check", "verify the release" | `release-captain` |
-| "adopt this kit", "optimize this existing agent", "install this into my current repo", "use these techniques going forward", "reconfigure my agents", "take this tech stack and implement the kit", "do not break my stack", "migrate my agent instructions" | `adoption-captain` |
+Before applying bootstrap-style skills:
 
-## How to apply a routed skill
+- New project with no existing protected files: `engagement-bootstrap`
+- Existing project or existing agent instructions: `adoption-captain`
 
-1. Identify the matching row.
-2. State: "Applying [skill-name] to this request."
-3. Load the SKILL.md from the matching tier and follow it exactly.
+Never use `engagement-bootstrap` on an existing project.
 
-### Two-mode bootstrap distinction
+## Panel offer judgment
 
-Before applying any bootstrap-style skill, identify the project type:
+Offer a panel when at least one is true:
 
-- **New project**, no existing user code at this path: `engagement-bootstrap`
-- **Existing project**, kit being adopted alongside existing code: `adoption-captain`
+1. User explicitly asks for another model or agent view.
+2. User is stuck between alternatives.
+3. The decision is high-stakes and should not be decided alone.
+4. User uses panel, council, multi-agent, or second-opinion language.
+5. A complete draft needs alternative framings or critique.
 
-If the request mentions an existing repo, current stack, "do not break," or asks to update agent instructions on an established project, route to `adoption-captain`. Never use `engagement-bootstrap` on an existing project; it copies templates that would overwrite real files.
-
-## Panel Offer judgment (five criteria)
-
-Match on at least ONE means OFFER the panel (do not auto-invoke):
-
-1. Explicit invitation to another model ("another model's read")
-2. Stuck-state ("I keep going back and forth")
-3. High-stakes + don't-decide-alone ("too important to decide alone")
-4. Explicit panel/council words outside fast-path
-5. Complete draft + desire for alternative framings
-
-Examples per criterion, full offer template, soft-offer pattern, and the NOT-trigger table (which keeps "what do you think?", "I'm not sure", etc. as normal solo collab) live in `reference/panel-offer-threshold.md`. Distinction: gesturing toward OTHER agents vs asking THIS agent to engage.
+Expanded thresholds live in `reference/panel-offer-threshold.md`.
 
 ## Compound requests
 
-Some requests need a skill chain (analysis + decision + action). Recipes in `reference/compound-requests.md`.
+Some requests need a skill chain. Examples:
+
+- Goal + implementation: `goal-runner` -> relevant capability -> `quality-gate`
+- Release: `release-captain` -> `quality-gate` -> `provenance-check`
+- Existing adoption: `adoption-captain` -> `trigger-indexer` -> `goal-runner`
+
+More recipes: `reference/compound-requests.md`.
 
 ## Passthrough
 
-No routing-table match and no Panel Offer criterion match: respond directly. Most requests fall here. Routing overhead and panel offers are only worth it when the task has real analytical complexity or council-tier intent.
-
-## Reference files
-
-- `reference/compound-requests.md` -- skill chain recipes
-- `reference/panel-offer-threshold.md` -- expanded criteria, offer template, soft-offer pattern
-- `reference/router-rationale.md` -- why three modes, why judgment beats phrase-list
+Most requests are ordinary. If the registry does not match, or the cost of
+routing exceeds the task, respond directly.

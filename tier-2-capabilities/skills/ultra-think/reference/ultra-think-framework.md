@@ -1,4 +1,4 @@
-# Ultra Think — Deep Multi-Angle Analysis
+# Ultra Think  -  Deep Multi-Angle Analysis
 
 Before responding or acting, engage extended reasoning across multiple dimensions.
 
@@ -37,7 +37,7 @@ Use before:
 
 ## Output format
 
-Show your reasoning across the lenses, then give a clear recommendation. Don't compress the thinking — the value is in the process, not just the conclusion.
+Show your reasoning across the lenses, then give a clear recommendation. Don't compress the thinking  -  the value is in the process, not just the conclusion.
 
 ---
 <!-- @origin: compound-ai-operating-standards v2.0.0 -->

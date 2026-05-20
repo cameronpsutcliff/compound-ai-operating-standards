@@ -16,7 +16,7 @@ It should not contain the whole framework. It should route the agent to the righ
 
 ## Size Rule
 
-Keep `SKILL.md` under 80 lines.
+Keep `SKILL.md` under 100 lines, target 80.
 
 If a skill needs more detail, move the detail into a referenced file and link to it.
 

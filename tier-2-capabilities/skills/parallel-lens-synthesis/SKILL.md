@@ -44,13 +44,13 @@ disagreement.
 LENS SYNTHESIS
 Lenses applied: [list]
 
-Lens 1 — [name]: [finding]
-Lens 2 — [name]: [finding]
+Lens 1  -  [name]: [finding]
+Lens 2  -  [name]: [finding]
 ...
 
 Disagreements: [explicit list or "none"]
 Synthesis: [integrated conclusion]
-Confidence: [high / medium / low — and why]
+Confidence: [high / medium / low  -  and why]
 ```
 
 ## Source references

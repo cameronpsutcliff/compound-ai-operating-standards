@@ -9,7 +9,7 @@ gate sequence and see no skips.
 ## Standard output
 
 ```
-NOD PROTOCOL — [topic in 5-8 words]
+NOD PROTOCOL  -  [topic in 5-8 words]
 
 Gate 1: Position
   [one sentence position]
@@ -31,7 +31,7 @@ Gate 4: Falsifiers
 
 Gate 5: Exit
   Exit chosen: [Decide / Defer / Refuse]
-  [The matching follow-on per the exit selected — see below]
+  [The matching follow-on per the exit selected  -  see below]
   Pass: yes
 ```
 
@@ -65,7 +65,7 @@ Why deciding now would be wrong: [one sentence]
 ## Worked example (synthetic)
 
 ```
-NOD PROTOCOL — Whether to add a new agent to the daily pipeline
+NOD PROTOCOL  -  Whether to add a new agent to the daily pipeline
 
 Gate 1: Position
   We should add the new triage agent to the daily 7 AM pipeline.
@@ -75,7 +75,7 @@ Gate 2: Strongest opposite
   Adding agents to the daily pipeline is how reliability dies. Every new
   agent introduces a new failure mode that does not surface until the
   pipeline is already in production. The triage value is real but the
-  daily slot is not the right entry point — bake it into the weekly
+  daily slot is not the right entry point  -  bake it into the weekly
   review where a human is already watching, then promote to daily after
   three weeks of clean runs.
   Signing test: yes, an SRE-minded operator would sign this.
@@ -94,7 +94,7 @@ Gate 4: Falsifiers
   days as judged by the operator.
   Opposite is right if: the triage agent has at least one silent failure
   in the first 14 days that requires manual intervention to catch.
-  Pass: yes — both falsifiers are concrete and resolvable in 14 days.
+  Pass: yes  -  both falsifiers are concrete and resolvable in 14 days.
 
 Gate 5: Exit
   Exit chosen: Defer

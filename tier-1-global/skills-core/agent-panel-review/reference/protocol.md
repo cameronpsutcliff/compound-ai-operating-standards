@@ -128,7 +128,7 @@ operator decides what ships.
 
 | Loop count | Healthy state | Unhealthy state |
 |---|---|---|
-| 1 | Most gaps closed, one or two open | Full convergence on loop 1 — you did not need a panel |
+| 1 | Most gaps closed, one or two open | Full convergence on loop 1  -  you did not need a panel |
 | 2 | Output close to ship-ready | Critiques still surfacing new gaps |
 | 3 | Final polish loop | Disagreement persists on structural questions |
 | 4+ | (rare) | Scope is wrong; close the loop, narrow the question, restart |

@@ -30,16 +30,16 @@ If it's 20% better, delegate or automate it. If you can't articulate the multipl
 > Don't optimize the old paradigm.
 
 **Test:** Which category is this?
-- **Horse** — traditional approach, no structural change
-- **Faster horse** — same process with AI bolted on
-- **Car** — new architecture enabled by AI (automated, scalable, brand-compliant, searchable — impossible before)
+- **Horse**  -  traditional approach, no structural change
+- **Faster horse**  -  same process with AI bolted on
+- **Car**  -  new architecture enabled by AI (automated, scalable, brand-compliant, searchable  -  impossible before)
 
 Would this product or process exist if AI didn't exist? If yes, it's probably a faster horse.
 
 **Verdict triggers:**
 - PASS: Building the car (new structural primitive)
 - REVISE: Faster horse with a clear car-version in sight
-- FAIL: Pure horse — automating something that should be eliminated
+- FAIL: Pure horse  -  automating something that should be eliminated
 
 ---
 
@@ -117,12 +117,12 @@ This applies to: vendors, advisors, platform partners, customers, well-meaning m
 **Test:** For this initiative, name:
 - The walk-away scenario
 - The BATNA if the primary path fails
-- The early signal that tells you it's failing — BEFORE it's obvious
+- The early signal that tells you it's failing  -  BEFORE it's obvious
 
 **Verdict triggers:**
 - PASS: All three explicit
 - REVISE: Walk-away exists but BATNA undefined
-- FAIL: No defined failure signal — operating on hope
+- FAIL: No defined failure signal  -  operating on hope
 
 ---
 
@@ -181,6 +181,6 @@ Generalists drift. Domain owners compound.
 
 The pressure-test skill walks all ten lenses. Some lenses don't apply (e.g. lens 4 for a marketing campaign critique). Mark those N/A and move on. The point is to apply every relevant lens and produce a verdict, not to force-fit every lens to every situation.
 
-When a lens fires (REVISE or FAIL), the refinement should be SPECIFIC. Not "consider the multiple" — "this plan saves 2 hours per week per analyst across 50 analysts; reframe the multiple as 100 hours/week of analyst capacity reclaimed and re-evaluate whether 3x is achievable."
+When a lens fires (REVISE or FAIL), the refinement should be SPECIFIC. Not "consider the multiple"  -  "this plan saves 2 hours per week per analyst across 50 analysts; reframe the multiple as 100 hours/week of analyst capacity reclaimed and re-evaluate whether 3x is achievable."
 
 Specificity is the difference between a useful critique and a generic one.

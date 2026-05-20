@@ -6,20 +6,21 @@ Run at the start of every non-trivial AI session.
 
 ## Always load
 
-- [ ] `AGENT.md` — root operating contract (constraints, tech stack, context map)
-- [ ] `_tiers.md` — inheritance model (Tier 1 / 2 / 3)
-- [ ] `tier-1-global/context/tier0.md` — the 5-bullet always-load context
-- [ ] `_skills-index.md` — full capability registry (infrastructure + capability skills)
-- [ ] `tier-1-global/skills-core/request-router/SKILL.md` — activates skill routing for this session
+- [ ] `AGENT.md`  -  root operating contract (constraints, tech stack, context map)
+- [ ] `_tiers.md`  -  inheritance model (Tier 1 / 2 / 3)
+- [ ] `tier-1-global/context/tier0.md`  -  the 5-bullet always-load context
+- [ ] `_skills-index.md`  -  full capability registry (infrastructure + capability skills)
+- [ ] `tier-1-global/conventions/trigger-registry.yaml`  -  machine-readable routing surface
+- [ ] `tier-1-global/skills-core/request-router/SKILL.md`  -  activates skill routing for this session
 
 ## Load for most sessions
 
-- [ ] `STATE.md` — current state: what is running, blocked, next
-- [ ] `tier-1-global/context/tier1-current.md` — live working context
+- [ ] `STATE.md`  -  current state: what is running, blocked, next
+- [ ] `tier-1-global/context/tier1-current.md`  -  live working context
 
 ## Load on demand (subsystem work)
 
-- [ ] `tier-1-global/context/tier1-subsystem/[relevant].md` — the specific subsystem slice
+- [ ] `tier-1-global/context/tier1-subsystem/[relevant].md`  -  the specific subsystem slice
 
 ## Load on demand (deep work)
 
@@ -39,8 +40,14 @@ Run at the start of every non-trivial AI session.
 
 ## Cognitive mode check
 
-Before responding to any complex request, check the request-router routing table.
+Before responding to any complex request, check the trigger registry through request-router.
 If a cognitive mode applies, load and follow that skill before producing output.
+
+## Durable goal check
+
+If work has a verifiable finish line, multiple steps, queue/backlog language,
+or "keep going until" intent, load `goal-runner` and write a goal contract
+before acting.
 
 ## Token budget check
 

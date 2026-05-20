@@ -351,7 +351,7 @@ Chapter 29 is Codex's responsibility (WQ-011). The substitution table already ex
 
 **`_skills-index.md`:** Correct. Five skills active, one (provenance-check) pending Codex Phase B.
 
-**Skills (5 of 6):** All five Kiro-authored skills are correct pointer files. Each stays under 80 lines. Each references the correct source files.
+**Skills (5 of 6):** All five Kiro-authored skills are correct pointer files. Each stays under 100 lines, target 80. Each references the correct source files.
 
 **Checklists (5 files):** All five checklists are correct and deployable. The era checklists correctly distinguish what is required for each transition.
 

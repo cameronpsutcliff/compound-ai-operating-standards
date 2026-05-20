@@ -16,11 +16,11 @@ decision points the operator surfaced during framing.
 ```
 DECISION-POINT VOTES (Stage 3)
 
-D1 — [decision point as the operator phrased it]
+D1  -  [decision point as the operator phrased it]
   Vote: [option chosen]
   Reasoning: [one line]
 
-D2 — [next decision point]
+D2  -  [next decision point]
   Vote: [option chosen]
   Reasoning: [one line]
 ```
@@ -49,11 +49,11 @@ remaining splits and runs a final vote.
 ```
 RATIFICATION VOTES (Stage 6)
 
-R1 — [the remaining contested decision]
-  Claude: [option] — [reasoning, one line]
-  Codex: [option] — [reasoning, one line]
-  Kiro: [option] — [reasoning, one line]
-  Operator: [option] — [reasoning, one line]
+R1  -  [the remaining contested decision]
+  Claude: [option]  -  [reasoning, one line]
+  Codex: [option]  -  [reasoning, one line]
+  Kiro: [option]  -  [reasoning, one line]
+  Operator: [option]  -  [reasoning, one line]
   Locked: [final decision]
 ```
 
@@ -84,10 +84,10 @@ panel, not above it.
 
 **Do NOT vote on:**
 - Subjective preferences with no decision impact ("which color do you
-  prefer for the website") — operator decides directly
-- Things the operator already locked in framing — these are not open
-- Things the panel agreed on at Stage 3 — these are not contested
-- Compound questions ("should we do X and Y") — split into two votes
+  prefer for the website")  -  operator decides directly
+- Things the operator already locked in framing  -  these are not open
+- Things the panel agreed on at Stage 3  -  these are not contested
+- Compound questions ("should we do X and Y")  -  split into two votes
 
 ---
 
@@ -126,7 +126,7 @@ of what was decided, by whom, and why.
 **Symptom.** The operator surfaces fifteen decision points. The panel
 spends most of its time on micro-decisions.
 **Fix.** Three to seven decisions at Stage 3. Anything more becomes
-noise. Many "decisions" are actually preferences — operator decides
+noise. Many "decisions" are actually preferences  -  operator decides
 directly.
 
 ### Anti-pattern: bare votes

@@ -12,26 +12,26 @@ Draws on the public canon of Stephen Few (perception, dashboard design) and Andy
 
 Pick the primary story the data needs to tell. Most charts only do one well.
 
-- `COMPARISON` — comparing values across categories or entities
-- `TREND` — change over time
-- `DISTRIBUTION` — spread, frequency, or shape of data
-- `CORRELATION` — relationship between two or more variables
-- `COMPOSITION` — how parts make up a whole
-- `FLOW` — process, steps, handoffs, sequences
-- `HIERARCHY` — nested or ranked relationships
-- `GEOGRAPHY` — spatial data
-- `RELATIONSHIP` — networks, dependencies, connections
-- `PERFORMANCE` — actuals vs targets, KPIs, scorecards
-- `RISK` — probability, impact, uncertainty
-- `CX` — customer behavior, journey, sentiment
-- `STRATEGY` — frameworks, positioning, options
+- `COMPARISON`  -  comparing values across categories or entities
+- `TREND`  -  change over time
+- `DISTRIBUTION`  -  spread, frequency, or shape of data
+- `CORRELATION`  -  relationship between two or more variables
+- `COMPOSITION`  -  how parts make up a whole
+- `FLOW`  -  process, steps, handoffs, sequences
+- `HIERARCHY`  -  nested or ranked relationships
+- `GEOGRAPHY`  -  spatial data
+- `RELATIONSHIP`  -  networks, dependencies, connections
+- `PERFORMANCE`  -  actuals vs targets, KPIs, scorecards
+- `RISK`  -  probability, impact, uncertainty
+- `CX`  -  customer behavior, journey, sentiment
+- `STRATEGY`  -  frameworks, positioning, options
 
 ## Audience Levels
 
-- `Exec` — needs high-level, decision-ready
-- `Stakeholder` — needs credible, polished, explainable
-- `Analyst` — tolerates complexity, wants detail
-- `Delivery` — needs operational specificity
+- `Exec`  -  needs high-level, decision-ready
+- `Stakeholder`  -  needs credible, polished, explainable
+- `Analyst`  -  tolerates complexity, wants detail
+- `Delivery`  -  needs operational specificity
 
 ## How To Use This Taxonomy
 

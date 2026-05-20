@@ -1,33 +1,33 @@
 # Project Operating Contract
-# Compound AI Operating Standards v2.5.0
+# Compound AI Operating Standards v2.6.0
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0 (code) / CC BY 4.0 (docs)
 
 Canonical URL: `https://cameronsutcliff.com/compound-ai`
 
 ## What this kit is
 
-A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 23 ready-to-load skills, four project shells, the Abyssal design system, and a complete field guide explaining why the kit is shaped this way.
+A vendor-neutral operating layer that turns any capable agent into a
+compounding work surface: routing, token discipline, durable goals, validation,
+provenance, and memory.
 
 ## What this kit is not
 
-1. Not a prompt library. The skills are reasoning scaffolds, not prompts.
-2. Not vendor-specific. It uses `AGENT.md` as the canonical contract; `CLAUDE.md` is a 3-line pointer.
-3. Not a framework that requires buy-in. Pick the tiers you need and ignore the rest.
+1. Not a prompt library.
+2. Not vendor-specific. `AGENT.md` is canonical; `CLAUDE.md` points here.
+3. Not a replacement for host project rules. Existing project rules win.
 
 ## Hard constraints
 
-1. Keep `AGENT.md` and every `SKILL.md` file under 100 lines (target 80). Long content goes in a `reference/` subfolder, dispatched on demand. Ship-gate (release-captain Step 9) enforces this on every release.
-2. Never duplicate Tier 1 content in Tier 2 or 3. Reference upstream.
-3. Always use `AGENT.md` as the canonical operating contract. `CLAUDE.md` exists only as a pointer for Claude-specific tooling.
-4. Always credit external canon (Stephen Few, Andy Kriebel, GSTACK by Garry Tan, etc.) in skill source references. Never inherit personal attributions from upstream sources.
+1. Keep `AGENT.md` and every `SKILL.md` under 100 lines (target 80).
+2. Put long content in `reference/` and load it only when needed.
+3. Never duplicate Tier 1 content in Tier 2 or 3. Reference upstream.
+4. Credit external canon in skill source references.
 
 ## Tier model
 
-Read `_tiers.md` for the inheritance rules. Quick summary:
-
-- `tier-1-global/` -- universal: conventions, context, checklists, core skills, design system
-- `tier-2-capabilities/` -- domain skills: viz, code-audit, pressure-test, cognitive modes, etc.
-- `tier-3-shells/` -- project scaffolds: slide, scroll, mission-control, course
+- `tier-1-global/`: conventions, context, checklists, infrastructure skills.
+- `tier-2-capabilities/`: cognitive modes, analysis, domain skills.
+- `tier-3-shells/`: slide, scroll, mission-control, course.
 
 ## Context map
 
@@ -38,69 +38,62 @@ Read `_tiers.md` for the inheritance rules. Quick summary:
 | Open items | `BACKLOG.md` |
 | Tier model | `_tiers.md` |
 | File map | `_map.md` |
-| Skill registry | `_skills-index.md` |
+| Human skill registry | `_skills-index.md` |
+| Trigger registry | `tier-1-global/conventions/trigger-registry.yaml` |
 | Always-load context | `tier-1-global/context/tier0.md` |
-| Current working context | `tier-1-global/context/tier1-current.md` |
 
-## Context tiers (loading depth, distinct from folder tiers)
+## Context tiers
 
-**Tier 0:** Always load. Short operating contract + task.
+- Tier 0: always load. Short operating contract + task.
+- Tier 1: current state + relevant subsystem slice.
+- Tier 2: full specs, long logs, detailed design docs.
+- Tier 3: do not load directly. Search or query exact files.
 
-**Tier 1:** Load for most project work. Current state + relevant subsystem slice.
+## Durable behavioral overlay
 
-**Tier 2:** Load on demand. Full specs, long logs, detailed design docs.
+For non-trivial work:
 
-**Tier 3:** Do not load directly. Use search, database queries, or exact file lookup.
+1. Check `trigger-registry.yaml` before answering.
+2. Route through the smallest useful skill chain.
+3. Use `goal-runner` when work has a verifiable finish line.
+4. Load minimum viable context.
+5. Validate the rendered or user-visible contract before declaring done.
+6. Write useful memory at closeout.
 
-## Model routing
-
-| Task type | Route |
-|---|---|
-| Classification, extraction, formatting | Small or local model |
-| Mechanical edit | Fast coding model |
-| Multi-file implementation | Strong coding model |
-| Synthesis, analysis, strategy | Strong reasoning model |
-| Status check | File read, script, or test command |
-| Complex reasoning request | Route via `tier-1-global/skills-core/request-router/SKILL.md` |
+Claude Code `/goal` is optional. If available, it automates continuation; the
+portable standard is still `goal-runner`.
 
 ## Skills
 
-Twenty-three skills total, organized by tier. See `_skills-index.md` for the complete registry with triggers.
+Twenty-seven skills total. See `_skills-index.md`.
 
-**Tier 1 -- session infrastructure (11 skills):**
-request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-planning, agent-panel-review, release-captain, adoption-captain
+Tier 1 infrastructure (13):
+request-router, goal-runner, trigger-indexer, context-loader, token-economist,
+engagement-bootstrap, quality-gate, pattern-promoter, provenance-check,
+agent-panel-planning, agent-panel-review, release-captain, adoption-captain.
 
-**Tier 2 -- capabilities (14 skills, broken into cognitive modes / analytical / domain in `_skills-index.md`):**
-parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol, ultra-think, code-audit, autoresearch, skill-creator, pressure-test, viz, stakeholder-mapping
-
-The `request-router` auto-dispatches based on request triggers. It also OFFERS panels (planning or review) when operator-humility signals fire. `release-captain` runs the ten-step ship gate on any release. `adoption-captain` runs the eight-stage protocol when adopting the kit into an existing project. Most users never have to think about which skill applies.
+Tier 2 capabilities (14):
+parallel-lens-synthesis, consequence-simulation, cross-domain-translation,
+convergence-detection, detached-judgment, simulation-to-action-bridge,
+nod-protocol, ultra-think, pressure-test, code-audit, autoresearch,
+skill-creator, viz, stakeholder-mapping.
 
 ## Session lifecycle
 
-**Start:**
+Start:
 
 1. Read this file.
-2. Read `_tiers.md`.
-3. Read `tier-1-global/context/tier0.md`.
-4. Read `_skills-index.md` and load `tier-1-global/skills-core/request-router/SKILL.md`.
-5. Read `STATE.md`.
-6. Load relevant Tier 1 context only if needed.
+2. Read `_skills-index.md`.
+3. Load `request-router` and `trigger-registry.yaml`.
+4. Read `STATE.md` if present.
 
-**End:**
+End:
 
-1. Update `STATE.md`.
-2. Add an entry to `session-log.md`.
-3. Update `BACKLOG.md` if needed.
-4. Promote reusable patterns via `pattern-promoter`.
+1. Record validation performed.
+2. Update state/log/backlog if work changed.
+3. Promote reusable patterns via `pattern-promoter`.
 
 ## Governance
 
-Confirm before:
-
-1. Destructive data operations.
-2. Force pushes or history rewrites.
-3. Billing changes.
-4. External publishing.
-5. Auth, permission, or secret changes.
-
-For everything else, act within this contract.
+Confirm before destructive data operations, force pushes, billing changes,
+external publishing, auth changes, or permission changes.

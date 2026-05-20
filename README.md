@@ -1,24 +1,28 @@
-# Compound AI Operating Standards -- Starter Kit v2.5.0
+# Compound AI Operating Standards: Starter Kit v2.6.0
 
-A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Continue) into a compounding work surface. Ships with a tiered directory structure, 23 ready-to-load skills, four project shells, and a complete field guide explaining why the kit is shaped this way.
+A drop-in operating layer that helps any capable agent (Claude, Codex, Cursor,
+Aider, Continue) work with durable routing, token discipline, goal loops,
+validation, provenance, and memory. The kit is vendor-neutral: Claude Code
+`/goal` is supported as an adapter, but the portable behavior is the Compound
+AI goal contract.
 
-**New in v2.5.0:** `adoption-captain` (Tier 1) closes the inbound metabolism loop. Eight-stage protocol for safely adopting the kit into an existing project: discover host context, preserve host rules, inventory kit, map kit to stack, propose plan, apply additively, validate with host's own tests, and commit kit awareness to host agent's instruction surfaces (CLAUDE.md, AGENT.md, AGENTS.md, .cursorrules) via marker-bounded sections so future sessions inherit the kit without re-discovery. New `ADOPT.md` is the entry point for existing projects; `HANDOFF.md` forks new vs existing at the top.
+**New in v2.6.0:** the durable behavioral overlay. `goal-runner` turns
+substantial work into an objective, completion condition, validation plan,
+context budget, stop conditions, and memory update. `trigger-indexer` maintains
+the machine-readable trigger registry used by `request-router`. Adoption now
+commits behaviors, not just kit awareness: route before complex replies, use
+goal contracts for verifiable multi-step work, budget context, validate the
+rendered/user-visible contract, slow-lane blocked items, and write useful
+memory.
 
-**Carried from v2.4.0:** `release-captain` (Tier 1) ships the ten-step ship gate. Clean unzip, verify-integrity, verify-origin, manifest reconciliation, SHA256 coverage, badge match, releaseUrl resolves, downloads return 200, `SKILL.md` line-count budget, screenshots.
-
-**Carried from v2.3.2:** Discipline pass after Codex's v2.3.1 critique. SKILL.md files trimmed under the 100-line budget. ZIP build retains historical release notes (clean extract passes `verify-integrity.py`). Versioned manifests under `releases/<version>/manifest.json`. Scorecard rubric requires `Verification performed:` opening line. Field guide reader version badge and `releaseUrl` no longer point at v1.0.0.
-
-**Carried from v2.3.1:** `agent-panel-review` ships `scorecard-rubric.md`: a ten-dimension quantitative evaluation rubric (0-100 per dimension, evidence citations, composite + dual grade). Heavier alternative to the four-cell template.
-
-**Carried from v2.3.0:** Merge framework with operator-bias check for `agent-panel-review` Stage 5. Loop-4 recovery framework (five causes + recovery moves). Standing-vs-convened panel trade-off in `agent-panel-planning/reference/when-to-convene.md`. New top-level `INSTALL.md` with multi-agent setup pitch. New top-level `_citations.md` registry; field guide reader resolves citation markers to hover tooltips. Router's Panel Offer Triggers refined into a 5-criteria judgment with soft-offer pattern.
-
-**Carried from v2.2.0:** `agent-panel-planning` (Tier 1) for upstream plan convergence with independent plans, element-level voting, cross-suggestions, and strength-matched task split. Field guide Ch 31 (Planning) + Ch 32 (Review) + Ch 33 (Before and After).
-
-**Carried from v2.1.0:** `agent-panel-review` (Tier 1) for sealed multi-agent review on drafts. `nod-protocol` (Tier 2 cognitive) for five-gate opposite-construction. Operationalized `reference/protocol.md` for all 6 cognitive modes.
+**Carried from v2.5.0:** `adoption-captain` safely layers the kit into an
+existing project, preserves host rules, applies additively under `.compound-ai/`,
+validates with the host project's own commands, and updates project instruction
+surfaces with marker-bounded sections.
 
 **Canonical site:** [cameronsutcliff.com/compound-ai](https://cameronsutcliff.com/compound-ai)
 **Source repo:** [github.com/cameronpsutcliff/compound-ai-operating-standards](https://github.com/cameronpsutcliff/compound-ai-operating-standards)
-**Field guide (rendered):** [cameronsutcliff.com/compound-ai/field-guide](https://cameronsutcliff.com/compound-ai/field-guide)
+**Field guide:** [cameronsutcliff.com/compound-ai/field-guide](https://cameronsutcliff.com/compound-ai/field-guide)
 
 ---
 
@@ -26,109 +30,91 @@ A drop-in operating layer that turns any agent (Claude, Codex, Cursor, Aider, Co
 
 ```
 compound-ai-operating-standards/
-├── README.md                     ← you are here
-├── AGENT.md                      ← root operating contract (every agent reads this)
-├── CLAUDE.md                     ← 3-line pointer to AGENT.md
-├── _tiers.md                     ← inheritance model (Tier 1 / 2 / 3)
-├── _skills-index.md              ← complete skill registry, 23 skills
-├── _map.md                       ← navigation map
-│
-├── tier-1-global/                ← universal: everything inherits this
-│   ├── conventions/                style-guide, token-efficiency, skill-author rules
-│   ├── context/                    tier0 always-load, tier1-current working context
-│   ├── checklists/                 session-start, era transitions, model-routing
-│   └── skills-core/                request-router + 6 session infrastructure skills
-│
-├── tier-2-capabilities/          ← workhorse skills: load when the task calls for them
-│   ├── skills/                     13 skills (6 cognitive modes + 5 analytical + 2 domain)
-│   └── templates/                  lineage-record, quality-gates, token-budget
-│
-├── tier-3-shells/                ← project scaffolds: pick one per deliverable
-│   ├── slide-shell/                presentation deck (keyboard nav, speaker notes, fullscreen)
-│   ├── scroll-shell/               data-storytelling page (scroll animations, sliders, charts)
-│   ├── mission-control/            dashboard (grid layout, RAG status, sparklines, role filter)
-│   └── course-shell/               sequential lessons (gating, quizzes, progress tracking)
-│
-├── code/                         reference implementations (cache_key.py, schema_validator.py, etc.)
+├── AGENT.md                      root operating contract
+├── ADOPT.md                      existing-project adoption entry point
+├── HANDOFF.md                    new-project / fresh-agent handoff
+├── _skills-index.md              human skill registry, 27 skills
+├── tier-1-global/
+│   ├── conventions/
+│   │   └── trigger-registry.yaml machine-readable routing registry
+│   ├── checklists/               session start, closeout, model routing
+│   └── skills-core/              13 infrastructure skills
+├── tier-2-capabilities/          14 cognitive, analytical, domain skills
+├── tier-3-shells/                slide, scroll, mission-control, course
+├── code/                         reference implementations
 ├── scripts/                      build-manifest, verify-integrity, verify-origin
-├── hooks/                        git hooks (pre-commit/no-em-dashes, post-session/append-state)
 └── docs/                         FIELD-GUIDE.md and publication docs
 ```
 
 ## What you get
 
-**23 skills** organized by tier, every one a pointer file under 100 lines that dispatches to richer reference material on demand:
+**27 skills** organized by tier, each `SKILL.md` kept under 100 lines with a
+target of 80:
 
 | Tier | Count | Skills |
-|---|---|---|
-| **1 -- Session infrastructure** | 11 | request-router, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-planning, agent-panel-review, release-captain, adoption-captain |
-| **2 -- Cognitive modes** | 7 | parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol |
-| **2 -- Analytical capabilities** | 5 | ultra-think, pressure-test, code-audit, autoresearch, skill-creator |
-| **2 -- Domain capabilities** | 2 | viz, stakeholder-mapping |
+|---|---:|---|
+| Tier 1: session infrastructure | 13 | request-router, goal-runner, trigger-indexer, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-planning, agent-panel-review, release-captain, adoption-captain |
+| Tier 2: cognitive modes | 7 | parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol |
+| Tier 2: analytical capabilities | 5 | ultra-think, pressure-test, code-audit, autoresearch, skill-creator |
+| Tier 2: domain capabilities | 2 | viz, stakeholder-mapping |
 
-**4 shells** for the most common deliverable types: open `index.html` in a browser, edit content, deploy as static HTML.
-
-**A complete framework** (the field guide) explaining why the kit is structured this way, what each pattern does, and when not to use AI at all.
+**4 shells** for deliverables: slide, scroll, mission-control, and course.
 
 ## Install
 
-### Option A: Drop into an existing project
+### Option A: Adopt into an existing project
 
 ```bash
-# Clone next to your project
 git clone https://github.com/cameronpsutcliff/compound-ai-operating-standards.git .compound-ai
-
-# Hand the kit to your agent
-echo "Read .compound-ai/AGENT.md and follow the session-start checklist." | claude
 ```
 
-The agent reads `AGENT.md`, walks the tier structure, and is operational in under a minute.
+Then hand the agent `ADOPT.md`, not just `AGENT.md`:
 
-### Option B: Use the agent-facing handoff
-
-For any agent (Claude Code, Codex, Cursor, Aider, Continue.dev), paste this prompt:
-
-```
-You are about to work with the Compound AI Operating Standards kit
-at <path-to-kit>. Read these files in order:
-
-  1. AGENT.md (root operating contract)
-  2. _tiers.md (the inheritance model)
-  3. _skills-index.md (full skill registry)
-  4. tier-1-global/checklists/session-start.md (the bootstrap routine)
-  5. tier-1-global/skills-core/request-router/SKILL.md
-
-After loading, you have access to 23 skills. The request-router will
-auto-dispatch based on what I ask. For deliverables, pick a shell from
-tier-3-shells/.
-
-Confirm you've loaded the kit by stating which skills are available
-and which shell you'd recommend for [my project type].
+```text
+Read .compound-ai/ADOPT.md and run adoption-captain. Preserve this project's
+existing rules, propose an additive plan before edits, and install the durable
+behavioral overlay only after approval.
 ```
 
-### Option C: Use as a reference
+### Option B: Bootstrap a new project
 
-If you don't want to install anything, the field guide explains the patterns and you can adopt them piecemeal. See [cameronsutcliff.com/compound-ai/field-guide](https://cameronsutcliff.com/compound-ai/field-guide).
+Use `HANDOFF.md` and `engagement-bootstrap`.
+
+### Option C: Use as reference
+
+Read the field guide and adopt the patterns piecemeal.
 
 ## How it works
 
-1. **You ask an agent for something.** "Pressure-test this plan", "what chart for this data", "map stakeholders for this initiative".
-2. **The request-router matches your language to a skill** (see `tier-1-global/skills-core/request-router/SKILL.md` for the routing table).
-3. **The skill loads, runs, and returns a structured output.** Every skill ships with an output template, so results are consistent.
-4. **For deliverables, you pick a shell from `tier-3-shells/`** and fill in the content. The interactivity, navigation, theming, and progress tracking are already wired.
+1. The agent loads `AGENT.md`, `_skills-index.md`, `request-router`, and
+   `trigger-registry.yaml`.
+2. The router maps requests to the smallest useful skill chain.
+3. Substantial work routes through `goal-runner`: objective, completion
+   condition, validation, context budget, stop conditions, memory update.
+4. The agent validates the user-visible contract before declaring done.
+5. Durable lessons move into state, logs, instructions, or reusable patterns.
 
-The compounding part: every session that runs through this kit reinforces the same patterns. Outputs accumulate in `STATE.md` and `session-log.md`. Patterns that prove themselves get promoted via `pattern-promoter`. The system gets cheaper and more reliable the longer it runs.
+## Claude Code `/goal`
 
-## What this kit is NOT
+Claude Code v2.1.139+ supports `/goal`, which keeps Claude working across turns
+until a completion condition is met. Compound AI supports it as an adapter:
+write the goal contract first, then pass the completion condition to `/goal`.
+Other agents use the same contract manually through `goal-runner`.
 
-- **Not a prompt library.** The skills are reasoning scaffolds, not pre-written prompts.
-- **Not vendor-specific.** Works with any agent that reads `AGENT.md` (or `CLAUDE.md`, which routes to AGENT.md).
-- **Not a framework that requires buy-in.** Pick the tiers and skills you need; ignore the rest.
-- **Not a replacement for thinking.** The skills change *how* you reason; they don't replace the work of reasoning.
+## What this kit is not
+
+- Not a prompt library.
+- Not vendor-specific.
+- Not a replacement for the host project's own rules.
+- Not a demand to load the full field guide at startup.
 
 ## Versioning
 
-This is **v2.5.0**. Minor version bump from v2.4.0 to add `adoption-captain` (Tier 1), the inbound mirror of `release-captain`. Eight-stage protocol for safely adopting the kit into an existing project: discover host context, preserve host rules, inventory kit, map skills, propose plan, apply additively, validate non-breakage, commit kit awareness to host agent instruction surfaces. The metabolic loop is now complete: engagement-bootstrap for new projects, adoption-captain for existing projects, release-captain for shipping releases. v2.4.0 added release-captain. v2.3.2 was the discipline patch in response to Codex's cross-feedback. v2.3.1 added the scorecard rubric. v2.3.0 added merge framework, loop-4 recovery, standing-vs-convened framing, INSTALL.md, _citations.md, refined router. The v2.0.0 line is the major-version anchor: directory structure changed and the skill count grew from 6 to 18; v2.1.0 took it to 20; v2.2.0 to 21; v2.4.0 to 22; v2.5.0 to 23.
+This is **v2.6.0**. It adds the durable behavioral overlay (`goal-runner`,
+`trigger-indexer`, `trigger-registry.yaml`) and updates adoption memory so
+future sessions inherit behavior, not just references. v2.5.0 added
+`adoption-captain`; v2.4.0 added `release-captain`; v2.3.x hardened package
+discipline and panel review.
 
 See `releases/` for full version history.
 
@@ -138,24 +124,13 @@ See `releases/` for full version history.
 - **Code:** Apache 2.0
 - **Origin:** Compound AI Operating Standards by Cameron Sutcliff
 
-Cite the canonical source when you fork or extend: `https://cameronsutcliff.com/compound-ai`
+Cite the canonical source when you fork or extend:
+`https://cameronsutcliff.com/compound-ai`
 
 ## Provenance verification
-
-Every release includes a manifest with SHA256 checksums. To verify your local copy matches the canonical release:
 
 ```bash
 ./scripts/verify-origin.py --online
 ```
 
 Returns `VERIFIED` if the local manifest matches the canonical website manifest.
-
-## Getting help
-
-- **Field guide questions:** read [cameronsutcliff.com/compound-ai/field-guide](https://cameronsutcliff.com/compound-ai/field-guide)
-- **Bug reports / requests:** open an issue on [GitHub](https://github.com/cameronpsutcliff/compound-ai-operating-standards/issues)
-- **Pattern contributions:** PR welcome. Every promoted pattern needs a Field Guide reference and a working skill or shell.
-
----
-
-*Compound AI Operating Standards: operating layer for AI work that accumulates instead of evaporates.*

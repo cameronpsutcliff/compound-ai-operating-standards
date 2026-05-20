@@ -428,14 +428,14 @@ The session loads Level 1. If it needs the full reference, it loads Level 2 expl
 
 The skills-routing pattern is the architectural differentiator that separates a deployable kit from a collection of markdown files. It is the pattern that makes the Compound AI Starter Kit not-just-another-CLAUDE.md.
 
-**The core idea.** Instead of loading a large instruction file at session start, the session loads a small index. The index maps trigger phrases to skill pointers. Each skill pointer is a short file (under 80 lines) that describes what the skill does and where the real implementation lives. The session loads the index cheaply, invokes the skill cheaply, and only then pays the cost of loading the implementation.
+**The core idea.** Instead of loading a large instruction file at session start, the session loads a small index. The index maps trigger phrases to skill pointers. Each skill pointer is a short file (under 100 lines, target 80) that describes what the skill does and where the real implementation lives. The session loads the index cheaply, invokes the skill cheaply, and only then pays the cost of loading the implementation.
 
 **The three-file pattern:**
 
 ```
 AGENT.md                    The operating contract (under 200 effective lines)
 _skills-index.md            The skill router (a short table of triggers and pointers)
-skills/[skill-name]/SKILL.md  The skill pointer (under 80 lines, routes to source)
+skills/[skill-name]/SKILL.md  The skill pointer (under 100 lines, target 80, routes to source)
 ```
 
 **The skills index** is a single table:
@@ -450,7 +450,7 @@ skills/[skill-name]/SKILL.md  The skill pointer (under 80 lines, routes to sourc
 
 The session loads this table (cheap). When a trigger phrase fires, it loads the corresponding SKILL.md (cheap). The SKILL.md points to the actual implementation files (loaded only when needed).
 
-**The pointer discipline.** Each SKILL.md stays under 80 lines. It contains:
+**The pointer discipline.** Each SKILL.md stays under 100 lines, target 80. It contains:
 - What this skill does (one sentence)
 - When to invoke it (trigger conditions)
 - What it produces (output description)
@@ -1744,7 +1744,7 @@ Terms used throughout this manual, defined precisely. Where a term has multiple 
 
 **Pipeline runs table.** A SQL table that records every scheduled phase's start, end, status, and error message. The minimum viable observability layer. See Chapter 23 and `code/pipeline_runs.sql` in the starter kit.
 
-**Pointer skill.** A skill file (`SKILL.md`) under 80 lines that describes a capability and points to where the actual implementation lives. The session loads the pointer cheaply and only pays the cost of loading the implementation when the skill is invoked. See Chapter 11.
+**Pointer skill.** A skill file (`SKILL.md`) under 100 lines, target 80 that describes a capability and points to where the actual implementation lives. The session loads the pointer cheaply and only pays the cost of loading the implementation when the skill is invoked. See Chapter 11.
 
 **Premature polish.** Era 03 obsession applied to an Era 01 system. The operator builds schemas, lineage, and quality gates before the underlying approach has been validated. The output is well-traced and wrong. See Chapter 3.
 
@@ -1884,7 +1884,7 @@ These five files are the in-kit reference layer. The session loads them on deman
     provenance-check/SKILL.md           Reports origin, version, manifest match, optional online
 ```
 
-Six pointer skills, each under 80 lines, each dispatching to the relevant implementation or convention file. The skills are the practical interface to the manual: a session that wants to optimize context tiers invokes `context-loader`, not "read Chapter 8 of the field guide." See Chapter 11 (Skills-Routing Pattern) for the architecture.
+Six pointer skills, each under 100 lines, target 80, each dispatching to the relevant implementation or convention file. The skills are the practical interface to the manual: a session that wants to optimize context tiers invokes `context-loader`, not "read Chapter 8 of the field guide." See Chapter 11 (Skills-Routing Pattern) for the architecture.
 
 **Checklists (the operational interface)**
 

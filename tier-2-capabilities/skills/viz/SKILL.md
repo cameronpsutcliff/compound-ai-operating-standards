@@ -50,13 +50,13 @@ taxonomy and explicit design rules.
 
 ## Pair with
 
-- `cross-domain-translation` — when the chart's audience changes (exec ↔ analyst ↔ delivery)
-- `quality-gate` — before shipping a visual, validate against the rules
+- `cross-domain-translation`  -  when the chart's audience changes (exec ↔ analyst ↔ delivery)
+- `quality-gate`  -  before shipping a visual, validate against the rules
 
 ## Source references
 
-- `reference/taxonomy.md` — 50+ chart types organized by story type
-- `reference/rules.md` — Stephen Few's design rules, distilled
-- `reference/canon.md` — Few and Kriebel canonical sources, with attribution
-- `reference/prompts.md` — ready-to-use prompt templates per chart type
-- `reference/critique-protocol.md` — the makeover pattern for fixing broken charts
+- `reference/taxonomy.md`  -  50+ chart types organized by story type
+- `reference/rules.md`  -  Stephen Few's design rules, distilled
+- `reference/canon.md`  -  Few and Kriebel canonical sources, with attribution
+- `reference/prompts.md`  -  ready-to-use prompt templates per chart type
+- `reference/critique-protocol.md`  -  the makeover pattern for fixing broken charts

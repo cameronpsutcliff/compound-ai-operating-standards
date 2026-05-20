@@ -18,7 +18,7 @@ LENS WALK
 
 1. Multiples, not percentages
    Verdict: [PASS / REVISE / FAIL / N/A]
-   Evidence: [one sentence — why this verdict]
+   Evidence: [one sentence  -  why this verdict]
    Refinement: [specific change if REVISE/FAIL]
 
 2. Horses → Cars → Trains
@@ -72,10 +72,10 @@ SCOPE MODE RECOMMENDATION
 
 Recommended mode: [SCOPE EXPANSION / SELECTIVE EXPANSION / HOLD SCOPE / SCOPE REDUCTION]
 
-Why this mode: [one paragraph — which lens verdicts triggered this recommendation]
+Why this mode: [one paragraph  -  which lens verdicts triggered this recommendation]
 
 What this mode requires of you next:
-  - [specific next action — depends on the mode]
+  - [specific next action  -  depends on the mode]
   - [...]
 
 ───────────────────────────────────────────────────
@@ -84,9 +84,9 @@ SEQUENCED REFINEMENTS
 
 In order of leverage (highest first):
 
-1. [Refinement] — affects: [which lens / outcome]
-2. [Refinement] — affects: [which lens / outcome]
-3. [Refinement] — affects: [which lens / outcome]
+1. [Refinement]  -  affects: [which lens / outcome]
+2. [Refinement]  -  affects: [which lens / outcome]
+3. [Refinement]  -  affects: [which lens / outcome]
 
 ───────────────────────────────────────────────────
 OPEN QUESTION THAT COULD INVALIDATE THIS PLAN
@@ -99,9 +99,9 @@ PAIR-WITH SUGGESTIONS
 ───────────────────────────────────────────────────
 
 [If applicable:]
-  - cross-domain-translation — to re-encode the refined plan for [specific audience]
-  - quality-gate — before shipping the refined version
-  - simulation-to-action-bridge — to convert refinements into a sequenced action plan
+  - cross-domain-translation  -  to re-encode the refined plan for [specific audience]
+  - quality-gate  -  before shipping the refined version
+  - simulation-to-action-bridge  -  to convert refinements into a sequenced action plan
 
 ═══════════════════════════════════════════════════
 ```

@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "Compound AI Operating Standards",
   "description": "A field guide and starter kit for token economics, durable context, repeatable AI work, and agentic quality control.",
-  "version": "1.0.0",
+  "version": "2.6.0",
   "author": [
     {
       "@type": "Person",
@@ -23,5 +23,6 @@
     "Shell",
     "SQL"
   ],
-  "dateCreated": "2026-05-13"
+  "dateCreated": "2026-05-13",
+  "dateModified": "2026-05-20"
 }

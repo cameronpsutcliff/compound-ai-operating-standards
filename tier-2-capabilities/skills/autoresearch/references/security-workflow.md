@@ -1,4 +1,4 @@
-# Security Workflow — /autoresearch:security
+# Security Workflow  -  /autoresearch:security
 
 Autonomous security auditing that uses the autoresearch loop to iteratively discover, validate, and report vulnerabilities. Combines STRIDE threat modeling, OWASP Top 10 sweeps, and red-team adversarial analysis into a single autonomous loop.
 
@@ -15,10 +15,10 @@ Autonomous security auditing that uses the autoresearch loop to iteratively disc
 Works with both unbounded and bounded modes:
 
 ```
-# Unlimited — keep finding vulnerabilities until interrupted
+# Unlimited  -  keep finding vulnerabilities until interrupted
 /autoresearch:security
 
-# Bounded — run exactly N security sweep iterations
+# Bounded  -  run exactly N security sweep iterations
 /loop 10 /autoresearch:security
 
 # With target scope
@@ -60,7 +60,7 @@ Focus: authentication and authorization flows
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## Setup Phase — Threat Model Generation
+## Setup Phase  -  Threat Model Generation
 
 ### Step 1: Codebase Reconnaissance
 
@@ -196,9 +196,9 @@ Finding Proof Structure:
 ```
 
 **Validation Rules:**
-- **Confirmed** — Code path clearly allows the attack, no guards present
-- **Likely** — Guards exist but are bypassable or incomplete
-- **Possible** — Theoretical risk, depends on configuration or runtime conditions
+- **Confirmed**  -  Code path clearly allows the attack, no guards present
+- **Likely**  -  Guards exist but are bypassable or incomplete
+- **Possible**  -  Theoretical risk, depends on configuration or runtime conditions
 
 Do NOT report findings without supporting code evidence.
 
@@ -239,10 +239,10 @@ Append to security-audit-results.tsv:
 
 ```tsv
 iteration	vector	severity	owasp	stride	confidence	location	description
-0	-	-	-	-	-	-	baseline — 3 npm audit warnings
+0	-	-	-	-	-	-	baseline  -  3 npm audit warnings
 1	IDOR	High	A01	EoP	Confirmed	src/api/users.ts:42	GET /api/users/:id returns any user data without ownership check
 2	XSS	Medium	A03	Tampering	Likely	src/components/comment.tsx:18	User input rendered via dangerouslySetInnerHTML
-3	rate-limit	Medium	A05	DoS	Confirmed	src/api/auth.ts:15	POST /login has no rate limiting — brute force possible
+3	rate-limit	Medium	A05	DoS	Confirmed	src/api/auth.ts:15	POST /login has no rate limiting  -  brute force possible
 ```
 
 #### Phase 6: Repeat
@@ -255,8 +255,8 @@ iteration	vector	severity	owasp	stride	confidence	location	description
 
 ```
 === Security Audit Progress (iteration 10) ===
-STRIDE Coverage: S[✓] T[✓] R[✗] I[✓] D[✓] E[✓] — 5/6
-OWASP Coverage: A01[✓] A02[✗] A03[✓] A04[✗] A05[✓] A06[✓] A07[✓] A08[✗] A09[✗] A10[✗] — 5/10
+STRIDE Coverage: S[✓] T[✓] R[✗] I[✓] D[✓] E[✓]  -  5/6
+OWASP Coverage: A01[✓] A02[✗] A03[✓] A04[✗] A05[✓] A06[✓] A07[✓] A08[✗] A09[✗] A10[✗]  -  5/10
 Findings: 4 Critical, 2 High, 3 Medium, 1 Low
 Confirmed: 7 | Likely: 2 | Possible: 1
 ```
@@ -343,7 +343,7 @@ Generated at loop completion (bounded) or on interrupt (unbounded):
 
 Detailed checks to perform for each OWASP category:
 
-### A01 — Broken Access Control
+### A01  -  Broken Access Control
 - [ ] IDOR on all parameterized routes (`:id`, `:slug`)
 - [ ] Missing authorization middleware on protected routes
 - [ ] Horizontal privilege escalation (user A accessing user B's data)
@@ -352,7 +352,7 @@ Detailed checks to perform for each OWASP category:
 - [ ] CORS misconfiguration allowing unauthorized origins
 - [ ] Missing function-level access control
 
-### A02 — Cryptographic Failures
+### A02  -  Cryptographic Failures
 - [ ] Sensitive data in plaintext (passwords, tokens, PII)
 - [ ] Weak hashing algorithms (MD5, SHA1 for passwords)
 - [ ] Hardcoded secrets/API keys in source
@@ -360,7 +360,7 @@ Detailed checks to perform for each OWASP category:
 - [ ] Weak random number generation for security tokens
 - [ ] Exposed .env files or config with secrets
 
-### A03 — Injection
+### A03  -  Injection
 - [ ] SQL/NoSQL injection in database queries
 - [ ] Command injection in shell executions (exec, spawn)
 - [ ] XSS (stored, reflected, DOM-based)
@@ -369,7 +369,7 @@ Detailed checks to perform for each OWASP category:
 - [ ] Path injection in file operations
 - [ ] Header injection (CRLF)
 
-### A04 — Insecure Design
+### A04  -  Insecure Design
 - [ ] Missing rate limiting on sensitive endpoints
 - [ ] No account lockout after failed login attempts
 - [ ] Predictable resource identifiers
@@ -377,7 +377,7 @@ Detailed checks to perform for each OWASP category:
 - [ ] Missing CSRF protection on state-changing operations
 - [ ] Insecure direct object references in design
 
-### A05 — Security Misconfiguration
+### A05  -  Security Misconfiguration
 - [ ] Debug mode enabled in production
 - [ ] Default credentials / admin pages exposed
 - [ ] Verbose error messages exposing internals
@@ -386,13 +386,13 @@ Detailed checks to perform for each OWASP category:
 - [ ] Directory listing enabled
 - [ ] Stack traces in error responses
 
-### A06 — Vulnerable and Outdated Components
+### A06  -  Vulnerable and Outdated Components
 - [ ] Known CVEs in dependencies (npm audit, pip audit)
 - [ ] Outdated frameworks with security patches available
 - [ ] Unmaintained dependencies
 - [ ] Dependencies with known prototype pollution
 
-### A07 — Identification and Authentication Failures
+### A07  -  Identification and Authentication Failures
 - [ ] Weak password policies
 - [ ] Missing multi-factor authentication for admin
 - [ ] Session fixation vulnerabilities
@@ -400,21 +400,21 @@ Detailed checks to perform for each OWASP category:
 - [ ] Insecure password reset flows
 - [ ] Missing session invalidation on logout/password change
 
-### A08 — Software and Data Integrity Failures
+### A08  -  Software and Data Integrity Failures
 - [ ] Missing integrity checks on CI/CD pipelines
 - [ ] Unsigned or unverified updates/dependencies
 - [ ] Insecure deserialization
 - [ ] Missing CSP or SRI for external scripts
 - [ ] Unsigned webhooks / API callbacks
 
-### A09 — Security Logging and Monitoring Failures
+### A09  -  Security Logging and Monitoring Failures
 - [ ] Missing audit logs for security events
 - [ ] No logging of failed authentication attempts
 - [ ] Sensitive data in logs (passwords, tokens)
 - [ ] Missing alerting on suspicious activity
 - [ ] Log injection vulnerabilities
 
-### A10 — Server-Side Request Forgery (SSRF)
+### A10  -  Server-Side Request Forgery (SSRF)
 - [ ] Unvalidated URLs in server-side requests
 - [ ] DNS rebinding vulnerabilities
 - [ ] Missing allowlist for external service calls
@@ -479,13 +479,13 @@ curl https://app/search?q=%3Cscript%3Ealert(1)%3C/script%3E
 ```
 
 ### Comprehensive Vulnerability Categories (from Strix)
-- **Access Control** — IDOR, privilege escalation, auth bypass
-- **Injection Attacks** — SQL, NoSQL, command injection
-- **Server-Side** — SSRF, XXE, deserialization flaws
-- **Client-Side** — XSS, prototype pollution, DOM vulnerabilities
-- **Business Logic** — Race conditions, workflow manipulation
-- **Authentication** — JWT vulnerabilities, session management
-- **Infrastructure** — Misconfigurations, exposed services
+- **Access Control**  -  IDOR, privilege escalation, auth bypass
+- **Injection Attacks**  -  SQL, NoSQL, command injection
+- **Server-Side**  -  SSRF, XXE, deserialization flaws
+- **Client-Side**  -  XSS, prototype pollution, DOM vulnerabilities
+- **Business Logic**  -  Race conditions, workflow manipulation
+- **Authentication**  -  JWT vulnerabilities, session management
+- **Infrastructure**  -  Misconfigurations, exposed services
 
 ## Metric for the Loop
 
@@ -503,7 +503,7 @@ This incentivizes the loop to cover ALL categories before going deep on any one.
 
 ## Flags & Modes
 
-### `--diff` — Delta Mode (v1.0.3)
+### `--diff`  -  Delta Mode (v1.0.3)
 
 Only audit files changed since the last audit. Reads the most recent `security/` subfolder to establish what was already tested.
 
@@ -518,9 +518,9 @@ Only audit files changed since the last audit. Reads the most recent `security/`
 3. Run `git diff --name-only {last_audit_commit}..HEAD` to find changed files
 4. Scope the current audit to ONLY those changed files
 5. In the final report, mark findings as:
-   - **New** — found in changed files, not in previous audit
-   - **Fixed** — was in previous audit, no longer present in changed code
-   - **Recurring** — still present from previous audit (unchanged)
+   - **New**  -  found in changed files, not in previous audit
+   - **Fixed**  -  was in previous audit, no longer present in changed code
+   - **Recurring**  -  still present from previous audit (unchanged)
 
 **Delta report additions:**
 
@@ -540,7 +540,7 @@ The overview.md gains a `## Delta Summary` section:
 
 If no previous audit folder exists, `--diff` falls back to full audit with a warning.
 
-### `--fail-on` — Severity Threshold Gate (v1.0.3)
+### `--fail-on`  -  Severity Threshold Gate (v1.0.3)
 
 Exit with non-zero code if findings meet or exceed a severity threshold. Designed for CI/CD blocking.
 
@@ -569,7 +569,7 @@ Exit with non-zero code if findings meet or exceed a severity threshold. Designe
 # Exit code 1 if any Critical findings → blocks the pipeline
 ```
 
-### `--fix` — Auto-Remediation Mode (v1.0.3)
+### `--fix`  -  Auto-Remediation Mode (v1.0.3)
 
 After completing the audit, switches to standard autoresearch modify→verify loop to fix confirmed findings. Uses the security audit report as its goal.
 
@@ -606,7 +606,7 @@ After fixes complete, updates the audit folder:
 **Safety rules:**
 - NEVER fix Low or Info findings automatically (too subjective)
 - NEVER modify test files (fixes must not break existing tests)
-- Run existing tests after each fix — revert if any test fails
+- Run existing tests after each fix  -  revert if any test fails
 - Maximum 3 fix attempts per finding, then skip
 - User can combine with `--fail-on` for gated fix: fix first, then gate
 
@@ -715,7 +715,7 @@ jobs:
             }
 ```
 
-**The template is generated ONCE** — after initial creation, it's the user's file to customize.
+**The template is generated ONCE**  -  after initial creation, it's the user's file to customize.
 
 ### Historical Comparison
 
@@ -767,9 +767,9 @@ For each finding in previous audit:
 **findings.md additions:**
 
 Each finding gets a `History` tag:
-- `🆕 New` — first time detected
-- `🔄 Recurring` — present in previous audit too
-- `✅ Fixed` (only in previous audit's context) — no longer present
+- `🆕 New`  -  first time detected
+- `🔄 Recurring`  -  present in previous audit too
+- `✅ Fixed` (only in previous audit's context)  -  no longer present
 
 ## Error Recovery
 
@@ -783,14 +783,14 @@ Each finding gets a `History` tag:
 
 ## Anti-Patterns
 
-- **Do NOT report theoretical risks without code evidence** — every finding needs a file:line reference
-- **Do NOT skip categories** — the loop should aim for 100% OWASP + STRIDE coverage
-- **Do NOT auto-fix vulnerabilities** — report only, user decides what to fix
-- **Do NOT test against live production** — analyze code statically, suggest dynamic tests
-- **Do NOT report the same finding twice** — check results log for duplicates before logging
-- **Do NOT prioritize quantity over quality** — 5 confirmed critical > 50 theoretical lows
+- **Do NOT report theoretical risks without code evidence**  -  every finding needs a file:line reference
+- **Do NOT skip categories**  -  the loop should aim for 100% OWASP + STRIDE coverage
+- **Do NOT auto-fix vulnerabilities**  -  report only, user decides what to fix
+- **Do NOT test against live production**  -  analyze code statically, suggest dynamic tests
+- **Do NOT report the same finding twice**  -  check results log for duplicates before logging
+- **Do NOT prioritize quantity over quality**  -  5 confirmed critical > 50 theoretical lows
 
-## Report Output — Structured Folder
+## Report Output  -  Structured Folder
 
 Every `/autoresearch:security` run creates a dedicated folder inside a `security/` directory at the project root (similar to how `/plan --hard` creates plan directories).
 
@@ -841,7 +841,7 @@ security/{YYMMDD}-{HHMM}-{audit-type-slug}/
 
 #### overview.md
 ```markdown
-# Security Audit — {audit-type}
+# Security Audit  -  {audit-type}
 
 **Date:** {YYYY-MM-DD HH:MM}
 **Scope:** {files/directories}
@@ -859,19 +859,19 @@ security/{YYMMDD}-{HHMM}-{audit-type-slug}/
 
 ## Top 3 Critical Findings
 
-1. [{title}]({findings.md#finding-1}) — {one-line description}
-2. [{title}]({findings.md#finding-2}) — {one-line description}
-3. [{title}]({findings.md#finding-3}) — {one-line description}
+1. [{title}]({findings.md#finding-1})  -  {one-line description}
+2. [{title}]({findings.md#finding-2})  -  {one-line description}
+3. [{title}]({findings.md#finding-3})  -  {one-line description}
 
 ## Files in This Report
 
-- [Threat Model](./threat-model.md) — STRIDE analysis, assets, trust boundaries
-- [Attack Surface Map](./attack-surface-map.md) — entry points, data flows, abuse paths
-- [Findings](./findings.md) — all findings ranked by severity
-- [OWASP Coverage](./owasp-coverage.md) — per-category test results
-- [Dependency Audit](./dependency-audit.md) — known CVEs in dependencies
-- [Recommendations](./recommendations.md) — prioritized mitigations
-- [Iteration Log](./security-audit-results.tsv) — raw data from every iteration
+- [Threat Model](./threat-model.md)  -  STRIDE analysis, assets, trust boundaries
+- [Attack Surface Map](./attack-surface-map.md)  -  entry points, data flows, abuse paths
+- [Findings](./findings.md)  -  all findings ranked by severity
+- [OWASP Coverage](./owasp-coverage.md)  -  per-category test results
+- [Dependency Audit](./dependency-audit.md)  -  known CVEs in dependencies
+- [Recommendations](./recommendations.md)  -  prioritized mitigations
+- [Iteration Log](./security-audit-results.tsv)  -  raw data from every iteration
 ```
 
 #### threat-model.md
@@ -916,7 +916,7 @@ Output of dependency security tools:
 #### recommendations.md
 Prioritized action items with code fix snippets:
 ```markdown
-## Priority 1 — Critical (Fix Immediately)
+## Priority 1  -  Critical (Fix Immediately)
 
 ### 1. Restrict JWT Algorithm
 **Finding:** [JWT Algorithm Confusion](./findings.md#finding-2)
@@ -933,10 +933,10 @@ jwt.verify(token, secret, { algorithms: ['HS256'] });
 ### 2. Add IDOR Protection
 ...
 
-## Priority 2 — High (Fix This Sprint)
+## Priority 2  -  High (Fix This Sprint)
 ...
 
-## Priority 3 — Medium (Plan for Next Sprint)
+## Priority 3  -  Medium (Plan for Next Sprint)
 ...
 ```
 
@@ -960,7 +960,7 @@ jwt.verify(token, secret, { algorithms: ['HS256'] });
    - `owasp-coverage.md` (coverage matrix)
    - `dependency-audit.md` (tool output)
    - `recommendations.md` (prioritized mitigations)
-   - `overview.md` (executive summary — written LAST, links to all other files)
+   - `overview.md` (executive summary  -  written LAST, links to all other files)
 
 5. Print the folder path to the user:
    ```

@@ -9,13 +9,13 @@ These four modes are borrowed from GSTACK's `plan-ceo-review` skill. The origina
 
 ---
 
-## SCOPE EXPANSION — cathedral mode
+## SCOPE EXPANSION  -  cathedral mode
 
 > Envision the platonic ideal. Push scope UP.
 
 **When to recommend:** The current plan is too small to matter. The lenses fire FAIL on Multiples or Horse/Car/Train. The work is technically sound but the ambition is the problem.
 
-**Posture:** Recommend enthusiastically. You have permission to dream — every expansion proposal is the user's decision, presented individually as a question, but you should propose them. Ask "what would make this 10x better for 2x the effort?"
+**Posture:** Recommend enthusiastically. You have permission to dream  -  every expansion proposal is the user's decision, presented individually as a question, but you should propose them. Ask "what would make this 10x better for 2x the effort?"
 
 **Output:** A list of scope-expansion ideas, each one a discrete proposal with effort estimate and case. The user opts in or out per idea.
 
@@ -23,7 +23,7 @@ These four modes are borrowed from GSTACK's `plan-ceo-review` skill. The origina
 
 ---
 
-## SELECTIVE EXPANSION — taste mode
+## SELECTIVE EXPANSION  -  taste mode
 
 > Hold the baseline. Cherry-pick worthy expansions.
 
@@ -37,7 +37,7 @@ These four modes are borrowed from GSTACK's `plan-ceo-review` skill. The origina
 
 ---
 
-## HOLD SCOPE — bulletproof mode
+## HOLD SCOPE  -  bulletproof mode
 
 > The plan's scope is accepted. Make it bulletproof.
 
@@ -51,7 +51,7 @@ These four modes are borrowed from GSTACK's `plan-ceo-review` skill. The origina
 
 ---
 
-## SCOPE REDUCTION — surgeon mode
+## SCOPE REDUCTION  -  surgeon mode
 
 > Find the minimum viable version. Cut everything else.
 
@@ -71,10 +71,10 @@ Walk the lens verdicts (`lenses.md`):
 
 | Lens verdict pattern | Recommended mode |
 |---|---|
-| Multiples FAIL or Horses/Cars FAIL | **SCOPE EXPANSION** — the ambition is the problem |
-| Most PASS, 2-4 REVISE on specific dimensions | **SELECTIVE EXPANSION** — baseline is sound, opportunities exist |
-| All PASS or near-all PASS | **HOLD SCOPE** — make it bulletproof |
-| So-What FAIL or Domain Ownership FAIL | **SCOPE REDUCTION** — the plan is overbuilt |
+| Multiples FAIL or Horses/Cars FAIL | **SCOPE EXPANSION**  -  the ambition is the problem |
+| Most PASS, 2-4 REVISE on specific dimensions | **SELECTIVE EXPANSION**  -  baseline is sound, opportunities exist |
+| All PASS or near-all PASS | **HOLD SCOPE**  -  make it bulletproof |
+| So-What FAIL or Domain Ownership FAIL | **SCOPE REDUCTION**  -  the plan is overbuilt |
 
 When ambiguous, default to **HOLD SCOPE**. It's the least invasive mode and the safest recommendation when the right answer isn't obvious.
 
@@ -88,4 +88,4 @@ Every scope change is an explicit opt-in. Never silently add or remove scope. On
 
 If EXPANSION is selected, do not argue for less work during later sections. If SELECTIVE EXPANSION is selected, surface expansions as individual decisions. If REDUCTION is selected, do not sneak scope back in.
 
-Raise concerns once during the lens walk — after that, execute the chosen mode faithfully.
+Raise concerns once during the lens walk  -  after that, execute the chosen mode faithfully.

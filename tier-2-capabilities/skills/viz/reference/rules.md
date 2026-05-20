@@ -21,9 +21,9 @@ The single legitimate use: showing one part of one whole at a single anchor posi
 Color is a visual channel. Decorative color wastes it.
 
 - **Rule:** different colors only when they correspond to differences of meaning.
-- **Rainbow bars** (one color per bar in a series) — wrong. Use one muted color, with one accent on the bar that matters.
-- **Heatmap colors** — must have sufficient contrast against any overlaid text or numbers.
-- **Background color** — keep it consistent across displays. The same data color looks different against different backgrounds (perceptual relativity).
+- **Rainbow bars** (one color per bar in a series)  -  wrong. Use one muted color, with one accent on the bar that matters.
+- **Heatmap colors**  -  must have sufficient contrast against any overlaid text or numbers.
+- **Background color**  -  keep it consistent across displays. The same data color looks different against different backgrounds (perceptual relativity).
 
 ## 3. Default to a muted palette with one accent
 
@@ -67,18 +67,18 @@ Position and length are the strongest pre-attentive cues. That is why bars (leng
 ## 8. Chart selection follows story type
 
 Before picking a chart, name the story type:
-- **COMPARISON** — comparing values across categories or entities → bar
-- **TREND** — change over time → line
-- **DISTRIBUTION** — spread, frequency, shape → histogram, box plot
-- **CORRELATION** — relationship between variables → scatter
-- **COMPOSITION** — parts of a whole → stacked bar, treemap (not pie)
-- **FLOW** — sequence, handoffs, process → swimlane, sankey, gantt
-- **HIERARCHY** — nested or ranked → tree, issue tree, treemap
-- **GEOGRAPHY** — spatial → choropleth, dot map
-- **RELATIONSHIP** — networks, dependencies → network graph, dependency map
-- **PERFORMANCE** — actuals vs targets → bullet graph, scorecard
-- **RISK** — probability + impact → heat map, risk matrix
-- **CX / STRATEGY** — qualitative or framework-driven → journey map, 2x2 matrix
+- **COMPARISON**  -  comparing values across categories or entities → bar
+- **TREND**  -  change over time → line
+- **DISTRIBUTION**  -  spread, frequency, shape → histogram, box plot
+- **CORRELATION**  -  relationship between variables → scatter
+- **COMPOSITION**  -  parts of a whole → stacked bar, treemap (not pie)
+- **FLOW**  -  sequence, handoffs, process → swimlane, sankey, gantt
+- **HIERARCHY**  -  nested or ranked → tree, issue tree, treemap
+- **GEOGRAPHY**  -  spatial → choropleth, dot map
+- **RELATIONSHIP**  -  networks, dependencies → network graph, dependency map
+- **PERFORMANCE**  -  actuals vs targets → bullet graph, scorecard
+- **RISK**  -  probability + impact → heat map, risk matrix
+- **CX / STRATEGY**  -  qualitative or framework-driven → journey map, 2x2 matrix
 
 Pick the chart that maps cleanly to the story type. Trying to make a chart do two story types at once produces clutter.
 
@@ -86,10 +86,10 @@ Pick the chart that maps cleanly to the story type. Trying to make a chart do tw
 
 Same dataset, different audience, different chart.
 
-- **Executive** — high-level, decision-ready, one number with one comparison. Use signal vs. noise charts, executive one-pagers, scorecards.
-- **Stakeholder** — credible, polished, explainable. Bar charts, dashboards, waterfall charts.
-- **Analyst** — tolerates complexity, wants detail. Scatter plots, control charts, heatmaps, small multiples.
-- **Delivery / operational** — needs operational specificity. Process maps, swimlane diagrams, bottleneck analysis.
+- **Executive**  -  high-level, decision-ready, one number with one comparison. Use signal vs. noise charts, executive one-pagers, scorecards.
+- **Stakeholder**  -  credible, polished, explainable. Bar charts, dashboards, waterfall charts.
+- **Analyst**  -  tolerates complexity, wants detail. Scatter plots, control charts, heatmaps, small multiples.
+- **Delivery / operational**  -  needs operational specificity. Process maps, swimlane diagrams, bottleneck analysis.
 
 When the audience shifts, pair this skill with `cross-domain-translation` to re-encode without losing fidelity.
 

@@ -3,9 +3,9 @@
 Stage 4 is sealed again. Each panelist produces three outputs without
 seeing the other panelists' revisions. The three outputs are:
 
-1. **Concession + attribution** — what is conceded, to whom, on what dimension
-2. **Revised private plan** — the agent's plan, revised
-3. **Path-forward suggestions for the OTHER agents** — concrete adjustments
+1. **Concession + attribution**  -  what is conceded, to whom, on what dimension
+2. **Revised private plan**  -  the agent's plan, revised
+3. **Path-forward suggestions for the OTHER agents**  -  concrete adjustments
    proposed for each other panelist's plan
 
 The third output is the load-bearing one. Most multi-agent workflows skip
@@ -58,7 +58,7 @@ Hold on cross-platform translation chapter:
 - One concession per dimension, no compound concessions
 - Each concession names a specific other agent (or the operator's framing)
 - "Hold" lines are allowed and important; they prevent capitulation
-- No concession means no concession — do not invent one to look reasonable
+- No concession means no concession  -  do not invent one to look reasonable
 
 ---
 
@@ -112,7 +112,7 @@ For [Agent Y]:
 PATH FORWARD: SUGGESTIONS FOR OTHERS
 
 For Codex:
-  1. Add audience-layering explicitly — your spine does not name how the
+  1. Add audience-layering explicitly  -  your spine does not name how the
      plan reaches different audiences. Adopt Cameron's medium-as-layer.
   2. The "five locked decisions" list is good but missing a sixth on
      voice/persona; surface it for the operator at Stage 6.
@@ -129,7 +129,7 @@ For Kiro:
 - 2-4 specific adjustments per other agent (not more)
 - Each must be actionable, not advisory ("consider thinking about" fails)
 - Reasoning required per suggestion
-- No "you should do what I did" suggestions — that is competitive, not
+- No "you should do what I did" suggestions  -  that is competitive, not
   collaborative
 
 **Why this move matters.**

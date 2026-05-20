@@ -29,7 +29,7 @@ iteration	commit	metric	delta	guard	status	description
 
 ```tsv
 iteration	commit	metric	delta	guard	status	description
-0	a1b2c3d	85.2	0.0	pass	baseline	initial state — test coverage 85.2%
+0	a1b2c3d	85.2	0.0	pass	baseline	initial state  -  test coverage 85.2%
 1	b2c3d4e	87.1	+1.9	pass	keep	add tests for auth middleware edge cases
 2	-	86.5	-0.6	-	discard	refactor test helpers (broke 2 tests)
 3	-	0.0	0.0	-	crash	add integration tests (DB connection failed)

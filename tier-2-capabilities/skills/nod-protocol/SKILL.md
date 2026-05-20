@@ -54,14 +54,14 @@ strawman opposite, premature consensus, ego-driven gate-skipping,
 
 ## Pair with
 
-- `parallel-lens-synthesis` — run multiple lenses first, then NOD the synthesis
-- `detached-judgment` — calibrate confidence before the final gate
-- `pressure-test` — for full adversarial critique with CEO/scope lenses
-- `agent-panel-review` — when the opposite case needs another agent to write it
+- `parallel-lens-synthesis`  -  run multiple lenses first, then NOD the synthesis
+- `detached-judgment`  -  calibrate confidence before the final gate
+- `pressure-test`  -  for full adversarial critique with CEO/scope lenses
+- `agent-panel-review`  -  when the opposite case needs another agent to write it
 
 ## Source references
 
-- `reference/gates.md` — five-gate procedure, pass criteria, common failures
-- `reference/output-template.md` — required output structure
-- `reference/anti-patterns.md` — how this skill fails when applied lazily
-- `reference/origin.md` — pattern lineage and attribution
+- `reference/gates.md`  -  five-gate procedure, pass criteria, common failures
+- `reference/output-template.md`  -  required output structure
+- `reference/anti-patterns.md`  -  how this skill fails when applied lazily
+- `reference/origin.md`  -  pattern lineage and attribution

@@ -14,7 +14,7 @@ Project scaffolds. Pick one when starting a specific deliverable. Each shell is 
 ## Rules at this tier
 
 1. **Shells inherit, do not redefine.** Use the Abyssal design system from `../tier-1-global/design-system/`.
-2. **Capabilities come from Tier 2.** A shell may reference cognitive modes, viz, or pressure-test — but should not re-implement them.
+2. **Capabilities come from Tier 2.** A shell may reference cognitive modes, viz, or pressure-test  -  but should not re-implement them.
 3. **Every shell ships with placeholder content only.** Real content lives in your project, not in the shell.
 4. **Every shell has a `README.md`** that explains what it produces, how to fill it, and which Tier 2 skills pair with it.
 

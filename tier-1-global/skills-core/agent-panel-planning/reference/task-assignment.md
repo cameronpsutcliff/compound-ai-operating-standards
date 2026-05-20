@@ -142,7 +142,7 @@ showed, not on prior assumption.
 
 ### Failure: every dimension goes to a different agent
 **Symptom.** Three agents, three dimensions per agent. Clean but
-suspicious — real strengths cluster.
+suspicious  -  real strengths cluster.
 **Fix.** It is fine for one agent to own 4-5 dimensions if they
 genuinely dominated. Forcing parity is artificial.
 

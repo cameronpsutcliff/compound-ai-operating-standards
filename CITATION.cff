@@ -7,7 +7,7 @@ authors:
     given-names: Cameron
 url: https://cameronsutcliff.com/compound-ai
 repository-code: https://github.com/cameronpsutcliff/compound-ai-operating-standards
-version: 1.0.0
-date-released: "2026-05-13"
+version: 2.6.0
+date-released: "2026-05-20"
 license: CC-BY-4.0
 abstract: A field guide and starter kit for token economics, durable context, repeatable AI work, and agentic quality control.

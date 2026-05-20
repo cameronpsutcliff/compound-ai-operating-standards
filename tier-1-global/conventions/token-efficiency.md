@@ -62,6 +62,9 @@ When the same model call repeats with the same inputs, cache it.
 
 When the same prompt keeps growing, split it into an operating contract plus references.
 
+When work has a verifiable finish line, use `goal-runner` so the agent
+validates completion instead of asking for the next step repeatedly.
+
 ---
 
 ## Anti-Patterns

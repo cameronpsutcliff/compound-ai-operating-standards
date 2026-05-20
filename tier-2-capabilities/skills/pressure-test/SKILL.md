@@ -29,10 +29,10 @@ not generic "consider X" advice. The output forces a verdict.
    - Specific refinement: what changes if this lens fires
 
 3. **Load `reference/scope-modes.md`** and recommend ONE of four scope modes:
-   - **SCOPE EXPANSION** — dream bigger, this is too small to matter
-   - **SELECTIVE EXPANSION** — hold the baseline, cherry-pick worthy expansions
-   - **HOLD SCOPE** — scope is right, make it bulletproof
-   - **SCOPE REDUCTION** — cut to minimum viable, kill the rest
+   - **SCOPE EXPANSION**  -  dream bigger, this is too small to matter
+   - **SELECTIVE EXPANSION**  -  hold the baseline, cherry-pick worthy expansions
+   - **HOLD SCOPE**  -  scope is right, make it bulletproof
+   - **SCOPE REDUCTION**  -  cut to minimum viable, kill the rest
 
 4. **Load `reference/output-template.md`** and produce the structured verdict.
 
@@ -49,15 +49,15 @@ not generic "consider X" advice. The output forces a verdict.
 
 Often paired in sequence:
 
-- **`parallel-lens-synthesis` → `pressure-test`** — generate options, then pressure-test the winner
-- **`consequence-simulation` → `pressure-test`** — model outcomes, then pressure-test the planned action
-- **`pressure-test` → `cross-domain-translation`** — pressure-test the plan, then re-encode for the audience that needs to hear it
+- **`parallel-lens-synthesis` → `pressure-test`**  -  generate options, then pressure-test the winner
+- **`consequence-simulation` → `pressure-test`**  -  model outcomes, then pressure-test the planned action
+- **`pressure-test` → `cross-domain-translation`**  -  pressure-test the plan, then re-encode for the audience that needs to hear it
 
 ## Source references
 
-- `reference/lenses.md` — the 10 executive operating lenses (multiples, horses/cars, so-what, incentive map, iceberg, etc.)
-- `reference/scope-modes.md` — the four-mode scope discipline borrowed from GSTACK
-- `reference/output-template.md` — the structured verdict format
+- `reference/lenses.md`  -  the 10 executive operating lenses (multiples, horses/cars, so-what, incentive map, iceberg, etc.)
+- `reference/scope-modes.md`  -  the four-mode scope discipline borrowed from GSTACK
+- `reference/output-template.md`  -  the structured verdict format
 
 ## Attribution
 

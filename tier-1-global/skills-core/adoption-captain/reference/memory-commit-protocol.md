@@ -3,12 +3,12 @@
 The kit is not adopted until the host agent's persistent instruction
 surfaces have been updated. Until that step is done, every future
 session starts kit-adoption from zero. With it, the agent's default
-operating context already includes the kit's techniques, triggers, and
-preserve rules.
+operating context already includes the kit's routing, goal loop, token
+budgeting, validation discipline, and preserve rules.
 
 This is the discipline that makes the kit STICK rather than evaporate
 between sessions. Stages 1-7 install the kit safely. Stage 8b commits
-the kit to the agent's operating memory.
+the kit's durable behavioral overlay to the agent's operating memory.
 
 ---
 
@@ -16,7 +16,7 @@ the kit to the agent's operating memory.
 
 The host agent reads instruction files at session start. If those files
 do not mention the kit, the agent will not use the kit. If those files
-mention the kit completely, the agent will use it as a default.
+mention the kit as an operating overlay, the agent will use it as a default.
 
 The job is therefore to **update the right instruction files with the
 right minimal additions** so the agent inherits kit awareness on every
@@ -53,7 +53,7 @@ rest of the file.
 Markdown surfaces (CLAUDE.md, AGENT.md, AGENTS.md, CONVENTIONS.md):
 
 ```markdown
-<!-- compound-ai:start v2.5.0 -->
+<!-- compound-ai:start v2.6.0 -->
 ## Compound AI Operating Standards
 
 [contents]
@@ -64,7 +64,7 @@ Markdown surfaces (CLAUDE.md, AGENT.md, AGENTS.md, CONVENTIONS.md):
 YAML / config surfaces (.cursorrules if rule-format, .aider.conf.yml):
 
 ```yaml
-# compound-ai:start v2.5.0
+# compound-ai:start v2.6.0
 compound-ai:
   kit-path: .compound-ai
   [...]
@@ -74,13 +74,13 @@ compound-ai:
 Plain text (rare; some projects use plain CONVENTIONS.txt):
 
 ```
-# ---- compound-ai:start v2.5.0 ----
+# ---- compound-ai:start v2.6.0 ----
 [contents]
 # ---- compound-ai:end ----
 ```
 
 The version stamp in the start marker lets future adoption runs detect
-upgrades (e.g. v2.5.0 → v2.6.0 should replace the section, not
+upgrades (e.g. v2.6.0 -> v2.7.0 should replace the section, not
 duplicate it).
 
 ---
@@ -94,7 +94,25 @@ Generic template:
 ## Compound AI Operating Standards
 
 This project uses the Compound AI kit at `.compound-ai/`. When working
-in this project, the following kit techniques apply.
+in this project, use this durable behavioral overlay unless it conflicts
+with preserved project rules.
+
+### Default operating loop
+
+For non-trivial work:
+
+1. Check `.compound-ai/tier-1-global/conventions/trigger-registry.yaml`
+   before answering.
+2. Route matching requests through the smallest useful skill chain.
+3. Use `goal-runner` for work with a verifiable finish line, backlog,
+   multi-step execution, or "keep going until" language.
+4. Load the minimum context needed for the current unit.
+5. Validate the rendered or user-visible contract before declaring done.
+6. Write useful memory at closeout: state, validation, remaining work,
+   and promoted patterns.
+
+Claude Code note: if `/goal` is available, it may automate the completion
+condition, but the portable contract is still `goal-runner`.
 
 ### Adopted skills
 
@@ -109,6 +127,8 @@ triggers fire:
 The full skill registry is at `.compound-ai/_skills-index.md`. The
 router that auto-dispatches is at
 `.compound-ai/tier-1-global/skills-core/request-router/SKILL.md`.
+The machine-readable trigger registry is at
+`.compound-ai/tier-1-global/conventions/trigger-registry.yaml`.
 
 ### Preserve rules (from adoption)
 
@@ -136,6 +156,8 @@ section.
 - Kit field guide: `.compound-ai/docs/FIELD-GUIDE.md` (do NOT load in
   full; load specific chapters when an adopted skill requests them)
 - Adoption report: `.compound-ai/adoption-report.md`
+- Goal-runner contract: `.compound-ai/tier-1-global/skills-core/goal-runner/SKILL.md`
+- Trigger registry: `.compound-ai/tier-1-global/conventions/trigger-registry.yaml`
 - Release-captain (ship gate for ANY release): invoke via
   router trigger "ship gate"
 - Panel skills: invoke for high-stakes deliverables
@@ -228,7 +250,7 @@ surfaces:
 4. Save the file
 
 The markers are designed to make this trivially scriptable. A future
-`adoption-captain --uninstall` flow could automate this; v2.5.0 ships
+`adoption-captain --uninstall` flow could automate this; v2.6.0 ships
 the discipline, not the automation.
 
 ---

@@ -45,19 +45,19 @@ votes on each, with one-line reasoning.
 ```
 Decision points (per the operator's framing):
 
-  D1 — Title: "Compound AI" vs "Compounding AI Operating Standards"
+  D1  -  Title: "Compound AI" vs "Compounding AI Operating Standards"
        My vote: Compound AI.
        Reasoning: Cleaner noun-phrase; aligns with BAIR's published frame.
 
-  D2 — Structural spine: Codex's 5-layer vs Kiro's 6-part vs Claude's Part I-VI
+  D2  -  Structural spine: Codex's 5-layer vs Kiro's 6-part vs Claude's Part I-VI
        My vote: Codex's 5-layer.
        Reasoning: Most parsimonious; substance maps cleanly onto it.
 
-  D3 — Inclusion of attribution architecture as separate artifact
+  D3  -  Inclusion of attribution architecture as separate artifact
        My vote: include.
        Reasoning: The non-coercive provenance design is itself a contribution.
 
-  D4 — Audience layering inside one document
+  D4  -  Audience layering inside one document
        My vote: drop (Cameron's framing supersedes).
        Reasoning: Medium-as-layer is sharper than within-doc layering.
 ```
