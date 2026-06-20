@@ -1,143 +1,163 @@
-# Compound AI Operating Standards: Starter Kit v2.7.0
+# Compound AI Operating Standards v3.0.7
 
-A drop-in operating layer that helps any capable agent (Claude, Codex, Cursor,
-Aider, Continue) work with durable routing, token discipline, goal loops,
-validation, provenance, and memory. The kit is vendor-neutral: Claude Code
-`/goal` is supported as an adapter, but the portable behavior is the Compound
-AI goal contract.
+[![CI](https://github.com/cameronpsutcliff/compound-ai/actions/workflows/enforce.yml/badge.svg)](https://github.com/cameronpsutcliff/compound-ai/actions/workflows/enforce.yml)
+[![Release](https://img.shields.io/github/v/release/cameronpsutcliff/compound-ai)](https://github.com/cameronpsutcliff/compound-ai/releases)
+[![License: Apache-2.0 and CC-BY-4.0](https://img.shields.io/badge/license-Apache--2.0%20and%20CC--BY--4.0-blue)](LICENSE)
 
-**New in v2.7.0:** the loop engineering layer. `loop-engineering` is the
-checklist any agent follows before building a recurring, self-prompting, or
-goal-seeking run: a Loop Spec written before the loop first runs, three hard
-stops (max iterations, no-progress detection, budget ceiling), closed-loop
-default, maker/checker verification, and memory on disk. The `loop-spec.md`
-template ships alongside it. No loop runs without a spec.
+**A co-owned operating kit that turns any capable AI coding agent into a
+compounding work surface.**
 
-**Carried from v2.6.0:** the durable behavioral overlay. `goal-runner` turns
-substantial work into an objective, completion condition, validation plan,
-context budget, stop conditions, and memory update. `trigger-indexer` maintains
-the machine-readable trigger registry used by `request-router`. Adoption now
-commits behaviors, not just kit awareness: route before complex replies, use
-goal contracts for verifiable multi-step work, budget context, validate the
-rendered/user-visible contract, slow-lane blocked items, and write useful
-memory.
+By **Cameron Sutcliff** ([cameronpsutcliff](https://github.com/cameronpsutcliff))
+and **Joshua Sutcliff** ([joshuadsutcliff](https://github.com/joshuadsutcliff)).
 
-**Carried from v2.5.0:** `adoption-captain` safely layers the kit into an
-existing project, preserves host rules, applies additively under `.compound-ai/`,
-validates with the host project's own commands, and updates project instruction
-surfaces with marker-bounded sections.
+Most AI work resets every session: the operator re-explains the project, the
+agent bulk-loads everything it might need, and the cost rises while the value
+stays flat. This kit makes the work compound instead. It ships a portable
+operating doctrine, a runtime-agnostic capability model that any agent can plug
+into, and a real enforcement layer that hard-blocks violations on Claude Code
+and is honored by prompt-prelude and wrapper on other runtimes. Enforcement is
+graceful-degradation by design: hard where the runtime supports it, advisory
+everywhere else, never silently absent.
 
 **Canonical site:** [cameronsutcliff.com/compound-ai](https://cameronsutcliff.com/compound-ai)
-**Source repo:** [github.com/cameronpsutcliff/compound-ai-operating-standards](https://github.com/cameronpsutcliff/compound-ai-operating-standards)
-**Field guide:** [cameronsutcliff.com/compound-ai/field-guide](https://cameronsutcliff.com/compound-ai/field-guide)
+**Source repo:** [github.com/cameronpsutcliff/compound-ai](https://github.com/cameronpsutcliff/compound-ai)
+
+> Sponsoring an AI initiative, or evaluating this in 90 seconds? Read
+> **[EXECUTIVE.md](EXECUTIVE.md)** first: the problem, the shift, and what is
+> enforced versus advisory, in business terms.
 
 ---
 
-## What ships
+## What is actually enforced
 
-```
-compound-ai-operating-standards/
-├── AGENT.md                      root operating contract
-├── ADOPT.md                      existing-project adoption entry point
-├── HANDOFF.md                    new-project / fresh-agent handoff
-├── _skills-index.md              human skill registry, 27 skills
-├── tier-1-global/
-│   ├── conventions/
-│   │   └── trigger-registry.yaml machine-readable routing registry
-│   ├── checklists/               session start, closeout, model routing
-│   └── skills-core/              13 infrastructure skills
-├── tier-2-capabilities/          14 cognitive, analytical, domain skills
-├── tier-3-shells/                slide, scroll, mission-control, course
-├── code/                         reference implementations
-├── scripts/                      build-manifest, verify-integrity, verify-origin
-└── docs/                         FIELD-GUIDE.md and publication docs
-```
+Stated up front, so the vocabulary never outruns the mechanism (full detail in
+[docs/known-limits.md](docs/known-limits.md)):
 
-## What you get
+| Discipline | How it is enforced |
+|---|---|
+| Costly subagent spawns and fan-out over the usage ceiling, on Claude Code | Hard block: a `PreToolUse` hook denies the call |
+| Repo invariants (personal-data leaks, skill counts, tier-0 discipline, registry coherence, hand-typed benchmark figures) | Hard block: CI gates with a planted-fixture self-test |
+| The same disciplines on Codex, Cursor, and other runtimes | Advisory: the agent is given the contract and honors it; nothing mechanically stops a violating call |
+| Tiered context loading and main-loop model choice | Human-controlled convention, not a mechanical block |
 
-**27 skills** organized by tier, each `SKILL.md` kept under 100 lines with a
-target of 80:
+## The six-layer architecture
 
-| Tier | Count | Skills |
-|---|---:|---|
-| Tier 1: session infrastructure | 13 | request-router, goal-runner, trigger-indexer, context-loader, token-economist, engagement-bootstrap, quality-gate, pattern-promoter, provenance-check, agent-panel-planning, agent-panel-review, release-captain, adoption-captain |
-| Tier 2: cognitive modes | 7 | parallel-lens-synthesis, consequence-simulation, cross-domain-translation, convergence-detection, detached-judgment, simulation-to-action-bridge, nod-protocol |
-| Tier 2: analytical capabilities | 5 | ultra-think, pressure-test, code-audit, autoresearch, skill-creator |
-| Tier 2: domain capabilities | 2 | viz, stakeholder-mapping |
+The kit is organized as six layers. You may stop at any layer; every layer
+below the one you stop at still applies and the Standard still holds.
 
-**4 shells** for deliverables: slide, scroll, mission-control, and course.
+| # | Layer | Path | What it gives you |
+|---|---|---|---|
+| 1 | **Doctrine** | `doctrine/` | Portable core any agent honors: tiered context, skills, goal and loop contracts, conventions. Plain Markdown and YAML, no tools. |
+| 2 | **Capabilities** | `capabilities/` | The runtime-agnostic capability model. Four contracts (`adapter-contract`, `usage-discipline`, `session-routing`, `goal-loop`) that define what any adapter must guarantee. |
+| 3 | **Runtime adapters** | `runtime/` | Per-runtime adapters: `claude-code` hard-enforces via hooks; `codex`, `cursor`, and `generic` honor the same contract (advisory, the graceful-degradation path for any agent). |
+| 4 | **Enforcement** | `enforcement/` | CI gates, workflows, and a planted-fixture self-test that block real violations. Run `enforcement/bin/check-kit.sh`. |
+| 5 | **Proof** | `proof/` | The session-start benchmark and other net-positive evidence. |
+| 6 | **Reference and adoption** | `reference-impl/`, `adoption/` | Maintainer Python tooling and the drop-in adoption protocol. |
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full picture: how the
+capability and adapter model lets any agent plug in, and how Claude Code hard
+enforces via hooks while any other agent honors the same contract through the
+generic adapter.
+
+## Any agent honors the contract (Claude Code hard-enforces)
+
+The capability layer is runtime-agnostic. A capability is defined once in
+`capabilities/<name>.md` as a contract, an input and output shape, a reference
+implementation, and a conformance test. Each runtime in `runtime/<agent>/`
+implements the same `dispatch(task) -> result` contract with its own mechanism:
+
+- **Claude Code** wires the capabilities to real `PreToolUse` and
+  `UserPromptSubmit` hooks, so usage ceilings and tier routing are mechanical
+  hard blocks. This is the richest adapter.
+- **Codex** and **Cursor** apply the same checks through their directive files
+  plus a dispatch wrapper.
+- **Generic** injects the discipline as a prompt prelude with an optional shell
+  wrapper, so a brand-new or GUI-only agent still honors the contract. This is
+  graceful degradation: the kit works with one agent and scales to N with no
+  structural change.
 
 ## Install
 
-### Option A: Adopt into an existing project
+### Option A: adopt the doctrine into an existing project
 
 ```bash
-git clone https://github.com/cameronpsutcliff/compound-ai-operating-standards.git .compound-ai
+git clone https://github.com/cameronpsutcliff/compound-ai.git .compound-ai
 ```
 
-Then hand the agent `ADOPT.md`, not just `AGENT.md`:
+Hand the agent `adoption/ADOPT.md` and run the `adoption-captain` skill. The
+doctrine and the capability contracts apply with no runtime dependency. See
+`adoption/INSTALL.md` for the multi-agent walkthrough.
 
-```text
-Read .compound-ai/ADOPT.md and run adoption-captain. Preserve this project's
-existing rules, propose an additive plan before edits, and install the durable
-behavioral overlay only after approval.
-```
+### Option B: add the enforced Claude Code runtime
 
-### Option B: Bootstrap a new project
+The `runtime/claude-code/` module vendors the enforced-runtime hooks
+(usage-guard, session-router) under Apache-2.0, adapted from Joshua Sutcliff's
+public claude-config (github.com/joshuadsutcliff) and credited in
+`runtime/claude-code/NOTICE`. Wire the runtime by following the adapter docs.
 
-Use `HANDOFF.md` and `engagement-bootstrap`.
+## The merge story
 
-### Option C: Use as reference
+Version 3 is a true co-owned merge of two complementary systems. Cameron's
+solo edition contributed the portable doctrine, the tiered context model, and
+the skill library. Joshua's System B reference runtime
+([github.com/joshuadsutcliff](https://github.com/joshuadsutcliff)),
+hardened by a real multi-agent operating incident, contributed the hook-level
+enforcement now living in `runtime/claude-code/`. The consolidation lifted the
+shared behavior out of both into the runtime-agnostic `capabilities/` layer, so
+the enforcement Joshua proved on Claude Code is now a contract any agent can
+satisfy. Cross-repo skills were merged into unified named skills (`memory`,
+`delegation`, `review`) with intelligent sub-routing. See
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-Read the field guide and adopt the patterns piecemeal.
+## Multi-agent orchestration
 
-## How it works
+Multi-agent coordination ships as distilled guidance, not implementation. The
+Field Guide (`docs/FIELD-GUIDE.md`) covers the patterns in its panel chapters:
+the agent interface contract, multi-agent coordination, and the planning and
+review panels. These read as operating guidance for running your own panels.
+The kit does not ship any sealed-panel protocol mechanics or orchestration
+secret sauce.
 
-1. The agent loads `AGENT.md`, `_skills-index.md`, `request-router`, and
-   `trigger-registry.yaml`.
-2. The router maps requests to the smallest useful skill chain.
-3. Substantial work routes through `goal-runner`: objective, completion
-   condition, validation, context budget, stop conditions, memory update.
-4. The agent validates the user-visible contract before declaring done.
-5. Durable lessons move into state, logs, instructions, or reusable patterns.
+## The proof point: context that does not reload
 
-## Claude Code `/goal`
+A realistic un-tiered setup carries many times the context this kit loads at the
+start of every session, and keeping the full reference resident costs an order of
+magnitude beyond that. The kit routes to one short procedure on demand instead.
+That is the cost you pay repeatedly, every session, for the life of the work.
 
-Claude Code v2.1.139+ supports `/goal`, which keeps Claude working across turns
-until a completion condition is met. Compound AI supports it as an adapter:
-write the goal contract first, then pass the completion condition to `/goal`.
-Other agents use the same contract manually through `goal-runner`.
+The benchmark is pure shell, no metered API and no model call, reproducible on a
+bare laptop with `bash proof/session-start-benchmark/measure.sh`. The token
+counts are character estimates (bytes / 4), so the figure is order-of-magnitude,
+and the ratio is estimator-independent because both sets use the same divisor.
+The exact figures, both the realistic single-tier ratio and the full-resident
+ceiling, are regenerated from the tree into
+[proof/session-start-benchmark/results.md](proof/session-start-benchmark/results.md);
+they are not hand-typed here, so they cannot drift. The benchmark measures
+context-loading cost, not output quality.
 
-## What this kit is not
+## Honest posture
 
-- Not a prompt library.
-- Not vendor-specific.
-- Not a replacement for the host project's own rules.
-- Not a demand to load the full field guide at startup.
+This is an early operating standard with a real enforced reference runtime, not
+a battle-tested mass-adopted product. Public adoption is low; internal usage is
+real. The enforcement story is incident-hardened on the runtime side. The kit
+states what the hooks block, what stays advisory, and what the human still
+controls, rather than overclaiming. See `docs/known-limits.md`.
 
-## Versioning
-
-This is **v2.7.0**. It adds the loop engineering layer (`loop-engineering`,
-`loop-spec.md`) so recurring agent runs are governed by spec instead of by
-hope. v2.6.0 added the durable behavioral overlay; v2.5.0 added
-`adoption-captain`; v2.4.0 added `release-captain`; v2.3.x hardened package
-discipline and panel review.
-
-See `releases/` for full version history.
+The early v3.0.x releases are same-day pre-publication hardening passes from a
+multi-model review, not instability between adopted versions. Pin v3.0.7 or
+later.
 
 ## License
 
-- **Documentation:** CC BY 4.0
-- **Code:** Apache 2.0
-- **Origin:** Compound AI Operating Standards by Cameron Sutcliff
+Co-owned by its two authors and dual licensed:
 
-Cite the canonical source when you fork or extend:
-`https://cameronsutcliff.com/compound-ai`
+- **Documentation and data:** CC BY 4.0
+- **Originally authored code:** Apache 2.0
+- **Vendored enforced-runtime hooks** (usage-guard, session-router): Apache 2.0,
+  adapted from Joshua Sutcliff's public claude-config
+  (github.com/joshuadsutcliff), credited in `runtime/claude-code/NOTICE`.
 
-## Provenance verification
+Attribution:
+`Compound AI Operating Standards by Cameron Sutcliff and Joshua Sutcliff`
 
-```bash
-./scripts/verify-origin.py --online
-```
-
-Returns `VERIFIED` if the local manifest matches the canonical website manifest.
+See `LICENSE` and `NOTICE` for full terms.
