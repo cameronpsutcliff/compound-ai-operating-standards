@@ -7,9 +7,17 @@ if [ -z "$files" ]; then
   exit 0
 fi
 
+# Match U+2014 (EM DASH) by its raw UTF-8 bytes (e2 80 94), built with printf.
+# This works on macOS's default /bin/bash 3.2, which does NOT support the
+# ANSI-C dollar-quote unicode escape (that arrived in bash 4.2); under 3.2 the
+# old escape expanded to literal text and the hook silently matched nothing.
+# LC_ALL=C compares bytes, so it is locale-independent and needs no grep -P
+# (PCRE is absent from the BSD grep that ships with macOS).
+em_dash="$(printf '\xe2\x80\x94')"
+
 found=0
 while IFS= read -r file; do
-  if [ -f "$file" ] && grep -n $'\u2014' "$file"; then
+  if [ -f "$file" ] && LC_ALL=C grep -n "$em_dash" "$file"; then
     found=1
   fi
 done <<< "$files"

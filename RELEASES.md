@@ -2,6 +2,24 @@
 
 Release notes for the Compound AI Operating Standards kit. Newest first.
 
+## v3.0.8 (2026-07-02)
+
+New chapter plus enforcement-layer doctrine.
+
+### Added
+
+- **Part VIII, Chapter 34: The Enterprise Translation.** How the personal operating system maps
+  function-by-function into an organization-owned cloud account: the substitution table, the turn
+  chokepoint, fail-closed budgets, and what must be repriced honestly instead of translated.
+- **Doctrine: mechanics over prose** (`docs/mechanics-over-prose.md`). A rule is not shipped until it is a
+  gate, a guard, or a derived artifact; prose documents the rule, the mechanism enforces it. Includes the
+  graduation rule and the mention-vs-use corollary.
+
+### Fixed
+
+- Release verification now extracts built artifacts and scans them with a manifest-driven leak detector
+  before any release passes. The home-path detector allowlists the documented fixture convention.
+
 ## v3.0.7 (2026-06-19)
 
 Roster-accuracy pass. No doctrine change.

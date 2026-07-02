@@ -7,12 +7,12 @@
   ],
   "canonical_url": "https://cameronsutcliff.com/compound-ai",
   "source_repo": "https://github.com/cameronpsutcliff/compound-ai",
-  "version": "3.0.7",
-  "release_date": "2026-06-19",
+  "version": "3.0.8",
+  "release_date": "2026-07-02",
   "license_docs": "CC-BY-4.0",
   "license_code": "Apache-2.0",
-  "generated_at": "2026-06-20T03:38:04.894387+00:00",
-  "aggregate_sha256": "7713e88ad86455e35b05edb0aa78df05b4fdc25a832e72ac4f5f020374ba7e8f",
+  "generated_at": "2026-07-02T07:50:47.175739+00:00",
+  "aggregate_sha256": "604cce18c1d431d05e951fe61dfd6cc811f20da5258f8d75da319f7a785788d6",
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -47,7 +47,7 @@
     {
       "path": "CITATION.cff",
       "bytes": 922,
-      "sha256": "399a2277247f4444b18328633fad8b263d0e4df239e3fa3e4fb3395cb9673679"
+      "sha256": "5e4eeb6488d7b6070ef9b0822a6f80f711fe8030abd008835a553ded06f2a07d"
     },
     {
       "path": "CLAUDE.md",
@@ -96,8 +96,8 @@
     },
     {
       "path": "RELEASES.md",
-      "bytes": 18479,
-      "sha256": "0f5ad9c0fe65c7509712a78f7240e9f5812153abc0d7004db45447c1a99fc3d2"
+      "bytes": 19327,
+      "sha256": "8ad71f09ca9b08eae6958650f5fb17404738b086edd72b1a9748ae5836595d7c"
     },
     {
       "path": "SECURITY.md",
@@ -196,8 +196,8 @@
     },
     {
       "path": "docs/FIELD-GUIDE.md",
-      "bytes": 142978,
-      "sha256": "8cdee1a6d658bce3c6385943503aaca59d9e9feb9a533baa65879ccb27886640"
+      "bytes": 147463,
+      "sha256": "295fa4df78c4eaa268c49d5a63c031943a45781be24a45015fa8bd2e53f8e4ec"
     },
     {
       "path": "docs/known-limits.md",
@@ -208,6 +208,11 @@
       "path": "docs/loop-engineering.md",
       "bytes": 9371,
       "sha256": "eb4d2915763396ba9476c4bca1478c840981d9a8fa0e91736d45bd6727187122"
+    },
+    {
+      "path": "docs/mechanics-over-prose.md",
+      "bytes": 1906,
+      "sha256": "32ce08e2213f57034616e6203f45c930c77068877c39df5008102e89c9211f87"
     },
     {
       "path": "doctrine/contracts/goal-contract.md",
@@ -238,6 +243,11 @@
       "path": "doctrine/contracts/token-budget.md",
       "bytes": 1822,
       "sha256": "7eab8184fb30f77b86ec84dabf0cde812ea42963e2e35648da1d0933ca3b58c4"
+    },
+    {
+      "path": "doctrine/conventions/agent-orchestration.md",
+      "bytes": 7312,
+      "sha256": "90d555c0cd1e7701bae9f17cec3adade14a895266fb5621c2ed6b35d8403a7df"
     },
     {
       "path": "doctrine/conventions/provenance.md",
@@ -376,8 +386,8 @@
     },
     {
       "path": "doctrine/skills/agent-panel-review/reference/agent-strengths.md",
-      "bytes": 5026,
-      "sha256": "98fc3a056f8854fc36628b3c63e2a13fda19a21537a8df7ba531f291974997e0"
+      "bytes": 5039,
+      "sha256": "b20a7dc3b36cf9fc78d274bc0b659873f7be7850ecead85c927fcd5a2c00e909"
     },
     {
       "path": "doctrine/skills/agent-panel-review/reference/critique-format.md",
@@ -1026,8 +1036,8 @@
     },
     {
       "path": "enforcement/hooks/pre-commit/no-em-dashes.sh",
-      "bytes": 401,
-      "sha256": "4452ed5275fb5fc8807234e619f625ed52783def442822af8b3f090babbd3366"
+      "bytes": 892,
+      "sha256": "05cc0b856f7174dbfa3bf390ab9343d7b57b0b83936e3183ea5d354d927f746b"
     },
     {
       "path": "enforcement/tests/fixtures/adapter-contract/budget-closed.json",
@@ -1187,7 +1197,7 @@
     {
       "path": "proof/session-start-benchmark/results.md",
       "bytes": 2821,
-      "sha256": "d395c6a9df146689559a6fefec9981d0e1810054bac1c1e7dc00674b5b4a2487"
+      "sha256": "2691112649f88d026c6d938ab85965b9973eef9889adf444a24c76feebac0c06"
     },
     {
       "path": "reference-impl/README.md",

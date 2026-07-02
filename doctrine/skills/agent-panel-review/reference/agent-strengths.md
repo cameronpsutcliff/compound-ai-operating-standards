@@ -93,7 +93,7 @@ exchanged. Use for production, not panel orchestration.
 
 ---
 
-## Local models (Ollama / OpenClaw / similar)
+## Local models (Ollama / llama.cpp / LM Studio / similar)
 
 **Strongest at:** no-cost grunt work, parsing, summarization at modest
 quality, RSS pulls, log scans, background tasks where latency tolerance
