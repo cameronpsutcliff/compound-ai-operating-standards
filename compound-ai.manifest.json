@@ -7,12 +7,12 @@
   ],
   "canonical_url": "https://cameronsutcliff.com/compound-ai",
   "source_repo": "https://github.com/cameronpsutcliff/compound-ai",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "release_date": "2026-07-02",
   "license_docs": "CC-BY-4.0",
   "license_code": "Apache-2.0",
-  "generated_at": "2026-07-02T07:50:47.175739+00:00",
-  "aggregate_sha256": "604cce18c1d431d05e951fe61dfd6cc811f20da5258f8d75da319f7a785788d6",
+  "generated_at": "2026-07-02T16:55:09.664911+00:00",
+  "aggregate_sha256": "5683d9add0a4d8a55e7f26ade9f0c9dc97cffb670352c36d3cf117293ea5eb88",
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -47,7 +47,7 @@
     {
       "path": "CITATION.cff",
       "bytes": 922,
-      "sha256": "5e4eeb6488d7b6070ef9b0822a6f80f711fe8030abd008835a553ded06f2a07d"
+      "sha256": "980b30ac70f2c279072ea34f03af358157d774521af670c8ee5653210b3a2ee7"
     },
     {
       "path": "CLAUDE.md",
@@ -96,8 +96,8 @@
     },
     {
       "path": "RELEASES.md",
-      "bytes": 19327,
-      "sha256": "8ad71f09ca9b08eae6958650f5fb17404738b086edd72b1a9748ae5836595d7c"
+      "bytes": 20284,
+      "sha256": "ae3472b6ef73e8cf79cd25d015a5a97aa67ab9d19bdb537a5440caf37b1bc745"
     },
     {
       "path": "SECURITY.md",
@@ -182,7 +182,7 @@
     {
       "path": "codemeta.json",
       "bytes": 1104,
-      "sha256": "9cb81a2a69451c9270da54e9325d198e5c1dec61c31962524feb6603b1ea294a"
+      "sha256": "8eae6963b7126a5be453f0721cb7c71211d231d873896711f4c55e12dc34da9d"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -196,8 +196,18 @@
     },
     {
       "path": "docs/FIELD-GUIDE.md",
-      "bytes": 147463,
-      "sha256": "295fa4df78c4eaa268c49d5a63c031943a45781be24a45015fa8bd2e53f8e4ec"
+      "bytes": 151081,
+      "sha256": "79b6935e0e9e38c6e8856659fb5f43c8b48820e360677ffb997467d96768deb4"
+    },
+    {
+      "path": "docs/derived-not-typed.md",
+      "bytes": 5155,
+      "sha256": "b600138ff1eba1441efe0f38d1368475ce53e3c391ebb6963954ebd1be5b18ee"
+    },
+    {
+      "path": "docs/fleet-measurement.md",
+      "bytes": 1319,
+      "sha256": "a69fedf649e12b820e10d9cad161fdfdd5e15f7b204dfb9b9d3be4a6333e634f"
     },
     {
       "path": "docs/known-limits.md",

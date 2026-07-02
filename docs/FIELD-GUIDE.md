@@ -1702,7 +1702,7 @@ The system described in this chapter is real. The numbers are real. The transiti
 
 ## Part VIII. The Enterprise Translation
 
-> **Status:** Complete. Owner: Claude. Added in v3.0.8.
+> **Status:** Complete. Owner: Claude. Chapter 34 added in v3.0.8; Chapter 35 (fleet measurement) in v3.0.9.
 
 ### Chapter 34. The Enterprise Translation
 
@@ -1734,6 +1734,31 @@ Two principles from this guide translate so directly they should be carried over
 **What does not translate, and must be repriced honestly.** Subscription economics do not survive the move: an enterprise build pays a fixed infrastructure floor every month before the first token, plus metered inference on top. Quote it as two numbers, floor and variable, never one. The single-operator trust model does not survive either: with more than one human, the backend becomes the authority on who may do what, and "act, do not ask" gets scoped per role and per blast radius (Chapter 27). And the human vault does not translate at all; an organization has knowledge bases, not a brain, and pretending otherwise produces a compliance problem wearing a memory system's clothes.
 
 **The discipline.** Keep the doctrine identical on both sides of the translation: loop specs before recurring jobs, panels for contested decisions, mechanics over prose, verification before completion claims. Swap only the substrate. An operator who has run this system personally can walk into the enterprise conversation with something rare: not a slide about agents, but a working referent for every control the IT owner is about to ask for.
+
+### Chapter 35. Measuring the Fleet: DORA for Agent Dispatch
+
+*Who this chapter is for: anyone who has been asked "is the agent fleet actually getting better?" and does not want to answer with an anecdote.*
+
+A fleet you cannot measure is a fleet you re-baseline by vibes. The software delivery world already solved this measurement problem once: the DORA metrics (deployment frequency, lead time, change-failure rate, time to restore) survived two decades of methodology fashion because they measure outcomes, not activity. Agent dispatch is a delivery pipeline, so the same four questions apply with almost no translation:
+
+| DORA metric | Fleet translation | What it tells you |
+|---|---|---|
+| Deployment frequency | Dispatch frequency per lane | Is work actually flowing, or is the fleet decorative? |
+| Lead time for changes | Submit-to-terminal time, p50 and p90 | Where dispatch latency really sits, not where it feels like it sits |
+| Change-failure rate | Failed dispatches, attributed per gate, plus substitution rate | WHICH control rejects work, and how often a fallback agent had to finish the job |
+| Time to restore | Time from a failed dispatch to the next success on that lane | Whether failures are blips or outages |
+
+**The one rule that makes this work: instrument before the pilot.** Metrics bolted on after cutover have no baseline, and a number with no baseline is a mood. Put the measurement at the dispatch chokepoint (Chapter 34) on day zero, run the old path in observe-only mode, and day one of real traffic arrives with its "before" already recorded. Migrating a caller onto the new path then produces a before-and-after you can defend in a steering meeting.
+
+Three instruments cover the whole surface, and each one answers a different failure of memory:
+
+1. **Chokepoint DORA.** One command over the dispatch event log, plus a nightly derived rollup into a dated file. Because every dispatch passes one pipe, the metrics are complete by construction; nothing routes around the counter.
+2. **The utilization ledger.** Append-only, per-agent, per-task verdicts (strong, adequate, weak, failed) with a short friction code. This is the re-baselining input: when you compose the next project's seats, the bench is picked from recorded evidence, and an agent that has drifted weak gets benched by record, not by recollection. Corrections are new lines, never edits, so the record keeps its own history honest.
+3. **Lane health probes.** Cheap scheduled auth-and-latency checks per agent lane, written to a machine-readable health file the scheduler consumes. Drift in a lane's availability becomes data before it becomes an incident.
+
+Two honesty rules keep the numbers trustworthy. Every metric prints its sample size, and a thin window says "insufficient data" instead of inventing a trend; a p90 over four dispatches is not a p90, it is a coin flip wearing statistics. And every measurement artifact is derived from the event log by a scheduled job, never hand-typed; a hand-maintained metrics file is a future lie (the derived-not-typed rule, Chapter 20, applied to your own scorecard).
+
+The enterprise translation here is nearly free, which is the point. These are the exact numbers a delivery organization already expects, so the fleet's scorecard and the client's KPI sheet can be the same artifact, co-owned from the first week. When someone asks whether the agents are working, the answer is a dashboard row with a sample size, a baseline, and a trend, the same shape of answer they would demand from any other pipeline they fund.
 
 ---
 

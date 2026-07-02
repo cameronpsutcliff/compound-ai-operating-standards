@@ -2,6 +2,27 @@
 
 Release notes for the Compound AI Operating Standards kit. Newest first.
 
+## v3.0.9 (2026-07-02)
+
+Fleet measurement doctrine: DORA for agent dispatch.
+
+### Added
+
+- **Part VIII, Chapter 35: Measuring the Fleet.** The DORA metrics translated to agent
+  dispatch (dispatch frequency, submit-to-terminal lead time, per-gate change-failure
+  attribution with substitution rate, time to restore), the instrument-before-the-pilot
+  rule, three instruments (chokepoint metrics, utilization ledger, lane health probes),
+  and the honesty rules: printed sample sizes and derived-not-typed scorecards.
+- **Doctrine: fleet measurement** (`docs/fleet-measurement.md`). The compact operating
+  rule behind Chapter 35.
+- **Doctrine: derived, not typed** (`docs/derived-not-typed.md`). Published counts,
+  versions, and metrics must be generated, loop-governed, or explicitly static-by-design.
+
+### Notes
+
+- Consolidates the v3.0.8 additions (Chapter 34: The Enterprise Translation;
+  mechanics-over-prose doctrine) into all distribution repos.
+
 ## v3.0.8 (2026-07-02)
 
 New chapter plus enforcement-layer doctrine.
